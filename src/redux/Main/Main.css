@@ -1,0 +1,59 @@
+.container {
+    padding: 4rem 6rem;
+    width: 1200px;
+    background-color: #f0f1f1;
+    margin: auto;
+}
+
+.section {
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+}
+
+.title {
+    color: #f00;
+    text-align: center;
+}
+
+.sub-title {
+    width: 40%;
+    display: block;
+    margin: auto;
+    text-align: justify;
+    margin-bottom: 3rem;
+}
+
+.main__section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section__box {
+    flex-basis: 30%;
+    margin-top: 5rem;
+}
+
+.section__box:nth-child(2) {
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+}
+
+.task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 0.5rem solid #8ac24a;
+    margin: auto;
+}
+
+.css-box {
+    border: 0.5rem solid #ffc007;
+}
+
+.java-box {
+    border: 0.5rem solid #ec1c24;
+}
