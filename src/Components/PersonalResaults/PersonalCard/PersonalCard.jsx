@@ -20,7 +20,6 @@ const PersonalCard = ({name, result, ratio, total}) => {
                 ratio >= 80 ?
                                  <div className={styles.flex}><span className={styles.green}>{ratio}% </span><img src={smile} alt="smile" className={styles.svg}/></div>:
                 ratio }</th>
-                {/* <span>{total}</span> */}
         </tr>
         
     );

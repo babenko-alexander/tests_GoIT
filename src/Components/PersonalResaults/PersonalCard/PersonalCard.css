@@ -1,5 +1,5 @@
 .paddings:nth-child(2n+1) {
-    background-color: #ffeee8;
+    background-color: #fff3f3;
 }
 .robotoGray {
     color: #414042;
@@ -13,16 +13,16 @@
     font-family: 'Roboto', sans-serif;
 }
 .red {
-    color: #b90909;
+    color: #d80027;
 }
 .yellow {
-    color: #e2d40d;
+    color: #dae727;
 }
 .green {
-    color: #056926;
+    color: #2bd900;
 }
 .svg {
-    margin-left: 10px;
+    margin-left: 1.6rem;
     width: 10px;
     height: 10px;
 }
@@ -36,7 +36,7 @@
     
 }
 .flex {
-    margin-left: 20px;
+    margin-left: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -50,7 +50,7 @@
     }
 }
 .svg {
-    margin-left: 20px;
+    margin-left: 1.25rem;
     width: 35px;
     height: 35px;
 }
@@ -63,7 +63,7 @@
     }
 
 .svg {
-   margin-left: 15px;
+   margin-left: 0.9rem;
    width: 40px;
    height: 40px;
 }
