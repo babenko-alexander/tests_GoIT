@@ -1,0 +1,45 @@
+.testsContainer {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #f3f3f3;
+}
+.answersContainer {
+    flex-basis: 77%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.answer {
+    padding: 1rem;
+    font-size: 1.2rem;
+    flex-basis: 48%;
+    margin-bottom: 2rem;
+    background-color: #8ef7ff;
+    box-shadow: 3px 0px 18px -5px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+
+.answerCor {
+    background-color: green;
+}
+
+.answerInc {
+    background-color: red;
+}
+
+.answers__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.answersBtn {
+    flex-basis: 50%;
+    background-color: #FC5830;
+    color: #fff;
+    font-size: 3rem;
+    box-shadow: 3px 0px 18px -5px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
