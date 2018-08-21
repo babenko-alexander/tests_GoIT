@@ -9,52 +9,46 @@
     width: 100%;
     margin: auto;
     background-color: #fff;
+    padding: 1rem;
 }
 
 .title {
     color: #f00;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
-.sub-title {
-    width: 40%;
-    display: block;
-    margin: auto;
+.sub__title {
     text-align: justify;
-    margin-bottom: 3rem;
 }
 
 .section__main {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .main__box {
-    flex-basis: 30%;
-    margin-top: 5rem;
-}
-
-.main__box:nth-child(2) {
-    margin-top: 15rem;
-    margin-bottom: 5rem;
+    flex-basis: 100%;
+    margin: 6rem 0;
 }
 
 .box__task {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
     border: 0.5rem solid #8ac24a;
     margin: auto;
+    position: relative;
 }
 
-.css-box {
+.css_box {
     border: 0.5rem solid #ffc007;
 }
 
-.java-box {
+.java_box {
     border: 0.5rem solid #ec1c24;
 }
 
@@ -62,6 +56,67 @@
     padding: 1rem;
     border-radius: 50%;
     background-color: #f0f1f1;
+    position: absolute;
+}
+
+.mod_1 {
+    top: 100%;
+    left: 100%;
+}
+
+.mod_2 {
+    top: 100%;
+    right: 100%;
+}
+
+.mod_3 {
+    bottom: 100%;
+    left: 100%;
+}
+
+.mod_4 {
+    bottom: 100%;
+    right: 100%;
+}
+
+.mod_5 {
+    top: 130%;
+    left: 15%;
+}
+
+.mod_6 {
+    bottom: 130%;
+    left: 15%;
+}
+
+.mod_7 {
+    top: 25%;
+    right: 130%;
+}
+
+.mod_8 {
+    top: 25%;
+    left: 130%;
+}
+
+.modul_1 {
+    top: 75%;
+    left: 120%;
+}
+
+.modul_2 {
+    top: 75%;
+    right: 120%;
+}
+
+.modul_3 {
+    bottom: 75%;
+    left: 120%;
+}
+
+.modul_4 {
+    bottom: 75%;
+    right: 120%;
 }
 
 @media (min-width: 768px) {
@@ -77,7 +132,7 @@
         width: 90%;
     }
 
-    .sub-title {
+    .sub__title {
         width: 40%;
         display: block;
         margin: auto;
