@@ -1,42 +1,16 @@
-export const dataResault = () => ({
+import axios from 'axios';
+export const dataResault = (tests) => ({
     type: 'data',
-    tests: [
-        {
-            HTML_CSS: {
-                THEME: [
-                    {
-                        question: "question",
-                        answers: [
-                            "answer1",
-                            "answer2",
-                            "answer3",
-                            "answer4"
-                        ],
-                        rightAnswer: "rightAnswer"
-                    }
-                ]
-            }
-        },
-        {
-            JS: {
-            }
-        },
-        {
-            SATELLITE: {
-            }
-        }
-    ],
-        results:[
-        {
-            name:"name",
-            result:7,
-            ratio: 70
-        }
-    ]
+    tests,
 })
 
 
+const getDataResault = () => axios.get('http://localhost:3001/results').then(({data,status})=>{if(status === 200){return data}});
 
+export const getDataAsync=()=> dispatch=>{
+    getDataResault()
+    .then(data=>dispatch(dataResault(data)));
+};
 
 
 // Collapse 

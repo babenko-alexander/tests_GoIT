@@ -6,12 +6,25 @@
     padding: 0.25rem;
 }
 .robotoGray:first-child{
-        /* content: ''; */
     text-decoration: underline;
 }
 .robotoOrange,.robotoGray{
     font-size: 0.9rem;
     font-family: 'Roboto', sans-serif;
+}
+.red {
+    color: #b90909;
+}
+.yellow {
+    color: #e2d40d;
+}
+.green {
+    color: #056926;
+}
+.svg {
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
 }
 @media (min-width: 450px){
 .robotoGray {
@@ -20,6 +33,13 @@
 .robotoGray{
     font-size: 1rem;
     }
+    
+}
+.flex {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 @media (min-width: 768){
 .robotoGray {
@@ -29,11 +49,24 @@
       font-size: 1.2rem;
     }
 }
+.svg {
+    margin-left: 20px;
+    width: 35px;
+    height: 35px;
+}
+
 @media (min-width: 1024px){
 
 .robotoGray {
        padding: 1.25rem;
        font-size: 1.3rem;
     }
+
+.svg {
+   margin-left: 15px;
+   width: 40px;
+   height: 40px;
+}
+
 
 }

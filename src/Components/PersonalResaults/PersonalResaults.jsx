@@ -2,22 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PersonalResaults.css';
 import PersonalCard from './PersonalCard/PersonalCard';
-import {dataResault} from '../../redux/action/actionDataResaults';
+import {getDataAsync} from '../../redux/action/actionDataResaults';
 import {connect} from 'react-redux';
+import {totalResaults} from '../../redux/selectors/totalResaults';
+
 
 class PersonalResaults extends Component {
 
     componentDidMount(){
-        this.props.dataResault();
+        this.props.getDataAsync();
     }
 
     render() {
-    const obj = [{name: 'CSS', age:10, el: 20}, 
-    {name: 'HTML', age:10, el: 20}, 
-    {name: 'REACT', age:10, el: 20}, 
-    {name: 'AlexAlexAlexAlex', age:10, el: 20}, 
-    {name: 'AlexAlexAlexAlex', age:10, el: 20}, 
-    {name: 'AlexAlexAlexAlex', age:10, el: 20},]
+        const {dataResault} = this.props;
         return (
             
             <div className={styles.wrapper}>
@@ -31,7 +28,10 @@ class PersonalResaults extends Component {
                             <th className={styles.robotoOrange}>Результаты</th>
                             <th className={styles.robotoOrange}>Средний бал по всем пользователям</th>
                         </tr>
-                        {obj.map(el => <PersonalCard name={el.name} />)}
+                        {dataResault.map(el => <PersonalCard name={el.name} result={el.result} ratio={el.ratio} id={el.id} key={el.id}/>)}
+                        <tr>
+                            <th>{this.props.total}</th>
+                        </tr>
                         </tbody>    
                         
                 </table>
@@ -48,13 +48,14 @@ PersonalResaults.propTypes = {
 function mSTP (store) {
     return {
         dataResault: store.dataResaults,
+        total: totalResaults(store),
     }
 }
 
 function mDTP (dispatch) {
     return {
-        dataResault : function (){
-            dispatch(dataResault())
+        getDataAsync : function (){
+            dispatch(getDataAsync())
         }
     }
 }
