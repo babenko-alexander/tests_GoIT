@@ -1,7 +1,6 @@
 .container {
     min-width: 320px;
     max-width: 1200px;
-    background-color: #f0f1f1;
     margin: auto;
 }
 
@@ -120,24 +119,21 @@
 }
 
 @media (min-width: 768px) {
-
+    .sub__title {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
 }
 
 @media (min-width: 1024px) {
-    .container {
-        padding: 4rem 6rem;
-    }
-
     .section {
+        padding: 2rem 4rem;
         width: 90%;
     }
 
     .sub__title {
         width: 40%;
-        display: block;
-        margin: auto;
-        text-align: justify;
-        margin-bottom: 3rem;
     }
 
     .section__main {
