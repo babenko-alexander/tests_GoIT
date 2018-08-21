@@ -1,0 +1,39 @@
+.paddings:nth-child(2n+1) {
+    background-color: #ffeee8;
+}
+.robotoGray {
+    color: #414042;
+    padding: 0.25rem;
+}
+.robotoGray:first-child{
+        /* content: ''; */
+    text-decoration: underline;
+}
+.robotoOrange,.robotoGray{
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+@media (min-width: 450px){
+.robotoGray {
+    padding: 0.3rem;
+}   
+.robotoGray{
+    font-size: 1rem;
+    }
+}
+@media (min-width: 768){
+.robotoGray {
+      padding: 0.87rem;
+}  
+.robotoOrange,.robotoGray{
+      font-size: 1.2rem;
+    }
+}
+@media (min-width: 1024px){
+
+.robotoGray {
+       padding: 1.25rem;
+       font-size: 1.3rem;
+    }
+
+}
