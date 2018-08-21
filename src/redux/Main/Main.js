@@ -11,12 +11,15 @@ const Main = () => {
                 <div className="main__section">
                     <div className="section__box">
                         <div className="task">HTML, CSS</div>
+                        <span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span>
                     </div>
                     <div className="section__box">
                         <div className="task">Satellite</div>
+                        <span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span>
                     </div>
                     <div className="section__box">
                         <div className="task">Java Script</div>
+                        <span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span><span>lorem</span>
                     </div>
                 </div>
             </section>
