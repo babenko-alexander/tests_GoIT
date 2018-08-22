@@ -13,7 +13,7 @@ const Main = () => {
                     <div className={styles.main__box}>
                         <div className={`${styles.box__task} ${styles.css_box}`}>
                             <p>HTML, CSS</p>
-                            <NavLink exact to='/'>
+                            <NavLink exact to='/tests'>
                                 <span className={`${styles.main__span} ${styles.mod_1}`}>lorem</span>
                             </NavLink>
                             <NavLink to='/2'>
