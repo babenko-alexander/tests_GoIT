@@ -3,10 +3,10 @@ import React from 'react';
 import styles from './TestCard.css';
 
 const TestCard = ({testname, index, question, answers}) => {
+    console.log('card', testname, index, question, answers);
     return (
         <div className={styles.testcard}>
-            <h1 className={styles.textcard__testname}>{testname}</h1>
-            <h2 className={styles.testcard__question}>{+index + 1}. {question}</h2>
+            <p className={styles.testcard__question}>{+index + 1}. {question}</p>
             <form method='post' onChange={(null)}>
                 {answers.map((answ, i) =>
                     <label

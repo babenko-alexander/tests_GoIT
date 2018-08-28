@@ -15,10 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Test
-            category="HTML_CSS"
-            name="mediaRequests"
-        />
+        <Test/>
       </div>
     );
   }
