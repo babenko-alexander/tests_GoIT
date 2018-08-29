@@ -35,6 +35,10 @@
     flex-direction: column;
 }
 
+.answers__form > label {
+    cursor: pointer;
+}
+
 .answersBtn {
     flex-basis: 50%;
     background-color: #FC5830;
@@ -42,4 +46,5 @@
     font-size: 3rem;
     box-shadow: 3px 0px 18px -5px rgba(0,0,0,0.75);
     border-radius: 5px;
+    cursor: pointer;
 }

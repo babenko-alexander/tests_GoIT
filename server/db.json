@@ -1,35 +1,852 @@
-//axios.get('/tests').then(({data,status})=>{if(status === 200){return data}});
-
-"tests": [
 {
-"HTML_CSS": {
-"THEME": [
-{
-"question": "question",
-"answers": [
-"answer1",
-"answer2",
-"answer3",
-"answer4"
-],
-"rightAnswer": "rightAnswer"
+  "tests": [
+    {
+      "HTML_CSS": {
+        "mediaRequests": [
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "100% черный",
+              "ярко зеленый",
+              "кроваво алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ],
+        "pixelPerfect": [
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "черный",
+              "зеленый",
+              "алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ],
+        "flexBox": [
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "черный",
+              "зеленый",
+              "алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ],
+        "formsTables": [
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "черный",
+              "зеленый",
+              "алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ],
+        "colorSizeTransparency":[
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "черный",
+              "зеленый",
+              "алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ],
+        "transitionsAnimation": [
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "черный",
+              "зеленый",
+              "алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ],
+        "positioning": [
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "черный",
+              "зеленый",
+              "алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ],
+        "tagsAttributesLists": [
+          {
+            "question": "Какого цвета синий холодильник?",
+            "answers": [
+              "черный",
+              "зеленый",
+              "алый",
+              "синий"
+            ],
+            "rightAnswer": "синий"
+          },
+          {
+            "question": "Что такое деструктуризация?",
+            "answers": [
+              "боль",
+              "загадка вселенной",
+              "деструктуризация",
+              "Спросить Вову"
+            ],
+            "rightAnswer": "Спросить Вову"
+          },
+          {
+            "question": "Что такое демократия?",
+            "answers": [
+              "Наше всё",
+              "Идиал",
+              "Народовластие",
+              "То же самое что и гей-парад"
+            ],
+            "rightAnswer": "Народовластие"
+          },
+          {
+            "question": "question4",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question5",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer3"
+          },
+          {
+            "question": "question6",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer1"
+          },
+          {
+            "question": "question7",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question8",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          },
+          {
+            "question": "question9",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer4"
+          },
+          {
+            "question": "question10",
+            "answers": [
+              "answer1",
+              "answer2",
+              "answer3",
+              "answer4"
+            ],
+            "rightAnswer": "answer2"
+          }
+        ]
+      }
+    },
+    {
+      "JS": {
+      }
+    },
+    {
+      "SATELLITE": {
+      }
+    }
+  ],
+  "results":[
+    {
+      "name":"name1",
+      "result":7,
+      "ratio": 70,
+      "id": 1
+    },
+    {
+      "name":"name2",
+      "result":6,
+      "ratio": 60,
+      "id": 2
+    },
+    {
+      "name":"name3",
+      "result":5,
+      "ratio": 50,
+      "id": 3
+    }
+  ]
 }
-]
-}
-},
-{
-"JS": {
-}
-},
-{
-"SATELLITE": {
-}
-}
-],
-"results":[
-{
-"name":"name",
-"result":7,
-"ratio": 70
-}
-]

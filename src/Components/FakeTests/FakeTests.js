@@ -4,6 +4,7 @@ import Result from '../../Components/Result/Result';
 import {addCurrentResult} from '../../redux/actions/currentResultActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
+import {correctResultsAsync} from '../../redux/actions/currentCorrectResultActions';
 import styles from './FakeTests.css';
 
 
@@ -12,15 +13,17 @@ function FakeTests(props) {
     const someArr = ['Question1', 'Question2', 'Question3', 'Question4', 'Question5', 'Question6', 'Question7', 'Question8', 'Question9', 'Question10'];
     // let data = ['', '', '', '', '', '', '', '', '', ''];
 
-    // const setUsersRate = (data) => {
-    //     props.addUsersRate(data);
-    // };
+    // componentDidMount() {
+    //     correctResultsAsync();
+    // }
+
     const onTestIsReady = () => {
         let type = 'TESTON';
         props.setTestIsReady(type);
     };
 
     const checkAnswers = () => {
+        // props.correctResultsAsync();
         props.currentAnswer.includes(undefined) || props.currentAnswer.length !== 10
             ? alert('Вы не ответили на все вопросы!')
             : onTestIsReady();
@@ -36,6 +39,7 @@ function FakeTests(props) {
     };
 
     const addCurrentAnswers = (e) => {
+        // props.correctResultsAsync();
         // e.preventDefault();
         // data[e.target.dataset.index] = e.target.value;
         props.addCurrentAnswers(e.target.value, e.target.dataset.index);
@@ -132,7 +136,10 @@ function MDTP(dispatch) {
         },
         setTestIsReady: function (type) {
             dispatch(setTestIsReady(type))
-        }
+        },
+        correctResultsAsync: function () {
+            dispatch(correctResultsAsync())
+        },
     }
 }
 

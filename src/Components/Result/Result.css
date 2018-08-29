@@ -15,6 +15,7 @@
     right: 0.5rem;
     font-size: 1.4rem;
     color: #FC5830;
+    cursor: pointer;
 }
 
 .result__header {
@@ -44,6 +45,7 @@
     margin: auto;
     background-color: #FC5830;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 @media (min-width: 1024px) {

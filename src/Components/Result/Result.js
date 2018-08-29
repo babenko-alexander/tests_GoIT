@@ -38,6 +38,7 @@ function MDTP(dispatch) {
         setTestIsReady: function (type) {
             dispatch(setTestIsReady(type))
         },
+
     }
 }
 
