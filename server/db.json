@@ -1,832 +1,2119 @@
 {
   "tests": [
     {
-      "HTML_CSS": {
-        "mediaRequests": [
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "100% черный",
-              "ярко зеленый",
-              "кроваво алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ],
-        "pixelPerfect": [
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "черный",
-              "зеленый",
-              "алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ],
-        "flexBox": [
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "черный",
-              "зеленый",
-              "алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ],
-        "formsTables": [
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "черный",
-              "зеленый",
-              "алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ],
-        "colorSizeTransparency":[
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "черный",
-              "зеленый",
-              "алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ],
-        "transitionsAnimation": [
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "черный",
-              "зеленый",
-              "алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ],
-        "positioning": [
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "черный",
-              "зеленый",
-              "алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ],
-        "tagsAttributesLists": [
-          {
-            "question": "Какого цвета синий холодильник?",
-            "answers": [
-              "черный",
-              "зеленый",
-              "алый",
-              "синий"
-            ],
-            "rightAnswer": "синий"
-          },
-          {
-            "question": "Что такое деструктуризация?",
-            "answers": [
-              "боль",
-              "загадка вселенной",
-              "деструктуризация",
-              "Спросить Вову"
-            ],
-            "rightAnswer": "Спросить Вову"
-          },
-          {
-            "question": "Что такое демократия?",
-            "answers": [
-              "Наше всё",
-              "Идиал",
-              "Народовластие",
-              "То же самое что и гей-парад"
-            ],
-            "rightAnswer": "Народовластие"
-          },
-          {
-            "question": "question4",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question5",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer3"
-          },
-          {
-            "question": "question6",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer1"
-          },
-          {
-            "question": "question7",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question8",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          },
-          {
-            "question": "question9",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer4"
-          },
-          {
-            "question": "question10",
-            "answers": [
-              "answer1",
-              "answer2",
-              "answer3",
-              "answer4"
-            ],
-            "rightAnswer": "answer2"
-          }
-        ]
-      }
+      "module": "HTML, CSS",
+      "module-tests": [
+        {
+          "test-name": "Медиа запросы",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Pixel perfect",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Flexbox",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Формы, таблицы",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Цвет, размер, прозрачность",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Переходы, анимация",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Позиционирование, обтекание",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Теги, атрибуты, списки",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        }
+      ]
     },
     {
-      "JS": {
-      }
+      "module": "SATELLITE",
+      "module-tests": [
+        {
+          "test-name": "JQuery",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "GIT",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Photoshop",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "GULP",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "ОПП",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Webpack",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        }
+      ]
     },
     {
-      "SATELLITE": {
-      }
+      "module": "JS",
+      "module-tests": [
+        {
+          "test-name": "События",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Переменные, операторы, строки",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Масивы, циклы",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Шаблонизация",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Валидация",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        },
+        {
+          "test-name": "Асинхронный JS",
+          "questions": [
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета желтый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "желтый"
+              ],
+              "rightAnswer": "желтый"
+            },
+            {
+              "question": "Какого цвета белый холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "белый"
+              ],
+              "rightAnswer": "белый"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            },
+            {
+              "question": "Какого цвета синий холодильник?",
+              "answers": [
+                "100% черный",
+                "ярко зеленый",
+                "кроваво алый",
+                "синий"
+              ],
+              "rightAnswer": "синий"
+            }
+          ]
+        }
+      ]
     }
   ],
   "results":[

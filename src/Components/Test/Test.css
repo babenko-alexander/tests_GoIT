@@ -1,0 +1,57 @@
+body {
+    background-color: #eee;
+}
+
+.test__wrapper {
+    padding: 1.5rem;
+}
+
+.test__module {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 0.5rem;
+    padding: 0 1rem;
+}
+
+.test__testname {
+    font-size: 1.15rem;
+    color: #3f51b5;
+    text-align: center;
+    margin: 0 0 1rem;
+    padding: 0 1rem;
+}
+
+.test__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.test__btn {
+    display: block;
+    margin:  1rem auto;
+    padding: 1rem 4rem;
+    background-color: #FC5830;
+    color: #fff;
+    font-size: 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.test__notfound {
+    display: inline-block;
+    max-width: 18px;
+    padding: 1.5rem;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #000;
+    background-color: #ddd;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .test__cards {
+        justify-content: space-around;
+    }
+}

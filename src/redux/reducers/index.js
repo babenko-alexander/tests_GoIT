@@ -1,11 +1,17 @@
 import { combineReducers } from 'redux';
-import currentResult from '../../redux/reducers/currentResultReducer';
+
 import currentAnswer from '../../redux/reducers/currentAnswerReducer';
 import correctResult from '../../redux/reducers/currentCorrectResultReducer';
 import testIsReady from '../../redux/reducers/testIsReadyReducer';
+import {tests} from './fetchReducer';
+import {selectedTest} from './testReducer';
 
 const rootReduser = combineReducers ({
-    currentResult, currentAnswer, correctResult, testIsReady,
+    currentAnswer,
+    correctResult,
+    testIsReady,
+    tests,
+    selectedTest,
 });
 
 export default rootReduser;
