@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './TestCard.css';
 
 const TestCard = ({testname, index, question, answers}) => {
-    console.log('card', testname, index, question, answers);
+    // console.log('card', testname, index, question, answers);
     return (
         <div className={styles.testcard}>
             <p className={styles.testcard__question}>{+index + 1}. {question}</p>

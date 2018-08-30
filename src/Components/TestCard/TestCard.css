@@ -43,14 +43,3 @@
     }
 }
 
-/*
-@media (min-width: 1024px) {
-    .testcard {
-        flex-basis: 28%;
-        margin-bottom: 1rem;
-    }
-
-    .testcard:nth-last-child(-n+1) {
-        margin-bottom: 0;
-    }
-}*/

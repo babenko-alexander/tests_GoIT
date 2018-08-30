@@ -1,12 +1,12 @@
-import React, {Object} from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import TestCard from '../TestCard/TestCard';
 import styles from './Test.css';
 
 const Test = ({selectedTest}) => {
-    return (selectedTest.hasOwnProperty('module')
-    // return (Object.keys(selectedTest).length
+    // return (selectedTest.hasOwnProperty('module')
+    return (Object.keys(selectedTest).length
             ? <div className={styles.test__wrapper}>
                 <div className={styles.test__container}>
                     <h1 className={styles.test__module}>{selectedTest.module}</h1>
