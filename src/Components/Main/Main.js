@@ -1,8 +1,9 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from './Main.css';
+import {connect} from 'react-redux'
 
-const Main = () => {
+const Main = (props) => {
     return (
         <div className={styles.container}>
             <section className={styles.section}>
@@ -10,6 +11,7 @@ const Main = () => {
                 <p className={styles.sub__title}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
                     consequatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, rerum! </p>
                 <div className={styles.section__main}>
+
                     <div className={styles.main__box}>
                         <div className={`${styles.box__task} ${styles.css_box}`}>
                             <p>HTML, CSS</p>
@@ -91,4 +93,38 @@ const Main = () => {
     );
 };
 
-export default Main;
+
+// const Main = ({tests}) => {
+//     if (Object.keys(tests).length) {
+//         const modules = Object.values(tests);
+//         modules.map(mod => console.log(mod));
+//         const massStyles = ['styles.modul_1', 'styles.modul_2', 'styles.modul_3', 'styles.modul_4', 'styles.mod_5', 'styles.mod_6'];
+//
+//         return (
+//             <div>
+//                 {modules.map((m, index) =>
+//                     <div key={index}>
+//                         <p>{m.module}</p>
+//                         <ul>
+//                             {m['module-tests'].map((t, index) => <li key={`${m.module}${index}`}  className={styles.modul_1}>{t['test-name']}</li>)}
+//                         </ul>
+//                     </div>)
+//                 }
+//             </div>
+//         );
+//     } else {
+//         return null;
+//     }
+// };
+
+
+// function MSTP(state) {
+//     return {
+//         tests: state.tests,
+//         selectedTest: state.selectedTest,
+//     }
+// }
+//
+// export default connect(MSTP, null)(Main);
+export default Main
+
