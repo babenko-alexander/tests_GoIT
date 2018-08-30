@@ -52,41 +52,31 @@ function FakeTests(props) {
 
     if (props.testIsready) {
         return (
-                <div className={styles.testsContainer}>
+            <div className={styles.testsContainer}>
                 <Result/>
                 <div className={styles.answersContainer}>
                     {someArr.map((el, ind) =>
-                        // (props.currentResult[ind] === props.correctResult[ind])
                         (props.currentResult[ind])
-                            // ? <div className={styles.answerCor}>{el}</div>
-                            // : <div className={styles.answerInc}>{el}</div>
-                            ? <div className={`${styles.answer} ${styles.answerCor}`}>
-                                <h2>{el}</h2>
-                                <form method='post' onChange={addCurrentAnswers} className={styles.answers__form}>
-                                    <label id={`${el}1`}><input type="radio" name='answer' value='answer1' id={`${el}1`}
-                                                                data-index={ind}/>answer1</label>
-                                    <label id={`${el}2`}><input type="radio" name='answer' value='answer2' id={`${el}2`}
-                                                                data-index={ind}/>answer2</label>
-                                    <label id={`${el}3`}><input type="radio" name='answer' value='answer3' id={`${el}3`}
-                                                                data-index={ind}/>answer3</label>
-                                    <label id={`${el}4`}><input type="radio" name='answer' value='answer4' id={`${el}4`}
-                                                                data-index={ind}/>answer4</label>
-                                </form>
-                            </div>
-                            : <div className={`${styles.answer} ${styles.answerInc}`}>
-                                <h2>{el}</h2>
-                                <form method='post' onChange={addCurrentAnswers} className={styles.answers__form}>
-                                    <label id={`${el}1`}><input type="radio" name='answer' value='answer1' id={`${el}1`}
-                                                                data-index={ind}/>answer1</label>
-                                    <label id={`${el}2`}><input type="radio" name='answer' value='answer2' id={`${el}2`}
-                                                                data-index={ind}/>answer2</label>
-                                    <label id={`${el}3`}><input type="radio" name='answer' value='answer3' id={`${el}3`}
-                                                                data-index={ind}/>answer3</label>
-                                    <label id={`${el}4`}><input type="radio" name='answer' value='answer4' id={`${el}4`}
-                                                                data-index={ind}/>answer4</label>
-                                </form>
-                            </div>
-                    )}
+                                ? <div className={`${styles.answer} ${styles.answerCor}`}>
+                                : <div className={`${styles.answer} ${styles.answerInc}`}>
+
+
+                                        <h2>{el}</h2>
+                                        <form method='post' onChange={addCurrentAnswers} className={styles.answers__form}>
+                                            <label id={`${el}1`}><input type="radio" name='answer' value='answer1'
+                                                                        id={`${el}1`}
+                                                                        data-index={ind}/>answer1</label>
+                                            <label id={`${el}2`}><input type="radio" name='answer' value='answer2'
+                                                                        id={`${el}2`}
+                                                                        data-index={ind}/>answer2</label>
+                                            <label id={`${el}3`}><input type="radio" name='answer' value='answer3'
+                                                                        id={`${el}3`}
+                                                                        data-index={ind}/>answer3</label>
+                                            <label id={`${el}4`}><input type="radio" name='answer' value='answer4'
+                                                                        id={`${el}4`}
+                                                                        data-index={ind}/>answer4</label>
+                                        </form>
+                                    </div>
                 </div>
                 <button onClick={checkAnswers} className={styles.answersBtn}>ГОТОВО</button>
             </div>
@@ -96,18 +86,18 @@ function FakeTests(props) {
             <div className={styles.testsContainer}>
                 <div className={styles.answersContainer}>
                     {someArr.map((el, ind) => <div className={styles.answer}>
-                        <h2>{el}</h2>
-                        <form method='post' onChange={addCurrentAnswers} className={styles.answers__form}>
-                            <label id={`${el}1`}><input type="radio" name='answer' value='answer1' id={`${el}1`}
-                                                        data-index={ind}/>answer1</label>
-                            <label id={`${el}2`}><input type="radio" name='answer' value='answer2' id={`${el}2`}
-                                                        data-index={ind}/>answer2</label>
-                            <label id={`${el}3`}><input type="radio" name='answer' value='answer3' id={`${el}3`}
-                                                        data-index={ind}/>answer3</label>
-                            <label id={`${el}4`}><input type="radio" name='answer' value='answer4' id={`${el}4`}
-                                                        data-index={ind}/>answer4</label>
-                        </form>
-                    </div>
+                            <h2>{el}</h2>
+                            <form method='post' onChange={addCurrentAnswers} className={styles.answers__form}>
+                                <label id={`${el}1`}><input type="radio" name='answer' value='answer1' id={`${el}1`}
+                                                            data-index={ind}/>answer1</label>
+                                <label id={`${el}2`}><input type="radio" name='answer' value='answer2' id={`${el}2`}
+                                                            data-index={ind}/>answer2</label>
+                                <label id={`${el}3`}><input type="radio" name='answer' value='answer3' id={`${el}3`}
+                                                            data-index={ind}/>answer3</label>
+                                <label id={`${el}4`}><input type="radio" name='answer' value='answer4' id={`${el}4`}
+                                                            data-index={ind}/>answer4</label>
+                            </form>
+                        </div>
                     )}
                 </div>
                 <button onClick={checkAnswers} className={styles.answersBtn}>ГОТОВО</button>

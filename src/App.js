@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import FakeTests from './Components/FakeTests/FakeTests';
 
 import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
 import {getSingleTestAsync} from './redux/actions/testActions';
@@ -18,7 +17,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FakeTests/>
         <Test/>
       </div>
     );
