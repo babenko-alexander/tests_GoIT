@@ -1,8 +1,8 @@
 export function selectedTest (state =
 
 {
-    module: 'Модуль',
-                                      testname: "Медиа запросы",
+module: 'Модуль',
+testname: "Медиа запросы",
 questions: [
     {
         question: "Какого цвета синий холодильник?",
@@ -106,7 +106,6 @@ questions: [
     }
 ]
 }
-
     , action) {
 
 

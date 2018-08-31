@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+// import PropTypes from 'prop-types';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
-// import PropTypes from 'prop-types';
 import styles from './Result.css';
 
 function Result(props) {

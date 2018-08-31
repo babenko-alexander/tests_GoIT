@@ -1,5 +1,5 @@
 export default function currentAnswer(state = [
-    1,1,1,1,1,1,1,1,1,1
+    //1,1,1,1,1,1,1,1,1,1
 ], action) {
     switch (action.type) {
         case ('ANSWERSAREREADY'):

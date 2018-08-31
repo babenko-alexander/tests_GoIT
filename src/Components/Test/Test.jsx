@@ -2,8 +2,6 @@ import React, {Object} from 'react';
 // import PropTypes from 'prop-types';
 import Result from '../../Components/Result/Result';
 import {connect} from 'react-redux';
-import {addCurrentResult} from '../../redux/actions/currentResultActions';
-import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
 
 import TestCard from '../TestCard/TestCard';
@@ -35,7 +33,6 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                         {selectedTest.questions.map((q, index) =>
                             (currentResult[index])
                                 ? <TestCard
-                                    //clas={`${styles.testcard} ${styles.testcardCor}`}
                                     clas={2}
                                     testname={selectedTest['test-name']}
                                     index={index}
@@ -44,7 +41,6 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                                     key={`${selectedTest['test-name']}${index}`}
                                 />
                                 : <TestCard
-                                    //clas={`${styles.answer} ${styles.answerInc}`}
                                     clas={3}
                                     testname={selectedTest['test-name']}
                                     index={index}
@@ -67,7 +63,6 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                     <div className={styles.test__cards}>
                         {selectedTest.questions.map((q, index) =>
                         <TestCard
-                            //clas={styles.testcard}
                             clas={1}
                             testname={selectedTest['test-name']}
                             index={index}
@@ -96,12 +91,6 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        // addCurrentResult: function (data, index) {
-        //     dispatch(addCurrentResult(data, index))
-        // },
-        // addCurrentAnswers: function (data, index) {
-        //     dispatch(addCurrentAnswers(data, index))
-        // },
         setTestIsReady: function (type) {
             dispatch(setTestIsReady(type))
         },

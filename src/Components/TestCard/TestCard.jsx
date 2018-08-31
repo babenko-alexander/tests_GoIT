@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 // import PropTypes from 'prop-types';
 import {addCurrentResult} from '../../redux/actions/currentResultActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
-import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
 import styles from './TestCard.css';
 
 const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, correctResult, addCurrentResult}) => {
@@ -37,7 +36,6 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     data-index={index}
                                     className={styles.testcard__answers}
                                     value={answ}
-                                    // onChange={()=> console.log('answer changed')}
                                 />
                                 {answ}
                             </label>
@@ -63,7 +61,6 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     data-index={index}
                                     className={styles.testcard__answers}
                                     value={answ}
-                                    // onChange={()=> console.log('answer changed')}
                                 />
                                 {answ}
                             </label>
@@ -89,7 +86,6 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     data-index={index}
                                     className={styles.testcard__answers}
                                     value={answ}
-                                    // onChange={()=> console.log('answer changed')}
                                 />
                                 {answ}
                             </label>
@@ -100,8 +96,8 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
     }
 };
 
-    TestCard.propTypes = {};
-    TestCard.defaultProps = {};
+    // TestCard.propTypes = {};
+    // TestCard.defaultProps = {};
 
 
     function MSTP(state) {
@@ -120,9 +116,6 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
             addCurrentAnswers: function (data, index) {
                 dispatch(addCurrentAnswers(data, index))
             },
-            // setTestIsReady: function (type) {
-            //     dispatch(setTestIsReady(type))
-            // },
         }
     }
 
