@@ -1,6 +1,4 @@
-export default function correctResult(state = [
-    'answer1', 'answer2', 'answer3', 'answer4', 'answer1', 'answer2', 'answer3', 'answer4', 'answer1', 'answer2',
-], action) {
+export default function correctResult(state = [], action) {
     switch (action.type) {
         case 'CORRECTRESULTISREADY':
             return action.data;

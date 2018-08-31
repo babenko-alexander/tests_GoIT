@@ -27,6 +27,7 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
             // selectedTest.hasOwnProperty('module')
             // return (Object.keys(selectedTest).length
             <div className={styles.test__wrapper}>
+                <Result/>
                 <div className={styles.test__container}>
                     <h1 className={styles.test__module}>{selectedTest.module}</h1>
                     <h2 className={styles.test__testname}>{selectedTest['test-name']}</h2>
@@ -34,7 +35,8 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                         {selectedTest.questions.map((q, index) =>
                             (currentResult[index])
                                 ? <TestCard
-                                    classname={`${styles.answer} ${styles.answerCor}`}
+                                    //clas={`${styles.testcard} ${styles.testcardCor}`}
+                                    clas={2}
                                     testname={selectedTest['test-name']}
                                     index={index}
                                     question={q.question}
@@ -42,7 +44,8 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                                     key={`${selectedTest['test-name']}${index}`}
                                 />
                                 : <TestCard
-                                    classname={`${styles.answer} ${styles.answerInc}`}
+                                    //clas={`${styles.answer} ${styles.answerInc}`}
+                                    clas={3}
                                     testname={selectedTest['test-name']}
                                     index={index}
                                     question={q.question}
@@ -51,7 +54,7 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                                 />
                         )}
                     </div>
-                    <button className={styles.test__btn}>ГОТОВО</button>
+                    {/*<button className={styles.test__btn}>ГОТОВО</button>*/}
                 </div>
             </div>
         );
@@ -60,11 +63,12 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
             <div className={styles.test__wrapper}>
                 <div className={styles.test__container}>
                     <h1 className={styles.test__module}>{selectedTest.module}</h1>
-                    <h2 className={styles.test__testname}>{selectedTest['test-name']}</h2>
+                    <h2 className={styles.test__testname}>{selectedTest['testname']}</h2>
                     <div className={styles.test__cards}>
                         {selectedTest.questions.map((q, index) =>
                         <TestCard
-                            clas={styles.answer}
+                            //clas={styles.testcard}
+                            clas={1}
                             testname={selectedTest['test-name']}
                             index={index}
                             question={q.question}

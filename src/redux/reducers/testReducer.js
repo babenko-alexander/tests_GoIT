@@ -1,6 +1,7 @@
 export function selectedTest (state =
 
-                                  {
+{
+    module: 'Модуль',
                                       testname: "Медиа запросы",
 questions: [
     {

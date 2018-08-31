@@ -13,7 +13,7 @@ const rootReduser = combineReducers ({
     correctResult,
     testIsReady,
     tests,
-    selectedTest,
+    selectedTest
 });
 
 export default rootReduser;

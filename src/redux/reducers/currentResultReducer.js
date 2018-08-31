@@ -3,6 +3,8 @@ export default function currentResult (state = [], action) {
         case ('TESTISREADY'):
             state[action.index] = action.data;
             return state;
+        case ('EXITTEST'):
+            return [];
         default:
             return state;
     }

@@ -4,6 +4,7 @@ body {
 
 .test__wrapper {
     padding: 1.5rem;
+    display: flex;
 }
 
 .test__module {
@@ -49,6 +50,7 @@ body {
     background-color: #ddd;
     margin: auto;
 }
+
 
 @media (min-width: 768px) {
     .test__cards {

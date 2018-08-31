@@ -16,59 +16,115 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
         (e.target.value === correctResult[e.target.dataset.index]) ? data = true : data = false;
         addCurrentResult(data, e.target.dataset.index);
     };
+    console.log(clas);
 
-    return (
-        <div className={styles.testcard}>
-        {/*<div className={clas}>*/}
-            <p className={styles.testcard__question}>{+index + 1}. {question}</p>
-            <form method='post' onChange={(addCurrentAnswersFunc)}>
-                {answers.map((answ, i) =>
-                    <label
-                        className={styles.testcard__answer}
-                        id={`${answ}${i}`}
-                        key={`${testname}${i}`}
-                    >
-                        <input
-                            type="radio"
-                            name="answer"
-                            id={`${answ}${i}`}
-                            data-index={index}
-                            className={styles.testcard__answers}
-                            value={answ}
-                            // onChange={()=> console.log('answer changed')}
-                        />
-                        {answ}
-                    </label>
-                )}
-            </form>
-        </div>
-    );
+    switch (clas) {
+        case 1:
+            return (
+                <div className={styles.testcard}>
+                    <p className={styles.testcard__question}>{+index + 1}. {question}</p>
+                    <form method='post' onChange={(addCurrentAnswersFunc)}>
+                        {answers.map((answ, i) =>
+                            <label
+                                className={styles.testcard__answer}
+                                id={`${answ}${i}`}
+                                key={`${testname}${i}`}
+                            >
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    id={`${answ}${i}`}
+                                    data-index={index}
+                                    className={styles.testcard__answers}
+                                    value={answ}
+                                    // onChange={()=> console.log('answer changed')}
+                                />
+                                {answ}
+                            </label>
+                        )}
+                    </form>
+                </div>
+            );
+        case 2:
+            return (
+                <div className={`${styles.testcard} ${styles.testcardCor}`}>
+                    <p className={styles.testcard__question}>{+index + 1}. {question}</p>
+                    <form method='post' onChange={(addCurrentAnswersFunc)}>
+                        {answers.map((answ, i) =>
+                            <label
+                                className={styles.testcard__answer}
+                                id={`${answ}${i}`}
+                                key={`${testname}${i}`}
+                            >
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    id={`${answ}${i}`}
+                                    data-index={index}
+                                    className={styles.testcard__answers}
+                                    value={answ}
+                                    // onChange={()=> console.log('answer changed')}
+                                />
+                                {answ}
+                            </label>
+                        )}
+                    </form>
+                </div>
+            );
+        case 3:
+            return (
+                <div className={`${styles.testcard} ${styles.testcardInc}`}>
+                    <p className={styles.testcard__question}>{+index + 1}. {question}</p>
+                    <form method='post' onChange={(addCurrentAnswersFunc)}>
+                        {answers.map((answ, i) =>
+                            <label
+                                className={styles.testcard__answer}
+                                id={`${answ}${i}`}
+                                key={`${testname}${i}`}
+                            >
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    id={`${answ}${i}`}
+                                    data-index={index}
+                                    className={styles.testcard__answers}
+                                    value={answ}
+                                    // onChange={()=> console.log('answer changed')}
+                                />
+                                {answ}
+                            </label>
+                        )}
+                    </form>
+                </div>
+            );
+    }
 };
 
-TestCard.propTypes = {};
-TestCard.defaultProps = {};
+    TestCard.propTypes = {};
+    TestCard.defaultProps = {};
 
 
-function MSTP(state) {
-    return {
-        currentResult: state.currentResult,
-        currentAnswer: state.currentAnswer,
-        correctResult: state.correctResult,
+    function MSTP(state) {
+        return {
+            currentResult: state.currentResult,
+            currentAnswer: state.currentAnswer,
+            correctResult: state.correctResult,
+        }
     }
-}
 
-function MDTP(dispatch) {
-    return {
-        addCurrentResult: function (data, index) {
-            dispatch(addCurrentResult(data, index))
-        },
-        addCurrentAnswers: function (data, index) {
-            dispatch(addCurrentAnswers(data, index))
-        },
-        // setTestIsReady: function (type) {
-        //     dispatch(setTestIsReady(type))
-        // },
+    function MDTP(dispatch) {
+        return {
+            addCurrentResult: function (data, index) {
+                dispatch(addCurrentResult(data, index))
+            },
+            addCurrentAnswers: function (data, index) {
+                dispatch(addCurrentAnswers(data, index))
+            },
+            // setTestIsReady: function (type) {
+            //     dispatch(setTestIsReady(type))
+            // },
+        }
     }
-}
+
 
 export default connect(MSTP, MDTP)(TestCard);
