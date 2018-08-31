@@ -21,7 +21,7 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
     };
 
     switch (clas) {
-        case 1:
+        default:
             return (
                 <div className={styles.testcard}>
                     <p className={styles.testcard__question}>{+index + 1}. {question}</p>
@@ -65,7 +65,7 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     data-index={index}
                                     className={styles.testcard__answers}
                                     value={answ}
-                                    checked={(checkedInd[index] === i) ? true : false}
+                                    defaultChecked={(checkedInd[index] === i) ? true : false}
                                 />
                                 {answ}
                             </label>
@@ -91,7 +91,7 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     data-index={index}
                                     className={styles.testcard__answers}
                                     value={answ}
-                                    checked={(checkedInd[index] === i) ? true : false}
+                                    defaultChecked={(checkedInd[index] === i) ? true : false}
                                 />
                                 {answ}
                             </label>

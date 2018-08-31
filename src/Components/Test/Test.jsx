@@ -1,4 +1,4 @@
-import React, {Object} from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import Result from '../../Components/Result/Result';
 import {connect} from 'react-redux';

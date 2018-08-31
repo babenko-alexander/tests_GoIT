@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
-import {getSingleTestAsync} from './redux/actions/testActions';
+// import {getSingleTestAsync} from './redux/actions/testActions';
 import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
 import Test from './Components/Test/Test';
 
