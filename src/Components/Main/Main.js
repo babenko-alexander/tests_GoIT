@@ -15,7 +15,8 @@ const Main = ({tests}) => {
                         <div className={`${styles.box__task} ${styles.css_box}`}>
                             <p>HTML, CSS</p>
                             <NavLink exact to='/tests'>
-                                <span className={`${styles.main__span} ${styles.mod_1}`}>lorem</span>
+                                <span
+                                    className={`${styles.main__span} ${styles.mod_1}`}>{tests.length ? tests[0]['module-tests'][0]["test-name"] : 'hello'}</span>
                             </NavLink>
                             <NavLink to='/2'>
                                 <span className={`${styles.main__span} ${styles.mod_2}`}>lorem</span>
@@ -92,25 +93,23 @@ const Main = ({tests}) => {
     );
 };
 
-export default Main;
-
-const Main = ({tests}) => {
-    if (Object.keys(tests).length) {
-        const modules = Object.values(tests);
-        // modules.map(mod => console.log(mod));
-        return (
-            <div>
-                {modules.map((m, index) => <div key={index}>
-                    <p>{m.module}</p>
-                    <ul>
-                        {m['module-tests'].map((t, index) => <li key={`${m.module}${index}`}>{t['test-name']}</li>)}
-                    </ul>
-                </div>)}
-            </div>);
-    } else {
-        return null;
-    }
-};
+// const Main = ({tests}) => {
+//     if (Object.keys(tests).length) {
+//         const modules = Object.values(tests);
+//         // modules.map(mod => console.log(mod));
+//         return (
+//             <div>
+//                 {modules.map((m, index) => <div key={index}>
+//                     <p>{m.module}</p>
+//                     <ul>
+//                         {m['module-tests'].map((t, index) => <li key={`${m.module}${index}`}>{t['test-name']}</li>)}
+//                     </ul>
+//                 </div>)}
+//             </div>);
+//     } else {
+//         return null;
+//     }
+// };
 
 function MSTP(state) {
     return {
@@ -120,4 +119,6 @@ function MSTP(state) {
 }
 
 export default connect(MSTP, null)(Main);
+
+
 
