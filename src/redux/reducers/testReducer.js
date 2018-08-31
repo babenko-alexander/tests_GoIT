@@ -2,7 +2,7 @@ export function selectedTest (state =
 
 {
 module: 'Модуль',
-testname: "Медиа запросы",
+'test-name': "Медиа запросы",
 questions: [
     {
         question: "Какого цвета синий холодильник?",

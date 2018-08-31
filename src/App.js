@@ -11,7 +11,7 @@ import './App.css';
 class App extends Component {
 
     componentDidMount() {
-        // this.props.loadAllTestsDataAsync();
+        this.props.loadAllTestsDataAsync();
         // this.props.loadSingleTestAsync('HTML, CSS', 'Медиа запросы');
         let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
         this.props.addCurrentCorrectResult(correctAnswerData)
@@ -38,9 +38,9 @@ function MDTP (dispatch) {
         loadAllTestsDataAsync: function() {
             dispatch(fetchAllTestsDataAsync())
         },
-        loadSingleTestAsync: function(module, testname) {
-          dispatch(getSingleTestAsync(module, testname))
-        },
+        // loadSingleTestAsync: function(module, testname) {
+        //   dispatch(getSingleTestAsync(module, testname))
+        // },
         addCurrentCorrectResult: function (data) {
             dispatch(addCurrentCorrectResult(data))
         }

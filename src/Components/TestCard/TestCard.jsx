@@ -6,7 +6,6 @@ import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
 import styles from './TestCard.css';
 
 const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, correctResult, addCurrentResult}) => {
-    console.log('card', testname, index, question, answers);
 
     const addCurrentAnswersFunc = (e) => {
         addCurrentAnswers(e.target.value, e.target.dataset.index);
@@ -15,7 +14,6 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
         (e.target.value === correctResult[e.target.dataset.index]) ? data = true : data = false;
         addCurrentResult(data, e.target.dataset.index);
     };
-    console.log(clas);
 
     switch (clas) {
         case 1:

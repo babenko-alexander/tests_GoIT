@@ -9,7 +9,6 @@ export function fetchAllTestsData(data) {
 
 function fetchAllTests() {
     return axios.get('http://localhost:3001/tests')
-     // .then(result => {console.log(result.data); return result})  // test
         .then(result => result.status === 200 ? result : null)
         .catch(err => console.log(err))
 }

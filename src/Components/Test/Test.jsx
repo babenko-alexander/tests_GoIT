@@ -28,7 +28,7 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                 <Result/>
                 <div className={styles.test__container}>
                     <h1 className={styles.test__module}>{selectedTest.module}</h1>
-                    <h2 className={styles.test__testname}>{selectedTest['testname']}</h2>
+                    <h2 className={styles.test__testname}>{selectedTest['test-name']}</h2>
                     <div className={styles.test__cards}>
                         {selectedTest.questions.map((q, index) =>
                             (currentResult[index])
@@ -59,7 +59,7 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
             <div className={styles.test__wrapper}>
                 <div className={styles.test__container}>
                     <h1 className={styles.test__module}>{selectedTest.module}</h1>
-                    <h2 className={styles.test__testname}>{selectedTest['testname']}</h2>
+                    <h2 className={styles.test__testname}>{selectedTest['test-name']}</h2>
                     <div className={styles.test__cards}>
                         {selectedTest.questions.map((q, index) =>
                         <TestCard
