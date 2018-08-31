@@ -2118,6 +2118,41 @@
   ],
   "results":[
     {
+      "name":"HTML/CSS",
+      "result":7,
+      "ratio": 70,
+      "id": 1
+    },
+    {
+      "name":"Query",
+      "result":5,
+      "ratio": 50,
+      "id": 1
+    },
+    {
+      "name":"name3",
+      "result":8,
+      "ratio": 80,
+      "id": 1
+    },
+    {"name":"HTML/CSS",
+      "result":7,
+      "ratio": 70,
+      "id": 1
+    },
+    {
+      "name":"Query",
+      "result":5,
+      "ratio": 50,
+      "id": 1
+    },
+    {
+      "name":"name3",
+      "result":8,
+      "ratio": 80,
+      "id": 1
+    },
+    {
       "name":"name1",
       "result":7,
       "ratio": 70,

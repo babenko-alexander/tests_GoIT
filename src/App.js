@@ -5,8 +5,9 @@ import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
 // import {getSingleTestAsync} from './redux/actions/testActions';
 import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
 import Test from './Components/Test/Test';
+import PersonalResault from './Components/PersonalResaults/PersonalResaults';
+import styles from './App.css';
 
-import './App.css';
 
 class App extends Component {
 
@@ -14,13 +15,14 @@ class App extends Component {
         this.props.loadAllTestsDataAsync();
         // this.props.loadSingleTestAsync('HTML, CSS', 'Медиа запросы');
         let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
-        this.props.addCurrentCorrectResult(correctAnswerData)
+        this.props.addCurrentCorrectResult(correctAnswerData);
     };
 
   render() {
     return (
-      <div className="App">
-        <Test/>
+      <div className={styles.App}>
+          <Test/>
+          <PersonalResault/>
       </div>
     );
   }

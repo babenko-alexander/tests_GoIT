@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import dataResaults from './reducerDataResaults';
+
 
 import currentAnswer from '../../redux/reducers/currentAnswerReducer';
 import currentResult from '../../redux/reducers/currentResultReducer';
@@ -13,7 +15,8 @@ const rootReduser = combineReducers ({
     correctResult,
     testIsReady,
     tests,
-    selectedTest
+    selectedTest,
+    dataResaults,
 });
 
 export default rootReduser;
