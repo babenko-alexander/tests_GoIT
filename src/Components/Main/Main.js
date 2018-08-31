@@ -103,10 +103,7 @@ const Main = ({tests}) => {
                 {modules.map((m, index) => <div key={index}>
                     <p>{m.module}</p>
                     <ul>
-                        {m['module-tests'].map((t, index) =>
-                            <NavLink>
-                                <li key={`${m.module}${index}`}>{t['test-name']}</li>
-                            </NavLink>)}
+                        {m['module-tests'].map((t, index) => <li key={`${m.module}${index}`}>{t['test-name']}</li>)}
                     </ul>
                 </div>)}
             </div>);
