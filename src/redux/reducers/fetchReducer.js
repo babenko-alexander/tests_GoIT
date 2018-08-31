@@ -1,7 +1,7 @@
-export function tests (state = {}, action) {
+export function tests (state = [], action) {
     switch (action.type) {
         case 'ALL_TESTS':
-            return {...action.payload};
+            return [...action.payload];
         default:
             return state;
     }
