@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
 import {getSingleTestAsync} from './redux/actions/testActions';
-import Test from './Components/Test/Test';
 import Main from './Components/Main/Main';
 import './App.css';
 
@@ -17,7 +16,6 @@ class App extends Component {
         return (
             <div className="App">
                 <Main/>
-                {/*<Test/>*/}
             </div>
         );
     }

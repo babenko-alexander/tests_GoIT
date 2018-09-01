@@ -56,6 +56,7 @@
     border-radius: 50%;
     background-color: #f0f1f1;
     position: absolute;
+    text-align: center;
 }
 
 .mod_1 {
@@ -98,22 +99,22 @@
     left: 130%;
 }
 
-.modul_1 {
+.mod1 {
     top: 75%;
     left: 120%;
 }
 
-.modul_2 {
+.mod2 {
     top: 75%;
     right: 120%;
 }
 
-.modul_3 {
+.mod3 {
     bottom: 75%;
     left: 120%;
 }
 
-.modul_4 {
+.mod4 {
     bottom: 75%;
     right: 120%;
 }
