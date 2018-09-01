@@ -4,6 +4,7 @@ body {
 
 .test__wrapper {
     padding: 1.5rem;
+    display: flex;
 }
 
 .test__module {
@@ -31,7 +32,13 @@ body {
 
 .test__btn {
     display: block;
-    margin: auto;
+    margin:  1rem auto;
+    padding: 1rem 4rem;
+    background-color: #FC5830;
+    color: #fff;
+    font-size: 3rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .test__notfound {
@@ -43,6 +50,7 @@ body {
     background-color: #ddd;
     margin: auto;
 }
+
 
 @media (min-width: 768px) {
     .test__cards {
