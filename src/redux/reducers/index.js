@@ -1,5 +1,4 @@
-import { combineReducers } from 'redux';
-
+import {combineReducers} from 'redux';
 import currentAnswer from '../../redux/reducers/currentAnswerReducer';
 import currentResult from '../../redux/reducers/currentResultReducer';
 import correctResult from '../../redux/reducers/currentCorrectResultReducer';

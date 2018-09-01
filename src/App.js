@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
@@ -17,13 +17,13 @@ class App extends Component {
         this.props.addCurrentCorrectResult(correctAnswerData)
     };
 
-  render() {
-    return (
-      <div className="App">
-        <Test/>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Main/>
+            </div>
+        );
+    }
 }
 
 function MSTP(state) {
@@ -33,7 +33,7 @@ function MSTP(state) {
     }
 }
 
-function MDTP (dispatch) {
+function MDTP(dispatch) {
     return {
         loadAllTestsDataAsync: function() {
             dispatch(fetchAllTestsDataAsync())
@@ -47,4 +47,4 @@ function MDTP (dispatch) {
     }
 }
 
-export default connect(MSTP, MDTP) (App);
+export default connect(MSTP, MDTP)(App);
