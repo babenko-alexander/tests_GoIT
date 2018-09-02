@@ -61,7 +61,12 @@ body {
 
 
 @media (min-width: 768px) {
+    .test__module {
+        font-size: 2rem;
+    }
+
     .test__testname {
+        font-size: 1.6rem;
         margin-bottom: 2rem;
     }
 
@@ -83,5 +88,9 @@ body {
 
     .test__cards {
         justify-content: space-around;
+    }
+
+    .test__btn {
+        margin-bottom: 1.5rem;
     }
 }
