@@ -1481,7 +1481,7 @@
       ]
     },
     {
-      "module": "JS",
+      "module": "JavaScript",
       "module-tests": [
         {
           "test-name": "События",

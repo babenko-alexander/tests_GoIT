@@ -43,11 +43,11 @@
     position: relative;
 }
 
-.css_box {
+.box__task_0 {
     border: 0.5rem solid #ffc007;
 }
 
-.java_box {
+.box__task_1 {
     border: 0.5rem solid #ec1c24;
 }
 
@@ -62,61 +62,73 @@
 .mod_1 {
     top: 100%;
     left: 100%;
+    cursor: pointer;
 }
 
 .mod_2 {
     top: 100%;
     right: 100%;
+    cursor: pointer;
 }
 
 .mod_3 {
     bottom: 100%;
     left: 100%;
+    cursor: pointer;
 }
 
 .mod_4 {
     bottom: 100%;
     right: 100%;
+    cursor: pointer;
 }
 
 .mod_5 {
     top: 130%;
     left: 15%;
+    cursor: pointer;
 }
 
 .mod_6 {
     bottom: 130%;
     left: 15%;
+    cursor: pointer;
 }
 
 .mod_7 {
     top: 25%;
     right: 130%;
+    cursor: pointer;
 }
 
 .mod_8 {
     top: 25%;
     left: 130%;
+    cursor: pointer;
 }
 
 .mod1 {
     top: 75%;
     left: 120%;
+    cursor: pointer;
 }
 
 .mod2 {
     top: 75%;
     right: 120%;
+    cursor: pointer;
 }
 
 .mod3 {
     bottom: 75%;
     left: 120%;
+    cursor: pointer;
 }
 
 .mod4 {
     bottom: 75%;
     right: 120%;
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
