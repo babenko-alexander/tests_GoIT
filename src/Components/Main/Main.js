@@ -23,34 +23,36 @@ const Main = ({tests, loadSelectedTest}) => {
         const modules = tests.sort((a,b) => a.module > b.module);
 
         return (
-            <div className={styles.container}>
-                <section className={styles.section}>
-                    <h1 className={styles.title}>Проверь свои знания Front End</h1>
-                    <p className={styles.sub__title}>Здраствуйте дорогие студенты, надеемся что, тесты GoIT не только
-                        принесут вам пользу и знания, но и множество эмоций, и удовольствия от их прохождения</p>
+            <div className={styles.main__wrapper}>
+                <div className={styles.main__container}>
+                    <section className={styles.section}>
+                        <h1 className={styles.title}>Проверь свои знания Front End</h1>
+                        <p className={styles.sub__title}>Здраствуйте дорогие студенты, надеемся что, тесты GoIT не только
+                            принесут вам пользу и знания, но и множество эмоций, и удовольствия от их прохождения</p>
 
-                    <div className={styles.section__main}>
-                        {modules.map((m, index) =>
-                            <div className={styles.main__box} key={index}>
-                                <div className={`${styles.box__task} ${moduleCircle[index]}`}>
-                                    <p>{m.module}</p>
-                                    {m['module-tests'].map((t, ind) =>
-                                        <span
-                                            className={`${styles.main__span} ${modules.indexOf(m) === 0 ? taskOne[ind] : taskTwo[ind]}`}
-                                            key={`${m.module}${ind}`}
-                                            data-module={m.module}
-                                            data-testname={t['test-name']}
-                                            data-test={JSON.stringify({'module': m.module, ...t})}
-                                            onClick={selectTest}
-                                        >
-                                        {t["test-name"]}
-                                    </span>)
-                                    }
-                                </div>
-                            </div>)
-                        }
-                    </div>
-                </section>
+                        <div className={styles.section__main}>
+                            {modules.map((m, index) =>
+                                <div className={styles.main__box} key={index}>
+                                    <div className={`${styles.box__task} ${moduleCircle[index]}`}>
+                                        <p>{m.module}</p>
+                                        {m['module-tests'].map((t, ind) =>
+                                            <span
+                                                className={`${styles.main__span} ${modules.indexOf(m) === 0 ? taskOne[ind] : taskTwo[ind]}`}
+                                                key={`${m.module}${ind}`}
+                                                data-module={m.module}
+                                                data-testname={t['test-name']}
+                                                data-test={JSON.stringify({'module': m.module, ...t})}
+                                                onClick={selectTest}
+                                            >
+                                            {t["test-name"]}
+                                        </span>)
+                                        }
+                                    </div>
+                                </div>)
+                            }
+                        </div>
+                    </section>
+                </div>
             </div>
         );
     } else {

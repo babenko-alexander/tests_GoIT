@@ -1,4 +1,9 @@
-.container {
+.main__wrapper {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.main__container {
     min-width: 320px;
     max-width: 1200px;
     margin: auto;
