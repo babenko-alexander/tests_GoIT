@@ -1,15 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {getSingleTestAsync} from '../../redux/actions/testActions';
+// import {getSingleTestAsync} from '../../redux/actions/testActions';
+import {setSelectedTest} from '../../redux/actions/testActions';
 
 import styles from './Main.css';
 
-const Main = ({tests, loadSingleTestAsync}) => {
+const Main = ({tests, loadSelectedTest}) => {
 
     const selectTest = function(e) {
-        console.log(e.target.dataset.module, e.target.dataset.testname);
-        loadSingleTestAsync(e.target.dataset.module, e.target.dataset.testname);
+        console.log(e.target.dataset.module, e.target.dataset.testname, e.target.dataset.test);
+        // loadSingleTestAsync(e.target.dataset.module, e.target.dataset.testname);
+        loadSelectedTest(JSON.parse(e.target.dataset.test)); //TODO: fix warning re: render/constructor
     };
 
     const taskOne = [styles.mod_1, styles.mod_2, styles.mod_3, styles.mod_4, styles.mod_5, styles.mod_6, styles.mod_7, styles.mod_8];
@@ -19,7 +21,6 @@ const Main = ({tests, loadSingleTestAsync}) => {
     if (tests.length) {
         // const modules = tests;
         const modules = tests.sort((a,b) => a.module > b.module);
-        // console.log('modules:', modules);
 
         return (
             <div className={styles.container}>
@@ -39,6 +40,7 @@ const Main = ({tests, loadSingleTestAsync}) => {
                                             key={`${m.module}${ind}`}
                                             data-module={m.module}
                                             data-testname={t['test-name']}
+                                            data-test={JSON.stringify({'module': m.module, ...t})}
                                             onClick={selectTest}
                                         >
                                         {t["test-name"]}
@@ -65,8 +67,11 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        loadSingleTestAsync: function(module, testname) {
-            dispatch(getSingleTestAsync(module, testname))
+        // loadSingleTestAsync: function(module, testname) {
+        //     dispatch(getSingleTestAsync(module, testname))
+        // },
+        loadSelectedTest: function(selectedTestObj) {
+            dispatch(setSelectedTest(selectedTestObj))
         }
     }
 }

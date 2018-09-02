@@ -1,5 +1,14 @@
 import axios from 'axios';
 
+export const setSelectedTest = function (data) {
+    return {
+        type: 'SELECTED_TEST',
+        payload: data
+    }
+};
+
+// original version:
+
 export function selectedTest (data) {
     return {
         type: 'SELECTED_TEST',

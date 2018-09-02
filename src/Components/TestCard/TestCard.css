@@ -1,7 +1,6 @@
 .testcard {
-    flex-basis: 90%;
+    flex-basis: 92%;
     min-width: 13.5rem;
-    /*max-width: 18rem;*/
     background-color: #fff;
     padding: 1rem;
     -webkit-box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.26);
@@ -26,23 +25,25 @@
 
 .testcard__question {
     font-family: 'Roboto', Arial, sans-serif;
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #000;
     padding-left: 0.375rem;
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.4rem 1.1rem;
 }
 
 .testcard__answer {
     display: block;
     font-family: 'Roboto', Arial, sans-serif;
-    font-size: 0.85rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
     color: #000;
 }
 
 
 @media (min-width: 768px) {
     .testcard {
-        flex-basis: 41%;
+        flex-basis: 48%;
+        margin-bottom: 1.5rem;
     }
 
     .testcard:nth-last-child(-n+2) {

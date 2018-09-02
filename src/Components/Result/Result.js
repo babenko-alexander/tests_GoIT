@@ -14,18 +14,18 @@ function Result(props) {
     };
 
     return (
-        <aside>
-            <div className={styles.result__container}>
-                {/*<span onClick={offTestIsReady} className={styles.result__x}>x</span>*/}
+        <div className={styles.result__container}>
+            {/*<span onClick={offTestIsReady} className={styles.result__x}>x</span>*/}
+            <div class={styles.result__content}>
                 <h2 className={styles.result__header}>Результат:</h2>
                 <ul className={styles.result__list}>
                     <li className={styles.result__item}>Вопросов: 10</li>
                     <li className={styles.result__item}>{`Правильных: ${props.usersRateLength}`}</li>
                     <li className={styles.result__item}>{`Успех: ${props.usersRateLength}0%`}</li>
                 </ul>
-                <button onClick={offTestIsReady} className={styles.result__btn}>Выйти</button>
             </div>
-        </aside>
+            <button onClick={offTestIsReady} className={styles.result__btn}>Выйти</button>
+        </div>
     );
 }
 

@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import Main from './Components/Main/Main';
-
 import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
 import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
+import Main from './Components/Main/Main';
 import Test from './Components/Test/Test';
 
 import './App.css';
 
 class App extends Component {
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.loadAllTestsDataAsync();
     };
 
      render() {
          const testIsReady = Object.keys(this.props.selectedTest).length > 0;
-         // console.log('testIsReady: ', testIsReady);
+         // TODO: change to use this.props.testIsReady
+
          if (testIsReady) {
              let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
              this.props.addCurrentCorrectResult(correctAnswerData)

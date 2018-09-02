@@ -24,7 +24,8 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
         default:
             return (
                 <div className={styles.testcard}>
-                    <p className={styles.testcard__question}>{+index + 1}. {question}</p>
+                    <ol start={+index + 1}><li className={styles.testcard__question}>{question}</li></ol>
+
                     <form method='post' onChange={(addCurrentAnswersFunc)}>
                         {answers.map((answ, i) =>
                             <label
