@@ -11,27 +11,102 @@ Header {
 .header__container {
     min-width: 320px;
     max-width: 1024px;
+    padding: 0.5rem 0.5rem;
+    height: 4rem;
     margin: 0 auto;
     display: flex;
     justify-content:space-between;
     align-content: center;
-
+    background-color: rgb(77, 14, 223);
+    align-items: center;
 }
 
-.header__menu {
-    display: flex;
-    list-style: none;
+.header__main-nav-link {
+    width: 15rem;
+    height: 3rem;
+    justify-content: space-between;
+    text-transform: uppercase;
     text-decoration: none;
+    vertical-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #e2f10e;
 }
 
-.header__menu-item {
-    font-size: 0.7rem;
-    color: #000;
-    padding: 0.15rem 0.5rem;
-    border-bottom: 1px solid #000;
-    cursor: pointer;
+.header__logo {
+    height: 3rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
 }
 
 .header__menu-buttons {
-    display: block;
+    display: flex;
+    min-width:35%;
+    justify-content: flex-end;
 }
+
+.header__button {
+    display: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 0.1rem 1rem;
+    text-shadow: 2px 2px 1px #595959;
+    filter: dropshadow(color=#595959, offx=1, offy=1);
+    text-decoration: none;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    border: solid 1px #3b7200;
+    background-color: #88c72a;
+}
+
+.header__button:hover {
+    background-color: #7fb52f;
+    background: -moz-linear-gradient(top, #7fb52f 0%, #67910b 100%);
+    background: -webkit-linear-gradient(top, #7fb52f 0%, #67910b 100%);
+    background: -o-linear-gradient(top, #7fb52f 0%, #67910b 100%);
+    background: -ms-linear-gradient(top, #7fb52f 0% ,#67910b 100%);
+    background: linear-gradient(top, #7fb52f 0% ,#67910b 100%);
+
+}
+
+.header__button:active {
+    background-color: #638f22;
+    background: -moz-linear-gradient(top, #638f22 0%, #486608 100%);
+    background: -webkit-linear-gradient(top, #638f22 0%, #486608 100%);
+    background: -o-linear-gradient(top, #638f22 0%, #486608 100%);
+    background: -ms-linear-gradient(top, #638f22 0% ,#486608 100%);
+    background: linear-gradient(top, #638f22 0% ,#486608 100%);
+}
+
+.header__margine-right {
+    margin-right: 3rem;
+}
+
+.header__menu-nav-links {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 55%;
+    list-style: none;
+    text-decoration: none
+}
+
+.header__item{
+    margin-right: 1rem;
+}
+
+.header__item-nav {
+    text-decoration: none;
+    color: azure;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .header__button {
+        display: block;
+    }
+}
+
+@media (min-width: 1024px) {}
