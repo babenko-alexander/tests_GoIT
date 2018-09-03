@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-// import {getSingleTestAsync} from '../../redux/actions/testActions';
 import {setSelectedTest} from '../../redux/actions/testActions';
 
 import styles from './Main.css';
@@ -9,9 +8,12 @@ import styles from './Main.css';
 const Main = ({tests, loadSelectedTest}) => {
 
     const selectTest = function(e) {
-        console.log(e.target.dataset.module, e.target.dataset.testname, e.target.dataset.test);
-        // loadSingleTestAsync(e.target.dataset.module, e.target.dataset.testname);
-        loadSelectedTest(JSON.parse(e.target.dataset.test)); //TODO: fix warning re: render/constructor
+        // find individual test in store using module name and test name:
+        const st = tests.find(el => el.module === e.target.dataset.module)['module-tests'].find(el=> el['test-name'] === e.target.dataset.testname);
+        // add module name in the selectedTest:
+        const selectedTestObj = Object.keys(st).length ? {'module': e.target.dataset.module, ...st} : {};
+        // console.log('selectedTestObj', selectedTestObj);
+        loadSelectedTest(selectedTestObj);
     };
 
     const taskOne = [styles.mod_1, styles.mod_2, styles.mod_3, styles.mod_4, styles.mod_5, styles.mod_6, styles.mod_7, styles.mod_8];
@@ -41,7 +43,7 @@ const Main = ({tests, loadSelectedTest}) => {
                                                 key={`${m.module}${ind}`}
                                                 data-module={m.module}
                                                 data-testname={t['test-name']}
-                                                data-test={JSON.stringify({'module': m.module, ...t})}
+                                                // data-test={JSON.stringify({'module': m.module, ...t})}
                                                 onClick={selectTest}
                                             >
                                             {t["test-name"]}
@@ -69,16 +71,10 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        // loadSingleTestAsync: function(module, testname) {
-        //     dispatch(getSingleTestAsync(module, testname))
-        // },
-        loadSelectedTest: function(selectedTestObj) {
-            dispatch(setSelectedTest(selectedTestObj))
+        loadSelectedTest: function(modulename, testname) {
+            dispatch(setSelectedTest(modulename, testname))
         },
     }
 }
 
 export default connect(MSTP, MDTP)(Main);
-
-
-

@@ -18,7 +18,7 @@ function Result(props) {
     return (
         <div className={styles.result__container}>
             {/*<span onClick={offTestIsReady} className={styles.result__x}>x</span>*/}
-            <div class={styles.result__content}>
+            <div className={styles.result__content}>
                 <h2 className={styles.result__header}>Результат:</h2>
                 <ul className={styles.result__list}>
                     <li className={styles.result__item}>Вопросов: 10</li>

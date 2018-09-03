@@ -14,18 +14,22 @@ class App extends Component {
         this.props.loadAllTestsDataAsync();
     };
 
-     render() {
-         const testIsReady = Object.keys(this.props.selectedTest).length > 0;
-         // TODO: change to use this.props.testIsReady
+    componentDidUpdate() {
+        const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
 
-         if (testIsReady) {
-             let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
-             this.props.addCurrentCorrectResult(correctAnswerData)
-         }
+        if (testIsSelected) {
+            let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
+            this.props.addCurrentCorrectResult(correctAnswerData)
+        }
+    };
+
+     render() {
+         const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
 
          return (
             <div className="App">
-                {testIsReady ? <Test/> : <Main/>}
+                {/* TODO: use routes instead */}
+                {testIsSelected ? <Test/> : <Main/>}
             </div>
         );
     }
