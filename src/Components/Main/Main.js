@@ -74,7 +74,7 @@ function MDTP(dispatch) {
         // },
         loadSelectedTest: function(selectedTestObj) {
             dispatch(setSelectedTest(selectedTestObj))
-        }
+        },
     }
 }
 

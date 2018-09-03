@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
+import {setSelectedTest} from '../../redux/actions/testActions';
 import styles from './Result.css';
 
 function Result(props) {
@@ -11,6 +12,7 @@ function Result(props) {
         let type = 'TESTOFF';
         props.setTestIsReady(type);
         props.currentAnswer.map((el, i) => props.addCurrentAnswers(undefined, i));
+        props.setSelectedTest();
     };
 
     return (
@@ -43,6 +45,9 @@ function MDTP(dispatch) {
         },
         addCurrentAnswers: function (data, index) {
             dispatch(addCurrentAnswers(data, index))
+        },
+        setSelectedTest: function() {
+            dispatch(setSelectedTest(null))
         },
     }
 }
