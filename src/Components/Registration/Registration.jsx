@@ -1,28 +1,69 @@
 import React from 'react';
-import {connect} from 'react-redux'
-import {emailChangeHandler} from '../actions/emailChangeAction'
-import { passChangeHandler} from '../actions/passChangeAction'
-
-import {chekBoxHandler} from '../actions/checkBoxAction'
+import axios from 'axios';
+import {connect} from 'react-redux';
+import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
+import { passChangeHandler} from '../../redux/actions/passChangeAction';
+import {chekBoxHandler} from '../../redux/actions/checkBoxAction';
+import Modal from '../ModalChild/ModalChild';
 import styles from './Registration.css';
-import email from './mail.svg'
-import lock from './locked.svg'
+import email from './mail.svg';
+import lock from './locked.svg';
+import {showRegistration} from '../../redux/actions/registrationAction';
 
 const Registration = (props) => {
     
     const onChangeEm = (e) => {
         props.emailChangeHandler(e.target.value)
-    }
+    };
 
     const onChangePass = (e) => {
         props.passChangeHandler(e.target.value)
-    }
+    };
+
+    const closeRegModal = (e) => {
+        e.stopPropagation();
+        if (e.target.id === 'overlay' || e.target.id === 'closeSymbol') {
+            props.closeRegModal()
+        }
+    };
+
+
+
+
+    const valPass = () => {
+        return props.passChange.length >= 6 && props.passChange.length <= 10
+    };
+
+    const valMail = () => {
+        let loginReg = /@/g
+
+        return loginReg.test(props.emailChange)
+    };
+
+    const sumCheck = () => {
+        if(valPass() && valMail()) {
+            const result = {
+                email: props.emailChange,
+                password: props.passChange
+            }
+            console.log(result);//make post
+
+        } else {
+            console.log('err');
+        }
+    };
+
+    const submit = (e) => {
+        e.preventDefault()
+        sumCheck()
+        props.closeRegModal();
+    };
     
     return (
-            <div className={styles.formCont}>
+            <Modal closeModal={closeRegModal}>
                 <h2 className={styles.regSpan}>Регистрация</h2>
 
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={submit}>
 
                 <div className={styles.emCont}>
                     <img src={email} alt="e" className={styles.emSvg}/>
@@ -44,7 +85,7 @@ const Registration = (props) => {
                 {props.checkBoxIsActive ? 
                     <button type='submit' className={styles.btn}>Зарегистрироваться</button> : null}
                 </form>
-            </div> 
+            </Modal>
         )
 };
 
@@ -54,7 +95,7 @@ function MSTP (state) {
         passChange: state.passChange,
         checkBoxIsActive: state.checkBoxIsActive,
     }
-}
+};
 
 function MDTP (dispatch) {
     return {
@@ -68,8 +109,12 @@ function MDTP (dispatch) {
 
         chekBoxHandler: function() {
             dispatch(chekBoxHandler())
+        },
+
+        closeRegModal: function() {
+            dispatch(showRegistration())
         }
     }
-}
+};
 
 export default connect(MSTP, MDTP) (Registration);

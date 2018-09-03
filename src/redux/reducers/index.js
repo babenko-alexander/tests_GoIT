@@ -1,14 +1,18 @@
 import { combineReducers } from 'redux';
-import emailArr from './emailReducers'
+import registration from './registrationReducers.jsx'
+import enter from './enterReducers'
+// import emailArr from './emailReducers'
 import emailChange from './emailChangeReducers'
 import passChange from './passChangeReducers'
-import passwordArr from './passwordReducers' 
+// import passwordArr from './passwordReducers' 
 import checkBoxIsActive from './checkBoxReducers'
 
 
 const rootReduser = combineReducers ({
-    emailArr: emailArr,
-    passwordArr: passwordArr,
+    registration: registration,
+    enter: enter,
+    // emailArr: emailArr,
+    // passwordArr: passwordArr,
     emailChange: emailChange,
     passChange: passChange,
     checkBoxIsActive: checkBoxIsActive,

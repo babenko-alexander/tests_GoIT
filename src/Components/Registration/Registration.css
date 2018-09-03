@@ -1,6 +1,5 @@
-.formCont {
+/* .formCont {
     padding: 25px 25px 40px 25px;
-    /* border: 1px solid #bbb; */
     border-radius: 4px;
     width: 300px;
     font-size: 19px;
@@ -8,12 +7,12 @@
     -webkit-box-shadow: 7px 0px 40px -8px rgba(112,111,111,1);
     -moz-box-shadow: 7px 0px 40px -8px rgba(112,111,111,1);
     box-shadow: 7px 0px 40px -8px rgba(112,111,111,1);
-}
+} */
 
 .regSpan {
     color: #3f51b5;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 19px;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -22,7 +21,7 @@
     display: block;
     width: 86%;
     border: none;
-    font-size: 17px;
+    font-size: 16px;
     outline: none;
     border-bottom: 2px solid #b8b8b9;
     color: #b8b8b9;
@@ -60,15 +59,11 @@
     outline: none;
 }
 
-.styleCheckbox {
-    
-}
-
 .agreement {
     color: #b8b8b9;
     font-size: 13px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 
 .orangeSp {
@@ -79,19 +74,20 @@
 }
 
 .btn {
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: 600;
     outline: none;
     border: none;
     background-color: #ff5722;
     color: #fff;
     border-radius: 18px;
-    padding: 10px 30px;
+    padding: 10px;
     cursor: pointer;
     width: 100%;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .formCont {
         width: 420px;
     }
-}
+} */
