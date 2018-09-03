@@ -37,6 +37,7 @@
 
 .result__item {
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 .result__item:last-child {
@@ -59,6 +60,7 @@
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content;
+        min-width: max-content;
         height: fit-content;
         margin: 0 1.25rem;
     }

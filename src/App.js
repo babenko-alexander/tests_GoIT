@@ -10,7 +10,7 @@ import './App.css';
 
 class App extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.loadAllTestsDataAsync();
     };
 
