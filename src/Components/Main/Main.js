@@ -21,7 +21,6 @@ const Main = ({tests, loadSelectedTest}) => {
     const moduleCircle = [styles.box__task_0, styles.box__task_1, null];
 
     if (tests.length) {
-        // const modules = tests;
         const modules = tests.sort((a,b) => a.module > b.module);
 
         return (
@@ -43,7 +42,6 @@ const Main = ({tests, loadSelectedTest}) => {
                                                 key={`${m.module}${ind}`}
                                                 data-module={m.module}
                                                 data-testname={t['test-name']}
-                                                // data-test={JSON.stringify({'module': m.module, ...t})}
                                                 onClick={selectTest}
                                             >
                                             {t["test-name"]}
