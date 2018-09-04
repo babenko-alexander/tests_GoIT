@@ -1,3 +1,12 @@
+export const setSelectedTest = function (selectedTestObj) {
+    return {
+        type: 'SELECTED_TEST',
+        payload: selectedTestObj
+    }
+};
+
+// original version:
+/*
 import axios from 'axios';
 
 export function selectedTest (data) {
@@ -21,3 +30,4 @@ export const getSingleTestAsync = (module, testname) => dispatch => {
         .then(test => dispatch(selectedTest({'module': module, ...test})))
         .catch(err => console.log(err))
 };
+*/
