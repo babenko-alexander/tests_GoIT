@@ -16,7 +16,6 @@ const Header = (props) => {
             Fun Test
         </NavLink>
 
-        {/* <div className={showMenu ? 'header__menu-show header__menu' : 'header__menu'} > */}
             {props.checkLogin ?
                 <ul className={styles['header__menu-nav-links']}>
                     <li className={styles.header__item}><NavLink className={styles['header__item-nav']} to='/view_profile'>view profile</NavLink></li>
@@ -25,7 +24,7 @@ const Header = (props) => {
                 </ul>
                 :
                 <div className={styles['header__menu-buttons']}>
-                    <button className={styles['header__button']+' '+styles['header__margine-right']}>sign in</button>
+                    <button className={styles['header__button']}>sign in</button>
                     <button className={styles.header__button}>create an account</button>
                 </div>
             }

@@ -12,7 +12,7 @@ Header {
     min-width: 320px;
     max-width: 1024px;
     padding: 0.5rem 0.5rem;
-    height: 4rem;
+    min-height: 4rem;
     margin: 0 auto;
     display: flex;
     justify-content:space-between;
@@ -41,12 +41,12 @@ Header {
 
 .header__menu-buttons {
     display: flex;
-    min-width:35%;
-    justify-content: flex-end;
-}
+    flex-direction: column;
+    justify-content: space-between;
+} 
 
 .header__button {
-    display: none;
+    /* display: none; */
     font-size: 1rem;
     font-weight: bold;
     color: #FFFFFF;
@@ -81,15 +81,16 @@ Header {
 }
 
 .header__margine-right {
-    margin-right: 3rem;
+    margin-right: 1rem;
 }
 
 .header__menu-nav-links {
     display: flex;
-    justify-content: flex-end;
-    min-width: 55%;
+    width: 10rem;
+    flex-direction: column;
     list-style: none;
-    text-decoration: none
+    text-decoration: none;
+    text-align: left;
 }
 
 .header__item{
@@ -103,9 +104,33 @@ Header {
     font-size: 1.2rem;
 }
 
+
+.threeLine {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--white);
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
 @media (min-width: 768px) {
-    .header__button {
-        display: block;
+    
+    .threeLine {
+        display: none;
+    }
+
+    .header__menu-buttons {
+        display: flex;
+        flex-direction: row;
+        width:16rem;
+        justify-content: space-between;
+    }
+
+    .header__menu-nav-links {
+        justify-content: flex-end;
+        flex-direction: row;
+        width: 18rem;
+        justify-content: space-between;
     }
 }
 

@@ -3,8 +3,9 @@ import Header from './Components/Header/Header'
 import styles from './App.css';
 
 class App extends Component {
+    
   render() {
-    return (
+    return ( 
       <div className={styles.App}>
         <Header/>
       </div>
