@@ -20,13 +20,13 @@ const Header = (props) => {
                 </NavLink>
                 <ul className={styles['header__menu-nav-links']}>
                     <li className={styles.header__item}>
-                        <NavLink className={styles['header__item-nav']} to='/view_profile'>view profile</NavLink>
+                        <NavLink className={styles['header__item-nav']} to='/view_profile'>Профиль</NavLink>
                     </li>
                     <li className={styles.header__item}>
-                        <NavLink className={styles['header__item-nav']} to='/ratings'>ratings</NavLink>
+                        <NavLink className={styles['header__item-nav']} to='/ratings'>Рейтинги</NavLink>
                     </li>
                     <li className={styles.header__item}>
-                        <NavLink className={styles['header__item-nav']} to='/logout'>logout</NavLink>
+                        <NavLink className={styles['header__item-nav']} to='/logout'>Выйти</NavLink>
                     </li>
                 </ul>
                 </div>

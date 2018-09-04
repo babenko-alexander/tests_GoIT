@@ -3,6 +3,10 @@ export default function showAgreement (state = false, action) {
         
         case 'AGR': 
             return !state
+
+        case 'AGRE':
+            return false
+
         default: 
             return state
     }

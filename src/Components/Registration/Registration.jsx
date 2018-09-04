@@ -3,13 +3,13 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import { passChangeHandler} from '../../redux/actions/passChangeAction';
-import {chekBoxHandler} from '../../redux/actions/checkBoxAction';
+import {chekBoxHandler, chekBoxFalse} from '../../redux/actions/checkBoxAction';
 import Modal from '../ModalChild/ModalChild';
 import styles from './Registration.css';
 import email from './mail.svg';
 import lock from './locked.svg';
 import {showRegistration} from '../../redux/actions/registrationAction';
-import {agreementOn} from '../../redux/actions/agreementAction';
+import {agreementOn, agreementOff} from '../../redux/actions/agreementAction';
 
 const Registration = (props) => {
     
@@ -24,11 +24,18 @@ const Registration = (props) => {
     const closeRegModal = (e) => {
         e.stopPropagation();
         if (e.target.id === 'overlay' || e.target.id === 'closeSymbol') {
-            props.chekBoxHandler()
-            props.showAgr()
+            // props.chekBoxHandler()
+            // props.showAgr()
+            props.closeAgr()
+            props.closeCheckBox()
             props.closeRegModal()
         }
     };
+
+    const disactiveCheckAndShowAgr = () => {
+        props.showAgr()
+        props.closeCheckBox()
+    }
 
 
 
@@ -67,7 +74,7 @@ const Registration = (props) => {
         <div>
             {props.showAgreement ?    
                 <Modal closeModal={closeRegModal}>
-                {/* <span>Назад</span> */}
+                <span className={styles.back} onClick={disactiveCheckAndShowAgr}>&#8249;</span>
                 <h2 className={styles.regSpan}>Пользовательское соглашение</h2>
                 <p className={styles.agreement}>
                     Условия пользовательского соглашения, обязательны для любого лица находящегося на сайте www.moldovenii.md. Если Вы не согласны с условиями пользовательского соглашения (полностью или в части) просим немедленно покинуть сайт www.moldovenii.md. Нахождение лица на сайте рассматривается как принятие пользователем всех условий пользовательского соглашения. Настоящее соглашение, а также изменения и дополнения к нему вступают в силу с момента их опубликования на Ресурсе.
@@ -139,6 +146,14 @@ function MDTP (dispatch) {
 
         showAgr: function() {
             dispatch(agreementOn())
+        },
+
+        closeAgr: function() {
+            dispatch(agreementOff())
+        },
+
+        closeCheckBox: function() {
+            dispatch(chekBoxFalse())
         }
     }
 };

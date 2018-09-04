@@ -90,6 +90,14 @@
     background-color: #f77751
 }
 
+.back {
+    font-size: 2rem;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 8px;
+}
+
 /* @media (min-width: 768px) {
     .formCont {
         width: 420px;

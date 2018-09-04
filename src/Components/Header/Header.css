@@ -35,7 +35,8 @@ Header {
     height: 3rem;
     vertical-align: middle;
     position: absolute;
-    left: 20px;
+    left: 15px;
+    display: none;
 }
 
 .header__menu-buttons {
@@ -45,7 +46,7 @@ Header {
 }
 
 .header__button {
-    font-size: 16px;
+    font-size: 1.2rem;
     font-weight: 600;
     outline: none;
     border: none;
@@ -100,6 +101,13 @@ Header {
     color: azure;
     text-transform: capitalize;
     font-size: 1.2rem;
+    font-weight: 700;
+}
+
+@media (min-width: 350px) {
+    .header__logo {
+        display: block;
+    }
 }
 
 @media(min-width: 400px) {
