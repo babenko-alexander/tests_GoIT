@@ -6,8 +6,10 @@ import enter from './enterReducers';
 // import emailArr from './emailReducers';
 import emailChange from './emailChangeReducers';
 import passChange from './passChangeReducers';
-// import passwordArr from './passwordReducers';
+// import passwordArr from './passwordReducers' ;
 import checkBoxIsActive from './checkBoxReducers';
+import isLogin from './isLogin';
+import showAgreement from './agreementReducers'
 
 
 import currentAnswer from '../../redux/reducers/currentAnswerReducer';
@@ -17,7 +19,7 @@ import testIsReady from '../../redux/reducers/testIsReadyReducer';
 import {tests} from './fetchReducer';
 import {selectedTest} from './testReducer';
 
-const rootReduser = combineReducers ({
+const rootReducer = combineReducers ({
     currentAnswer,
     currentResult,
     correctResult,
@@ -32,6 +34,10 @@ const rootReduser = combineReducers ({
     emailChange,
     passChange,
     checkBoxIsActive,
+    isLogin,
+    showAgreement,
+
+
 });
 
-export default rootReduser;
+export default rootReducer;

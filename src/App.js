@@ -3,16 +3,18 @@ import {connect} from 'react-redux';
 
 import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
 import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
+import Header from './Components/Header/Header';
+import Registration from './Components/Registration/Registration';
 import Main from './Components/Main/Main';
 import Test from './Components/Test/Test';
+import Enter from './Components/Enter/Enter';
 
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
-// import Registration from './Components/Registration/Registration';
-// import Registration from './Components/Registration/Registration';
-import Enter from './Components/Enter/Enter';
 
-import './App.css';
+import styles from './App.css';
+
+
 
 class App extends Component {
 
@@ -33,8 +35,9 @@ class App extends Component {
         const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
 
         return (
-            <div className="App">
+            <div className={styles.App}>
                 {/* TODO: use routes instead */}
+                <Header/>
                 {testIsSelected ? <Test/> : <Main/>}
                 {/*<button id='enter' onClick={this.props.showEnter}>Вход</button>*/}
                 {/*<button id='reg' onClick={this.props.showRegistration}>Регистрация</button>*/}
@@ -47,6 +50,7 @@ class App extends Component {
         );
     }
 }
+
 
 function MSTP(state) {
     return {
