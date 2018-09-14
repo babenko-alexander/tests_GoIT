@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
-import {setSelectedTest} from '../../redux/actions/testActions';
+import {setSelectedTest} from '../../redux/actions/selectedTestAction';
 import styles from './Result.css';
 
 function Result(props) {

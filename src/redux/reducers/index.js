@@ -16,14 +16,16 @@ import currentAnswer from '../../redux/reducers/currentAnswerReducer';
 import currentResult from '../../redux/reducers/currentResultReducer';
 import correctResult from '../../redux/reducers/currentCorrectResultReducer';
 import testIsReady from '../../redux/reducers/testIsReadyReducer';
-import {tests} from './fetchReducer';
-import {selectedTest} from './testReducer';
+import tests from './testsReducer';
+import selectedTest from './selectedTestReducer';
+import modules from './modulesReducer';
 
 const rootReducer = combineReducers ({
     currentAnswer,
     currentResult,
     correctResult,
     testIsReady,
+    modules,
     tests,
     selectedTest,
     dataResaults,
@@ -36,8 +38,6 @@ const rootReducer = combineReducers ({
     checkBoxIsActive,
     isLogin,
     showAgreement,
-
-
 });
 
 export default rootReducer;

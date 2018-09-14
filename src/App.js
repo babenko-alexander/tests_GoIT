@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
+import {fetchModulesDataAsync} from './redux/actions/modulesAction';
+import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
 import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
 import Header from './Components/Header/Header';
 import Registration from './Components/Registration/Registration';
@@ -19,6 +20,7 @@ import styles from './App.css';
 class App extends Component {
 
     componentDidMount() {
+        this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
     };
 
@@ -64,6 +66,9 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
+        loadModulesDataAsync: function() {
+            dispatch(fetchModulesDataAsync())
+        },
         loadAllTestsDataAsync: function() {
             dispatch(fetchAllTestsDataAsync())
         },

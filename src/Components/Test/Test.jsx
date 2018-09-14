@@ -26,7 +26,7 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                 <div className={styles.test__container}>
                     <header>
                         <h1 className={styles.test__module}>{selectedTest.module}</h1>
-                        <h2 className={styles.test__testname}>{selectedTest['test-name']}</h2>
+                        <h2 className={styles.test__testname}>{selectedTest.testname}</h2>
                     </header>
                     <div className={styles.test__content}>
                         <Result/>
@@ -35,19 +35,19 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                                 (currentResult[index])
                                     ? <TestCard
                                         clas={2}
-                                        testname={selectedTest['test-name']}
+                                        testname={selectedTest.testname}
                                         index={index}
                                         question={q.question}
                                         answers={q.answers}
-                                        key={`${selectedTest['test-name']}${index}`}
+                                        key={`${selectedTest.testname}${index}`}
                                     />
                                     : <TestCard
                                         clas={3}
-                                        testname={selectedTest['test-name']}
+                                        testname={selectedTest.testname}
                                         index={index}
                                         question={q.question}
                                         answers={q.answers}
-                                        key={`${selectedTest['test-name']}${index}`}
+                                        key={`${selectedTest.testname}${index}`}
                                     />
                             )}
                         </div>
@@ -61,16 +61,16 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
             <div className={styles.test__wrapper}>
                 <div className={styles.test__container}>
                     <h1 className={styles.test__module}>{selectedTest.module}</h1>
-                    <h2 className={styles.test__testname}>{selectedTest['test-name']}</h2>
+                    <h2 className={styles.test__testname}>{selectedTest.testname}</h2>
                     <div className={styles.test__cards}>
                         {selectedTest.questions.map((q, index) =>
                         <TestCard
                             clas={1}
-                            testname={selectedTest['test-name']}
+                            testname={selectedTest.testname}
                             index={index}
                             question={q.question}
                             answers={q.answers}
-                            key={`${selectedTest['test-name']}${index}`}
+                            key={`${selectedTest.testname}${index}`}
                         />
                         )}
                     </div>
