@@ -2,13 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let TestSchema = new Schema(
-    {
+    {   m: { type: String, required: [ true, 'Укажите название модуля' ]},
         testname: { type: String, required: [ true, 'Укажите название теста' ]},
-        questions:[{question: String,
-                    answers: [String],
-                    rightAnswer: String
-        }],
-        moduleId: {type: String, required: [ true, 'Укажите название модуля' ]}
+        questions: Array
+
     }
 );
 
