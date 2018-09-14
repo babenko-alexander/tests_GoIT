@@ -1,5 +1,0 @@
-{
-    "/api/*": "/$1",
-    "/tests": "/tests",
-    "/results": "/results"
-}
