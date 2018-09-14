@@ -11,7 +11,8 @@ module.exports.getById = function (paramsId) {
 module.exports.add = function (data) {
     let Test = new Test_model({
         testname: data.testname,
-        questions: data.questions
+        questions: data.questions,
+        moduleId: data.moduleId
     });
 
     return Test.save()
