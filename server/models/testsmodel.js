@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let TestSchema = new Schema(
-    {   m: { type: String, required: [ true, 'Укажите название модуля' ]},
+    {
         testname: { type: String, required: [ true, 'Укажите название теста' ]},
-        questions: Array
-
+        questions: Array,
+        moduleId: {type: String, required: [ true, 'Укажите id модуля' ]}
     }
 );
 
