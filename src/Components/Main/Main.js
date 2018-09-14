@@ -5,7 +5,7 @@ import {setSelectedTest} from '../../redux/actions/testActions';
 
 import styles from './Main.css';
 
-const Main = ({tests, loadSelectedTest}) => {
+const Main = ({tests, loadSelectedTest, checkLogin}) => {
 
     const selectTest = function(e) {
         // find individual test in store using module name and test name:
@@ -25,18 +25,17 @@ const Main = ({tests, loadSelectedTest}) => {
         const modules = tests.sort((a,b) => a.module > b.module);
 
         return (
-            <div className={styles.main__wrapper}>
-                <div className={styles.main__container}>
+        <div>
+            {checkLogin ?
+                <div className={styles.main__wrapper}>
+                    <div className={styles.main__container}>
                     <section className={styles.section}>
-                        <h1 className={styles.title}>Проверь свои знания Front End</h1>
-                        <p className={styles.sub__title}>Здраствуйте дорогие студенты, надеемся что, тесты GoIT не только
-                            принесут вам пользу и знания, но и множество эмоций, и удовольствия от их прохождения</p>
 
                         <div className={styles.section__main}>
                             {modules.map((m, index) =>
                                 <div className={styles.main__box} key={index}>
                                     <div className={`${styles.box__task} ${moduleCircle[index]}`}>
-                                        <p>{m.module}</p>
+                                        <p className={styles.spanInCircle}>{m.module}</p>
                                         {m['module-tests'].map((t, ind) =>
                                             <span
                                                 className={`${styles.main__span} ${modules.indexOf(m) === 0 ? taskOne[ind] : taskTwo[ind]}`}
@@ -54,9 +53,22 @@ const Main = ({tests, loadSelectedTest}) => {
                             }
                         </div>
                     </section>
+                    </div>
                 </div>
-            </div>
-        );
+
+            : <div className={styles.background}>
+                <div className={styles.main__container}>
+                <section className={styles.section}>
+                    <h1 className={styles.title}>Проверь свои знания Front End</h1>
+                    <p className={styles.sub__title}>Здравствуйте, дорогие студенты, надеемся что, тесты GoIT не только
+                        принесут вам пользу и знания, но и множество эмоций, и удовольствия от их прохождения!
+                    </p>
+                </section>
+                </div>
+              </div>
+            }
+            
+        </div>);
     } else {
         return null;
     }
@@ -66,6 +78,7 @@ function MSTP(state) {
     return {
         tests: state.tests,
         selectedTest: state.selectedTest,
+        checkLogin: state.isLogin,
     }
 }
 

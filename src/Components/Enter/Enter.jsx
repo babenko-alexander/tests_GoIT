@@ -5,6 +5,7 @@ import email from './mail.svg';
 import lock from './locked.svg';
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import { passChangeHandler} from '../../redux/actions/passChangeAction';
+import {isLogin} from '../../redux/actions/isLogin'
 import {showEnter} from '../../redux/actions/enterAction';
 import {connect} from 'react-redux';
 
@@ -55,7 +56,7 @@ const Enter = (props) => {
                     <input type="password" className={styles.input} onChange={onChangePass} placeholder='Password'/>
                 </div>
                 
-                <button type='submit' className={styles.btn}>Войти</button>
+                <button type='submit' className={styles.btn} onClick={props.wasLogin}>Войти</button>
             </form>
         </Modal>
     );
@@ -74,14 +75,17 @@ function MDTP (dispatch) {
         emailChangeHandler: function(value) {
             dispatch(emailChangeHandler(value))
         },
-
         passChangeHandler: function(value) {
             dispatch(passChangeHandler(value))
         },
-
         closeEntModal: function() {
             dispatch(showEnter())
+        },
+        wasLogin: function() {
+            dispatch(isLogin())
         }
+
+
     }
 };
 

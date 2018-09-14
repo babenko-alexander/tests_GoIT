@@ -1,6 +1,16 @@
 .main__wrapper {
-    background-color: #fff;
-    height: 100vh;
+    min-height: 131vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./photo_74954_20160905.jpg');
+    background-attachment: fixed;
+}
+
+.background {
+    min-height: 91.5vh;
+    background-image: linear-gradient(rgba(63, 81, 181, 1), rgba(0, 0, 0, 0.5)),url('./photo_74954_20160905.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .main__container {
@@ -12,18 +22,21 @@
 .section {
     width: 100%;
     margin: auto;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 1rem;
 }
 
 .title {
-    color: #f00;
+    color: #ff5722;
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 2rem
 }
 
 .sub__title {
     text-align: justify;
+    color: #fff;
+    font-size: 1.1rem;
 }
 
 .section__main {
@@ -34,6 +47,12 @@
 .main__box {
     flex-basis: 100%;
     margin: 6rem 0;
+}
+
+.spanInCircle {
+    color: #fff;
+    font-size: 1.12rem;
+    font-weight: 700;
 }
 
 .box__task {
@@ -145,6 +164,10 @@
 }
 
 @media (min-width: 1024px) {
+    .main__wrapper {
+        min-height: 91.5vh;
+    }
+
     .section {
         padding: 2rem 4rem;
         width: 90%;
