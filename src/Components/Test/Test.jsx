@@ -3,15 +3,23 @@ import React from 'react';
 import Result from '../../Components/Result/Result';
 import {connect} from 'react-redux';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
+import {dataResault} from '../../redux/action/actionDataResaults';
 
 import TestCard from '../TestCard/TestCard';
 import styles from './Test.css';
 
-const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, currentResult}) => {
+const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, currentResult, dataResault, usersRateLength}) => {
 
     const onTestIsReady = () => {
         let type = 'TESTON';
+        let persRes = {
+            title: selectedTest['test-name'],
+            totalQuest: 10,
+            corAnswers: usersRateLength,
+            sucsess: usersRateLength /10  * 100 +'%',
+    };
         setTestIsReady(type);
+        dataResault(persRes);
     };
 
     const checkAnswers = () => {
@@ -87,6 +95,7 @@ function MSTP(state) {
         testIsready: state.testIsReady,
         currentAnswer: state.currentAnswer,
         currentResult: state.currentResult,
+        usersRateLength: state.currentResult.filter(el => el === true).length,
 
     }
 }
@@ -95,6 +104,9 @@ function MDTP(dispatch) {
     return {
         setTestIsReady: function (type) {
             dispatch(setTestIsReady(type))
+        },
+        dataResault: function(data){
+            dispatch(dataResault(data))
         },
     }
 }

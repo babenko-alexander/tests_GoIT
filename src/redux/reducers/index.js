@@ -13,6 +13,7 @@ import correctResult from './currentCorrectResultReducer';
 import testIsReady from './testIsReadyReducer';
 import {tests} from './fetchReducer';
 import {selectedTest} from './testReducer';
+import resultIsActive from './resultPageReducer';
 
 const rootReducer = combineReducers ({
     currentAnswer,
@@ -29,6 +30,7 @@ const rootReducer = combineReducers ({
     checkBoxIsActive,
     isLogin,
     showAgreement,
+    resultIsActive,
 });
 
 export default rootReducer;

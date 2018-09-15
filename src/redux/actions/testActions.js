@@ -5,6 +5,13 @@ export const setSelectedTest = function (selectedTestObj) {
     }
 };
 
+export const unSelectedTest = function () {
+    return {
+        type: 'UNSELECTED_TEST',
+        payload: {}
+    }
+}
+
 // original version:
 /*
 import axios from 'axios';

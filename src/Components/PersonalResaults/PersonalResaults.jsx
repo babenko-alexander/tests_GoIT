@@ -12,9 +12,9 @@ import smile from '../PersonalResaults/PersonalCard/images/smile.svg';
 
 class PersonalResaults extends Component {
 
-    componentDidMount(){
-        this.props.getDataAsync();
-    }
+    // componentDidMount(){
+    //     this.props.getDataAsync();
+    // }
 
     render() {
         const {dataResault, total, percent} = this.props;
@@ -28,10 +28,10 @@ class PersonalResaults extends Component {
                 </tr>
                         <tr >
                            <th className={styles.robotoOrange}>Название</th>
-                            <th className={styles.robotoOrange}>Результаты</th>
-                            <th className={styles.robotoOrange}>Средний бал по всем пользователям</th>
+                            <th className={styles.robotoOrange}>Количество правильних ответов</th>
+                            <th className={styles.robotoOrange}>Процент успешности</th>
                         </tr>
-                        {dataResault.map(el => <PersonalCard name={el.name} result={el.result} ratio={el.ratio} id={el.id} key={el.id}/>)}
+                        {dataResault.map(el => <PersonalCard name={el.title} result={el.corAnswers} ratio={el.sucsess} id={el.id} key={el.id}/>)}
                         <tr>
                             <th>Итог</th>
                             <th className={styles.robotoOrange}>Средний : {total}</th>
@@ -67,13 +67,13 @@ function mSTP (store) {
     }
 }
 
-function mDTP (dispatch) {
-    return {
-        getDataAsync : function (){
-            dispatch(getDataAsync())
-        }
-    }
-}
+// function mDTP (dispatch) {
+//     return {
+//         getDataAsync : function (){
+//             dispatch(getDataAsync())
+//         }
+//     }
+// }
 
 
-export default connect(mSTP, mDTP)(PersonalResaults);
+export default connect(mSTP)(PersonalResaults);

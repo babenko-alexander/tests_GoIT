@@ -8,7 +8,7 @@ import Registration from './Components/Registration/Registration';
 import Main from './Components/Main/Main';
 import Test from './Components/Test/Test';
 import Enter from './Components/Enter/Enter';
-
+import PersonalResaults from './Components/PersonalResaults/PersonalResaults';
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 
@@ -38,7 +38,7 @@ class App extends Component {
             <div className={styles.App}>
                 {/* TODO: use routes instead */}
                 <Header/>
-                {testIsSelected ? <Test/> : <Main/>}
+                {testIsSelected ? <Test/> : this.props.resultIsActive ? <PersonalResaults/> : <Main/>}
                 {/*<button id='enter' onClick={this.props.showEnter}>Вход</button>*/}
                 {/*<button id='reg' onClick={this.props.showRegistration}>Регистрация</button>*/}
                 {/* <Registration/> */}
@@ -59,6 +59,8 @@ function MSTP(state) {
 
         enter: state.enter,
         registration: state.registration,
+
+        resultIsActive: state.resultIsActive,
     }
 }
 

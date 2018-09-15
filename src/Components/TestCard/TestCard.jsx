@@ -5,6 +5,7 @@ import {addCurrentResult} from '../../redux/actions/currentResultActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
 import styles from './TestCard.css';
 
+
 let checkedInd = [];
 
 const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, correctResult, addCurrentResult}) => {
