@@ -4,9 +4,10 @@ import styles from './Enter.css';
 import email from './mail.svg';
 import lock from './locked.svg';
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
-import { passChangeHandler} from '../../redux/actions/passChangeAction';
+import {passChangeHandler} from '../../redux/actions/passChangeAction';
 import {showEnter} from '../../redux/actions/enterAction';
 import {connect} from 'react-redux';
+import axios from "axios/index";
 
 const Enter = (props) => {
 
@@ -29,13 +30,18 @@ const Enter = (props) => {
         const result = {
             email: props.emailChange,
             password: props.passChange
-        }
-        console.log(result)
-    }    
+        };
+        // console.log(result);
+        axios.post('/users/login', result)
+            .then(result => result.status === 200 ? result.data : null)
+            .then(result => {console.log(result); return result})
+            .then(token => sessionStorage.setItem('token', token))
+            .catch(err => console.log(err))
+    };
 
     const submit = (e) => {
-        e.preventDefault()
-        post()
+        e.preventDefault();
+        post();
         props.closeEntModal();
     };
 
@@ -67,7 +73,7 @@ function MSTP (state) {
         passChange: state.passChange,
         checkBoxIsActive: state.checkBoxIsActive,
     }
-};
+}
 
 function MDTP (dispatch) {
     return {
@@ -83,6 +89,6 @@ function MDTP (dispatch) {
             dispatch(showEnter())
         }
     }
-};
+}
 
 export default connect(MSTP, MDTP) (Enter);

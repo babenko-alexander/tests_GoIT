@@ -26,16 +26,16 @@ const Registration = (props) => {
         if (e.target.id === 'overlay' || e.target.id === 'closeSymbol') {
             // props.chekBoxHandler()
             // props.showAgr()
-            props.closeAgr()
-            props.closeCheckBox()
-            props.closeRegModal()
+            props.closeAgr();
+            props.closeCheckBox();
+            props.closeRegModal();
         }
     };
 
     const disactiveCheckAndShowAgr = () => {
-        props.showAgr()
-        props.closeCheckBox()
-    }
+        props.showAgr();
+        props.closeCheckBox();
+    };
 
 
 
@@ -45,7 +45,7 @@ const Registration = (props) => {
     };
 
     const valMail = () => {
-        let loginReg = /@/g
+        let loginReg = /@/g;
 
         return loginReg.test(props.emailChange)
     };
@@ -55,8 +55,12 @@ const Registration = (props) => {
             const result = {
                 email: props.emailChange,
                 password: props.passChange
-            }
-            console.log(result);//make post
+            };
+            // console.log(result);//make post
+            axios.post('/users', result)
+                // .then(result => {console.log(result); return result})
+                .then(result => result.status === 201 ? result.data : null)
+                .catch(err => console.log(err))
 
         } else {
             console.log('err');
@@ -64,8 +68,8 @@ const Registration = (props) => {
     };
 
     const submit = (e) => {
-        e.preventDefault()
-        sumCheck()
+        e.preventDefault();
+        sumCheck();
         props.closeRegModal();
     };
     

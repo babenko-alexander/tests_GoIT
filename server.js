@@ -4,15 +4,40 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 mongoose.Promise = global.Promise;
-const userRoutes = require('./server/routes/userRoutes');
-const testRoutes = require('./server/routes/testRoutes');
-const moduleRoutes = require('./server/routes/moduleRoutes');
+
+const passport = require('passport');
+const jwt = require("jwt-simple");
+const session = require('express-session');
+const mongoStore = require('connect-mongo')(session);
 const config = require('./server/config/config');
 const DB = config.db_url;
 const server_port = config.port;
 
+const user = require('./server/models/usersmodel');
+const userRoutes = require('./server/routes/userRoutes');
+const testRoutes = require('./server/routes/testRoutes');
+const moduleRoutes = require('./server/routes/moduleRoutes');
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+app.use(session({
+    secret: 'secret',
+    key: 'keys',
+    cookie: {
+        path: '/',
+        httpOnly: true,
+        maxAge: null
+    },
+    saveUninitialized: false,
+    resave: true,
+    store: new mongoStore({mongooseConnection: mongoose.connection})
+}));
+
+require('./config/passport-config');
+app.use(passport.initialize({userProperty: 'payload'}));
+app.use(passport.session());
+
 app.use(cors({ origin: '*' }));
 app.use(express.static(path.join(__dirname,'build')));
 app.use('/users', userRoutes);
