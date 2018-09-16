@@ -17,6 +17,6 @@ router.put('/:id', auth, userControllers.editUser);
 
 router.delete('/:id', auth, userControllers.deleteUser);
 
-router.post('/login', passport.authenticate('loginUsers'), userControllers.loginUser);
+router.post('/login', userControllers.loginUser);
 
 module.exports = router;

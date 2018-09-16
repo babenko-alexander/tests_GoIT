@@ -29,7 +29,8 @@ const Enter = (props) => {
     const post = () => {
         const result = {
             email: props.emailChange,
-            password: props.passChange
+            password: props.passChange,
+            withCredentials: true
         };
         // console.log(result);
         axios.post('/users/login', result)

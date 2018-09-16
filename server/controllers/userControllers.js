@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
-const db = require('../models/usersFunctions');
 mongoose.set('useFindAndModify', false);
-const  passport = require('passport');
+const passport = require('passport');
+const jwt = require("jwt-simple");
 
+const db = require('../models/usersFunctions');
+const config = require('../config/config');
 
 module.exports.getUsers = function (req, res) {
     db.gets().then(results => res.json(results))
@@ -28,21 +30,19 @@ module.exports.editUser = function (req, res) {
 };
 
 module.exports.deleteUser = function (req, res) {
+    req.session.result = {};
     db.delete(req.params.id)
         .then(results => results ? res.json(results) : res.status(400).json({err: 'User not found'}))
         .catch(err => res.status(400).json({err: err.message}))
 };
 
 module.exports.loginUser = function (req, res) {
-    console.log(req);
-    // console.log(req.user);
-    return res.status(401).json({err: 'Укажите правильный логин и пароль!'});
-
-    /*passport.authenticate('loginUsers', (err, user) => {
+    // console.log('req.payload:', req.payload);
+    passport.authenticate('loginUsers', (err, user) => {
         if (err) {
-            return next(err);
+            return res.status(401).json({err: 'Ошибка аутентификации!'});
         }
-        console.log(err, user);
+        // console.log(err, user);
         if (!user) {
             console.log('Укажите правильный логин и пароль!');
             return res.status(401).json({err: 'Укажите правильный логин и пароль!'});
@@ -50,15 +50,15 @@ module.exports.loginUser = function (req, res) {
         req
             .logIn(user, function (err) {
                 if (err) {
-                    console.log(err);
-                    res.sendStatus(401)
+                    // console.log(err);
+                    res.status(401).json({err: 'Not Authorized!'});
                 }
                 let payload = {
                     id: user._id
                 };
                 console.log('payload: ', payload);
-                let token = jwt.encode(payload, config.secret); // line 10 passport-config
+                let token = jwt.encode(payload, config.jwtsecret); // line 10 passport-config
                 res.json({token: token});
             });
-    })(req, res, next);*/
+    })(req, res);
 };

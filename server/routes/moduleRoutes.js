@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ModuleControllers = require('../controllers/ModuleControllers');
+const ModuleControllers = require('../controllers/moduleControllers');
 
 router.get('/', ModuleControllers.getModules);
 
