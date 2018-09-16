@@ -5,6 +5,7 @@ import {addCurrentResult} from '../../redux/actions/currentResultActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
 import styles from './TestCard.css';
 
+
 let checkedInd = [];
 
 const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, correctResult, addCurrentResult}) => {
@@ -66,8 +67,8 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     data-index={index}
                                     className={styles.testcard__answers}
                                     value={answ}
-                                    checked={(checkedInd[index] === i) ? true : false}
-                                    readOnly={(checkedInd[index] === i) ? true : false}
+                                    checked={checkedInd[index] === i}
+                                    readOnly={checkedInd[index] === i}
                                 />
                                 {answ}
                             </label>

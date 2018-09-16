@@ -38,8 +38,6 @@ const Registration = (props) => {
     };
 
 
-
-
     const valPass = () => {
         return props.passChange.length >= 6 && props.passChange.length <= 10
     };
@@ -83,7 +81,8 @@ const Registration = (props) => {
                 <p className={styles.agreement}>
                     Условия пользовательского соглашения, обязательны для любого лица находящегося на сайте www.moldovenii.md. Если Вы не согласны с условиями пользовательского соглашения (полностью или в части) просим немедленно покинуть сайт www.moldovenii.md. Нахождение лица на сайте рассматривается как принятие пользователем всех условий пользовательского соглашения. Настоящее соглашение, а также изменения и дополнения к нему вступают в силу с момента их опубликования на Ресурсе.
                 </p>
-                </Modal>                
+                </Modal>   
+
                 :   
                 <Modal closeModal={closeRegModal}>
                     <h2 className={styles.regSpan}>Регистрация</h2>
