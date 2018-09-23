@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 import {fetchModulesDataAsync} from './redux/actions/modulesAction';
 import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
@@ -12,14 +13,36 @@ import Enter from './Components/Enter/Enter';
 import PersonalResaults from './Components/PersonalResaults/PersonalResaults';
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
+import {isLogin} from './redux/actions/isLogin';
 
 import styles from './App.css';
 
 
-
 class App extends Component {
 
+    parseJWT() {
+        let token = localStorage.getItem('token');
+        if (token) {
+            let base64 = token.split('.')[1];
+            let parsedToken = JSON.parse(window.atob(base64));
+            // console.log('parsedToken: ', parsedToken);
+            return parsedToken;
+        } else {
+            return null;
+        }
+    }
+
+    checkUser(id, jwt) {
+        axios.get(`/users/${id}`, { headers: { Authorization: `Bearer ${jwt}` }})
+            .then(result => result.status === 200)
+            .catch(err => console.log(err))
+    }
+
     componentDidMount() {
+        let auth = this.parseJWT();
+        if (auth && this.checkUser(auth.id, localStorage.getItem('token'))) {
+            this.props.isLogin();
+        }
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
     };
@@ -83,6 +106,9 @@ function MDTP(dispatch) {
         },
         showRegistration: function() {
             dispatch(showRegistration())
+        },
+        isLogin: function () {
+            dispatch(isLogin())
         },
     }
 }

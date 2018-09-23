@@ -37,7 +37,7 @@ const Enter = (props) => {
         axios.post('/users/login', result)
             .then(result => result.status === 200 ? result.data : null)
             .then(result => {console.log(result); return result})
-            .then(token => sessionStorage.setItem('token', token))
+            .then(result => localStorage.setItem('token', result.token))
             .catch(err => console.log(err))
     };
 

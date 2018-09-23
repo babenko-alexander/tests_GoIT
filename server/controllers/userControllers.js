@@ -54,7 +54,8 @@ module.exports.loginUser = function (req, res) {
                     res.status(401).json({err: 'Not Authorized!'});
                 }
                 let payload = {
-                    id: user._id
+                    id: user._id,
+                    email: user.email
                 };
                 console.log('payload: ', payload);
                 let token = jwt.encode(payload, config.jwtsecret); // line 10 passport-config
