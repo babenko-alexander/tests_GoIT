@@ -7,7 +7,7 @@ let auth = passport.authenticate('jwt', {
     session: false
 });
 
-router.get('/', userControllers.getUsers);
+router.get('/', auth, userControllers.getUsers);
 
 router.get('/:id', auth, userControllers.getUser);
 

@@ -9,6 +9,7 @@ import {isLogin} from '../../redux/actions/isLogin'
 import {showEnter} from '../../redux/actions/enterAction';
 import {connect} from 'react-redux';
 import axios from "axios/index";
+import validateUser from "../../helpers/userValidation";
 
 const Enter = (props) => {
 
@@ -47,6 +48,14 @@ const Enter = (props) => {
         props.closeEntModal();
     };
 
+    const doLogin = () => {
+        const v = validateUser();
+        const l = props.loginHandler();
+        console.log('v=', v, 'l=', l);
+        return v && l;
+    // debugger
+};
+
     return (
         <Modal closeModal={closeEntModal}>
             <h2 className={styles.entSpan}>Вход</h2>
@@ -63,7 +72,7 @@ const Enter = (props) => {
                     <input type="password" className={styles.input} onChange={onChangePass} placeholder='Password'/>
                 </div>
                 
-                <button type='submit' className={styles.btn} onClick={props.wasLogin}>Войти</button>
+                <button type='submit' className={styles.btn} onClick={doLogin}>Войти</button>
             </form>
         </Modal>
     );
@@ -90,7 +99,7 @@ function MDTP (dispatch) {
         closeEntModal: function() {
             dispatch(showEnter())
         },
-        wasLogin: function() {
+        loginHandler: function() {
             dispatch(isLogin())
         }
     }

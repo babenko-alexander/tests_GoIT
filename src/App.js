@@ -14,42 +14,22 @@ import PersonalResaults from './Components/PersonalResaults/PersonalResaults';
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 import {isLogin} from './redux/actions/isLogin';
+import validateUser from './helpers/userValidation';
 
 import styles from './App.css';
 
 
 class App extends Component {
 
-    parseJWT() {
-        let token = localStorage.getItem('token');
-        if (token) {
-            let base64 = token.split('.')[1];
-            let parsedToken = JSON.parse(window.atob(base64));
-            // console.log('parsedToken: ', parsedToken);
-            return parsedToken;
-        } else {
-            return null;
-        }
-    }
-
-    checkUser(id, jwt) {
-        const AuthStr = 'Bearer '.concat(jwt);
-        console.log(AuthStr);
-        return axios.get(`/users/${id}`, { headers: { Authorization: AuthStr } })
-            .then(result => result.status === 200)
-            .catch(err => console.log(err))
-    }
-
     componentDidMount() {
-        let auth = this.parseJWT();
-        if (auth && this.checkUser(auth.id, localStorage.getItem('token'))) {
-            this.props.isLogin();
-        }
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
     };
 
     componentDidUpdate() {
+        if (validateUser()) {
+            this.props.isLogin();
+        }
         const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
 
         if (testIsSelected) {

@@ -4,11 +4,11 @@ import {Switch, Route, NavLink} from 'react-router-dom';
 import {resultSelected, resultUnSelected} from '../../redux/actions/resultPageActions';
 import {showEnter} from '../../redux/actions/enterAction';
 import {showRegistration} from '../../redux/actions/registrationAction';
-import {isLogin} from '../../redux/actions/isLogin';
+import {isLogout} from '../../redux/actions/isLogin';
 import logo from './logo.svg';
 import styles from './Header.css';
 import {unSelectedTest} from '../../redux/actions/selectedTestAction';
-
+import validateUser from '../../helpers/userValidation';
 
 const Header = (props) => {
 
@@ -24,7 +24,7 @@ const Header = (props) => {
                         <NavLink className={styles['header__item-nav']} to='/ratings' onClick={props.resultSelected}>Рейтинги</NavLink>
                     </li>
                     <li className={styles.header__item}>
-                        <NavLink className={styles['header__item-nav']} to='/logout' onClick={props.wasLogin}>Выйти</NavLink>
+                        <NavLink className={styles['header__item-nav']} to='/logout' onClick={props.logoutHandler}>Выйти</NavLink>
                     </li>
                 </ul>
                 </div>
@@ -50,12 +50,18 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        wasLogin: function () {
-            dispatch(resultUnSelected());
-            dispatch(isLogin());
-            dispatch(unSelectedTest())
-
+        // loginHandler: function () {
+        //     dispatch(resultUnSelected());
+        //     dispatch(isLogin());
+        //     dispatch(unSelectedTest())
+        //
+        // },
+        logoutHandler: function() {
+            // dispatch(resultUnSelected());
+            dispatch(isLogout());
+            // dispatch(unSelectedTest())
         },
+
         showEnter: function() {
             dispatch(showEnter())
         },
