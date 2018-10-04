@@ -1,4 +1,4 @@
-import axios from "axios/index";
+import axios from "axios";
 
 function parseJWT() {
     let token = localStorage.getItem('token');
@@ -6,22 +6,24 @@ function parseJWT() {
         let base64 = token.split('.')[1];
         return JSON.parse(window.atob(base64));
     } else {
-        return null;
+        return false;
     }
 }
 
-
-
 function checkUser(id, jwt) {
     const AuthStr = 'Bearer '.concat(jwt);
-    // console.log(AuthStr);
+    console.log(AuthStr);
     return axios.get(`/users/${id}`, { headers: { Authorization: AuthStr } })
         .then(result => result.status === 200)
-        .catch(err => console.log(err))
+        .catch(err => {console.log(err); return false});
 }
 
 export default function validateUser() {
     let auth = parseJWT();
-    // console.log('auth=', auth);
-    return (auth && checkUser(auth.id, localStorage.getItem('token')));
+    debugger
+    if (!auth) {
+        return false
+    } else {
+        return checkUser(auth.id, localStorage.getItem('token'))
+    }
 }

@@ -22,14 +22,15 @@ import styles from './App.css';
 class App extends Component {
 
     componentDidMount() {
+        if (validateUser()) {
+            this.props.isLogin();
+        }
+
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
     };
 
     componentDidUpdate() {
-        if (validateUser()) {
-            this.props.isLogin();
-        }
         const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
 
         if (testIsSelected) {

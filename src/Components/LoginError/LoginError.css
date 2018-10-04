@@ -1,0 +1,7 @@
+.hiddenError {
+    opacity: 0
+}
+
+.showError {
+    opacity: 1
+}

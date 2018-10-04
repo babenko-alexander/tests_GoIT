@@ -77,6 +77,14 @@
     background-color: #f77751
 }
 
+.hiddenError {
+    opacity: 0
+}
+
+.showError {
+    opacity: 1
+}
+
 @media (min-width: 768px) {
     .formCont {
         width: 420px;

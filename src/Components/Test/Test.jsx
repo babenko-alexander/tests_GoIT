@@ -3,7 +3,7 @@ import React from 'react';
 import Result from '../../Components/Result/Result';
 import {connect} from 'react-redux';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
-import {dataResault} from '../../redux/action/actionDataResaults';
+import {dataResault} from '../../redux/actions/actionDataResaults';
 
 import TestCard from '../TestCard/TestCard';
 import styles from './Test.css';

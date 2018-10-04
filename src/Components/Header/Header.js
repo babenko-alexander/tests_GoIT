@@ -8,9 +8,13 @@ import {isLogout} from '../../redux/actions/isLogin';
 import logo from './logo.svg';
 import styles from './Header.css';
 import {unSelectedTest} from '../../redux/actions/selectedTestAction';
-import validateUser from '../../helpers/userValidation';
 
 const Header = (props) => {
+
+    const logOut = function() {
+        props.logoutHandler();
+        props.resultPageOff();
+    };
 
     return (
         <div>
@@ -24,7 +28,7 @@ const Header = (props) => {
                         <NavLink className={styles['header__item-nav']} to='/ratings' onClick={props.resultSelected}>Рейтинги</NavLink>
                     </li>
                     <li className={styles.header__item}>
-                        <NavLink className={styles['header__item-nav']} to='/logout' onClick={props.logoutHandler}>Выйти</NavLink>
+                        <NavLink className={styles['header__item-nav']} to='/logout' onClick={logOut}>Выйти</NavLink>
                     </li>
                 </ul>
                 </div>
@@ -50,12 +54,9 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        // loginHandler: function () {
-        //     dispatch(resultUnSelected());
-        //     dispatch(isLogin());
-        //     dispatch(unSelectedTest())
-        //
-        // },
+        resultPageOff: function () {
+            dispatch(resultUnSelected());
+        },
         logoutHandler: function() {
             // dispatch(resultUnSelected());
             dispatch(isLogout());

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PersonalResaults.css';
 import PersonalCard from './PersonalCard/PersonalCard';
-import {getDataAsync} from '../../redux/action/actionDataResaults';
+import {getDataAsync} from '../../redux/actions/actionDataResaults';
 import {connect} from 'react-redux';
 import {totalResaults, percentResaults} from '../../redux/selectors/totalResaults';
 import sad from '../PersonalResaults/PersonalCard/images/sad.svg';

@@ -6,10 +6,11 @@ import lock from './locked.svg';
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import {passChangeHandler} from '../../redux/actions/passChangeAction';
 import {isLogin} from '../../redux/actions/isLogin'
-import {showEnter} from '../../redux/actions/enterAction';
+import {closeModal} from '../../redux/actions/enterAction';
 import {connect} from 'react-redux';
 import axios from "axios/index";
 import validateUser from "../../helpers/userValidation";
+import {loginError} from '../../redux/actions/LoginErrorAction';
 
 const Enter = (props) => {
 
@@ -39,22 +40,25 @@ const Enter = (props) => {
             .then(result => result.status === 200 ? result.data : null)
             .then(result => {console.log(result); return result})
             .then(result => localStorage.setItem('token', result.token))
-            .catch(err => console.log(err))
+            .then(() => props.loginHandler())
+            .catch(err => {console.log(err); props.setLoginError()})
     };
 
     const submit = (e) => {
         e.preventDefault();
+        // debugger
         post();
-        props.closeEntModal();
+
+        if (validateUser()) {
+            // props.loginHandler();
+            props.closeEntModal();
+        } else {
+
+            // props.setLoginError();
+        }
     };
 
-    const doLogin = () => {
-        const v = validateUser();
-        const l = props.loginHandler();
-        console.log('v=', v, 'l=', l);
-        return v && l;
-    // debugger
-};
+    // const doLogin = () => validateUser() ? props.loginHandler() : null;
 
     return (
         <Modal closeModal={closeEntModal}>
@@ -71,9 +75,16 @@ const Enter = (props) => {
                     <img src={lock} alt="lock" className={styles.lockSvg}/>
                     <input type="password" className={styles.input} onChange={onChangePass} placeholder='Password'/>
                 </div>
-                
-                <button type='submit' className={styles.btn} onClick={doLogin}>Войти</button>
+
+
+
+
+
+                <button type='submit' className={styles.btn}>Войти</button>
             </form>
+            <span className={props.loginError ? styles.showError : styles.hiddenError}>
+                    Неправильный логин или пароль
+                </span>
         </Modal>
     );
 };
@@ -83,6 +94,7 @@ function MSTP (state) {
         emailChange: state.emailChange,
         passChange: state.passChange,
         checkBoxIsActive: state.checkBoxIsActive,
+        loginError: state.loginError,
     }
 }
 
@@ -97,10 +109,13 @@ function MDTP (dispatch) {
         },
 
         closeEntModal: function() {
-            dispatch(showEnter())
+            dispatch(closeModal())
         },
         loginHandler: function() {
             dispatch(isLogin())
+        },
+        setLoginError: function () {
+            dispatch(loginError())
         }
     }
 }
