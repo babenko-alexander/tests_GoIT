@@ -1,13 +1,13 @@
 export default function showAgreement (state = false, action) {
     switch(action.type) {
         
-        case 'AGR': 
-            return !state
+        case 'AGREEMENT_SHOW':
+            return true;
 
-        case 'AGRE':
-            return false
+        case 'AGREEMENT_HIDE':
+            return false;
 
         default: 
-            return state
+            return state;
     }
 }

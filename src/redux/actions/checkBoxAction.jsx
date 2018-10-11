@@ -1,7 +1,7 @@
-export const chekBoxHandler = () => ({
-    type: 'CHECKBOX_ACTIVE',
-})
+export const checkBoxOn = () => ({
+    type: 'CHECKBOX_ON',
+});
 
-export const chekBoxFalse = () => ({
-    type: 'CHECKBOX_DISACTIVE'
-})
+export const checkBoxOff = () => ({
+    type: 'CHECKBOX_OFF'
+});

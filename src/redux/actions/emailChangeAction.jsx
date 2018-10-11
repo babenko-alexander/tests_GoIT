@@ -1,4 +1,9 @@
 export const emailChangeHandler = (value) => ({
-    type: 'EM_CHANGE',
+    type: 'EMAIL_CHANGE',
     data: value
-})
+});
+
+export const emailChangeClear = () => ({
+    type: 'EMAIL_CLEAR',
+    data: '',
+});

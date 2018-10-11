@@ -5,7 +5,7 @@ import registration from './registrationReducers';
 import enter from './enterReducers';
 import emailChange from './emailChangeReducers';
 import passChange from './passChangeReducers';
-import checkBoxIsActive from './checkBoxReducers';
+import checkBoxStatus from './checkBoxReducers';
 import isLogin from './isLogin';
 import showAgreement from './agreementReducers'
 import currentAnswer from './currentAnswerReducer';
@@ -17,6 +17,7 @@ import selectedTest from './selectedTestReducer';
 import resultIsActive from './resultPageReducer';
 import modules from './modulesReducer';
 import loginError from './LoginErrorReducer';
+import messageText from './messageTextReducers';
 
 const rootReducer = combineReducers ({
     currentAnswer,
@@ -31,11 +32,12 @@ const rootReducer = combineReducers ({
     enter,
     emailChange,
     passChange,
-    checkBoxIsActive,
+    checkBoxStatus,
     isLogin,
     showAgreement,
     resultIsActive,
     loginError,
+    messageText,
 });
 
 export default rootReducer;

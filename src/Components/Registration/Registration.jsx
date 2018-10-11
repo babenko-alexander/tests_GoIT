@@ -1,17 +1,31 @@
 import React from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import Modal from '../ModalChild/ModalChild';
+
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import { passChangeHandler} from '../../redux/actions/passChangeAction';
-import {chekBoxHandler, chekBoxFalse} from '../../redux/actions/checkBoxAction';
-import Modal from '../ModalChild/ModalChild';
-import styles from './Registration.css';
+import {checkBoxOn, checkBoxOff} from '../../redux/actions/checkBoxAction';
+
+import {showRegistration, hideRegistration} from '../../redux/actions/registrationAction';
+import {agreementOn, agreementOff} from '../../redux/actions/agreementAction';
+import {emailChangeClear} from '../../redux/actions/emailChangeAction';
+import {passChangeClear} from '../../redux/actions/passChangeAction';
+import {setMessageText} from '../../redux/actions/messageTextActions';
+
+
+
 import email from './mail.svg';
 import lock from './locked.svg';
-import {showRegistration} from '../../redux/actions/registrationAction';
-import {agreementOn, agreementOff} from '../../redux/actions/agreementAction';
+import styles from './Registration.css';
 
 const Registration = (props) => {
+
+    const modalCloseStateClear = () => {
+        props.hideRegistration();
+        props.emailChangeClearFunc();
+        props.passChangeClearFunc();
+    };
     
     const onChangeEm = (e) => {
         props.emailChangeHandler(e.target.value)
@@ -23,18 +37,19 @@ const Registration = (props) => {
 
     const closeRegModal = (e) => {
         e.stopPropagation();
+        // console.log(e.target);
+
         if (e.target.id === 'overlay' || e.target.id === 'closeSymbol') {
-            // props.chekBoxHandler()
-            // props.showAgr()
             props.closeAgr();
-            props.closeCheckBox();
-            props.closeRegModal();
+            props.checkBoxOffFunc();
+            props.hideRegistration();
+            modalCloseStateClear();
         }
     };
 
     const disactiveCheckAndShowAgr = () => {
         props.showAgr();
-        props.closeCheckBox();
+        props.checkBoxOffFunc();
     };
 
 
@@ -57,9 +72,10 @@ const Registration = (props) => {
             // console.log(result);//make post
             axios.post('/users', result)
                 // .then(result => {console.log(result); return result})
-                .then(result => result.status === 201 ? result.data : null)
-                .catch(err => console.log(err))
-
+                .then(result => result.status === 201
+                    ? props.setMessageTextFunc(`Пользователь ${result.data.email} успешно создан. Теперь вы можете войти в систему.`)
+                    : null)
+        .catch(err => {console.log(err); props.setMessageTextFunc('Такой пользователь уже существует!')})
         } else {
             console.log('err');
         }
@@ -68,50 +84,48 @@ const Registration = (props) => {
     const submit = (e) => {
         e.preventDefault();
         sumCheck();
-        props.closeRegModal();
+        modalCloseStateClear();
     };
     
     return (
-        
         <div>
-            {props.showAgreement ?    
+            {props.showAgreement ?
                 <Modal closeModal={closeRegModal}>
                 <span className={styles.back} onClick={disactiveCheckAndShowAgr}>&#8249;</span>
                 <h2 className={styles.regSpan}>Пользовательское соглашение</h2>
                 <p className={styles.agreement}>
-                    Условия пользовательского соглашения, обязательны для любого лица находящегося на сайте www.moldovenii.md. Если Вы не согласны с условиями пользовательского соглашения (полностью или в части) просим немедленно покинуть сайт www.moldovenii.md. Нахождение лица на сайте рассматривается как принятие пользователем всех условий пользовательского соглашения. Настоящее соглашение, а также изменения и дополнения к нему вступают в силу с момента их опубликования на Ресурсе.
+                Условия пользовательского соглашения, обязательны для любого лица находящегося на сайте www.moldovenii.md. Если Вы не согласны с условиями пользовательского соглашения (полностью или в части) просим немедленно покинуть сайт www.moldovenii.md. Нахождение лица на сайте рассматривается как принятие пользователем всех условий пользовательского соглашения. Настоящее соглашение, а также изменения и дополнения к нему вступают в силу с момента их опубликования на Ресурсе.
                 </p>
-                </Modal>   
-
-                :   
-                <Modal closeModal={closeRegModal}>
-                    <h2 className={styles.regSpan}>Регистрация</h2>
-
-                    <form className={styles.form} onSubmit={submit}>
-
-                        <div className={styles.emCont}>
-                            <img src={email} alt="e" className={styles.emSvg}/>
-                            <input type='email' className={styles.input} placeholder='E-mail' value={props.emailChange} onChange={onChangeEm}/>
-                        </div>
-
-                        <div className={styles.lockCont}>
-                            <img src={lock} alt="lock" className={styles.lockSvg}/>
-                            <input type="password" className={styles.input} placeholder='Password' value={props.passChange} onChange={onChangePass}/>
-                        </div>
-                
-                        <p className={styles.agreement}>
-                            <label htmlFor="1">
-                                <input type="checkbox" id='1' className={styles.styleCheckbox}
-                        onClick={props.chekBoxHandler}/>
-                            </label>
-                        Регистрируясь, вы принимаете <span className={styles.orangeSp} onClick={props.showAgr}>пользовательское соглашение</span>
-                        </p>
-                        {props.checkBoxIsActive ? 
-                            <button type='submit' className={styles.btn}>Зарегистрироваться</button> 
-                            : null
-                        }
-                    </form>
                 </Modal>
+                :
+                <Modal closeModal={closeRegModal}>
+                <h2 className={styles.regSpan}>Регистрация</h2>
+
+                <form className={styles.form} onSubmit={submit}>
+
+                <div className={styles.emCont}>
+                <img src={email} alt="e" className={styles.emSvg}/>
+                <input type='email' className={styles.input} placeholder='E-mail' value={props.emailChange} onChange={onChangeEm}/>
+                </div>
+
+                <div className={styles.lockCont}>
+                <img src={lock} alt="lock" className={styles.lockSvg}/>
+                <input type="password" className={styles.input} placeholder='Password' value={props.passChange} onChange={onChangePass}/>
+                </div>
+
+                <p className={styles.agreement}>
+                <label htmlFor="1">
+                <input type="checkbox" id='1' className={styles.styleCheckbox}
+                onClick={props.checkBoxStatus ? props.checkBoxOffFunc : props.checkBoxOnFunc}/>
+                </label>
+                Регистрируясь, вы принимаете <span className={styles.orangeSp} onClick={props.showAgr}>пользовательское соглашение</span>
+                </p>
+                {props.checkBoxStatus &&
+                <button type='submit' className={styles.btn}>Зарегистрироваться</button>
+                }
+                </form>
+                </Modal>
+
                 
             }
         </div>
@@ -122,10 +136,11 @@ function MSTP (state) {
     return {
         emailChange: state.emailChange,
         passChange: state.passChange,
-        checkBoxIsActive: state.checkBoxIsActive,
-        showAgreement: state.showAgreement
+        checkBoxStatus: state.checkBoxStatus,
+        showAgreement: state.showAgreement,
+        messageText: state.messageText
     }
-};
+}
 
 function MDTP (dispatch) {
     return {
@@ -137,28 +152,36 @@ function MDTP (dispatch) {
             dispatch(passChangeHandler(value))
         },
 
-        chekBoxHandler: function() {
-            dispatch(chekBoxHandler())
+        checkBoxOnFunc: function() {
+            dispatch(checkBoxOn())
+        },
+        checkBoxOffFunc: function() {
+            dispatch(checkBoxOff())
         },
 
-        closeRegModal: function() {
-            dispatch(showRegistration())
-        },
-
-
+        // closeRegModalFunc: function() {
+        //     dispatch(showRegistration())
+        // },
 
         showAgr: function() {
             dispatch(agreementOn())
         },
-
         closeAgr: function() {
             dispatch(agreementOff())
         },
-
-        closeCheckBox: function() {
-            dispatch(chekBoxFalse())
+        hideRegistration: function () {
+            dispatch(hideRegistration())
+        },
+        emailChangeClearFunc: function () {
+            dispatch(emailChangeClear())
+        },
+        passChangeClearFunc: function () {
+            dispatch(passChangeClear())
+        },
+        setMessageTextFunc: function(message) {
+            dispatch(setMessageText(message))
         }
     }
-};
+}
 
 export default connect(MSTP, MDTP) (Registration);

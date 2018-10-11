@@ -11,6 +11,6 @@ const ModalChild = (props) => {
             </div>
         </div> 
     )
-}
+};
 
 export default ModalChild;

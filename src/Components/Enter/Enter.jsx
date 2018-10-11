@@ -1,23 +1,33 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import axios from "axios/index";
 import Modal from '../ModalChild/ModalChild';
 import styles from './Enter.css';
 import email from './mail.svg';
 import lock from './locked.svg';
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import {passChangeHandler} from '../../redux/actions/passChangeAction';
-import {isLogin} from '../../redux/actions/isLogin'
+import {isLogin} from '../../redux/actions/isLogin';
+import {setLoginError, clearLoginError} from '../../redux/actions/LoginErrorAction';
 import {closeModal} from '../../redux/actions/enterAction';
-import {connect} from 'react-redux';
-import axios from "axios/index";
-import validateUser from "../../helpers/userValidation";
-import {loginError} from '../../redux/actions/LoginErrorAction';
+import {emailChangeClear} from '../../redux/actions/emailChangeAction';
+import {passChangeClear} from '../../redux/actions/passChangeAction';
+
+
 
 const Enter = (props) => {
+
+    const modalCloseStateClear = () => {
+        props.closeModalFunc();
+        props.emailChangeClearFunc();
+        props.passChangeClearFunc();
+        props.clearLoginError();
+    };
 
     const closeEntModal = (e) => {
         e.stopPropagation();
         if (e.target.id === 'overlay' || e.target.id === 'closeSymbol') {
-            props.closeEntModal()
+            modalCloseStateClear();
         }
     };
 
@@ -38,24 +48,27 @@ const Enter = (props) => {
         // console.log(result);
         axios.post('/users/login', result)
             .then(result => result.status === 200 ? result.data : null)
-            .then(result => {console.log(result); return result})
+            // .then(result => {console.log(result); return result})
             .then(result => localStorage.setItem('token', result.token))
             .then(() => props.loginHandler())
+            .then(() => modalCloseStateClear())
+
             .catch(err => {console.log(err); props.setLoginError()})
     };
 
     const submit = (e) => {
         e.preventDefault();
+
         // debugger
         post();
 
-        if (validateUser()) {
-            // props.loginHandler();
-            props.closeEntModal();
-        } else {
-
-            // props.setLoginError();
-        }
+        // if (validateUser()) {
+        //     // props.loginHandler();
+        //     props.closeEntModal();
+        // } else {
+        //
+        //     // props.setLoginError();
+        // }
     };
 
     // const doLogin = () => validateUser() ? props.loginHandler() : null;
@@ -75,10 +88,6 @@ const Enter = (props) => {
                     <img src={lock} alt="lock" className={styles.lockSvg}/>
                     <input type="password" className={styles.input} onChange={onChangePass} placeholder='Password'/>
                 </div>
-
-
-
-
 
                 <button type='submit' className={styles.btn}>Войти</button>
             </form>
@@ -103,20 +112,27 @@ function MDTP (dispatch) {
         emailChangeHandler: function(value) {
             dispatch(emailChangeHandler(value))
         },
-
         passChangeHandler: function(value) {
             dispatch(passChangeHandler(value))
-        },
-
-        closeEntModal: function() {
-            dispatch(closeModal())
         },
         loginHandler: function() {
             dispatch(isLogin())
         },
         setLoginError: function () {
-            dispatch(loginError())
-        }
+            dispatch(setLoginError())
+        },
+        clearLoginError: function () {
+            dispatch(clearLoginError())
+        },
+        closeModalFunc: function () {
+            dispatch(closeModal())
+        },
+        emailChangeClearFunc: function () {
+            dispatch(emailChangeClear())
+        },
+        passChangeClearFunc: function () {
+            dispatch(passChangeClear())
+        },
     }
 }
 

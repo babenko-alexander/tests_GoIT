@@ -1,3 +1,6 @@
 export const showRegistration = () => ({
-    type: 'REG',
-})
+    type: 'REGISTRATION_SHOW',
+});
+export const hideRegistration = () => ({
+    type: 'REGISTRATION_HIDE',
+});

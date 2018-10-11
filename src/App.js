@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import axios from 'axios';
-
-import {fetchModulesDataAsync} from './redux/actions/modulesAction';
-import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
-import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
+import MessageBox from './Components/MessageBox/MessageBox';
 import Header from './Components/Header/Header';
 import Registration from './Components/Registration/Registration';
 import Main from './Components/Main/Main';
 import Test from './Components/Test/Test';
 import Enter from './Components/Enter/Enter';
 import PersonalResaults from './Components/PersonalResaults/PersonalResaults';
+
+import {fetchModulesDataAsync} from './redux/actions/modulesAction';
+import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
+import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 import {isLogin} from './redux/actions/isLogin';
@@ -54,6 +54,8 @@ class App extends Component {
 
                 {this.props.enter && <Enter/>}
                 {this.props.registration && <Registration/>}
+                {this.props.messageText && <MessageBox/>}
+                    {/*{this.props.message && <Message msgText={msgText}><p></p></Message>}*/}
             </div>
         );
     }
@@ -69,6 +71,8 @@ function MSTP(state) {
         registration: state.registration,
 
         resultIsActive: state.resultIsActive,
+        messageText: state.messageText
+
     }
 }
 

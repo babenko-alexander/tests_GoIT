@@ -20,7 +20,7 @@ function checkUser(id, jwt) {
 
 export default function validateUser() {
     let auth = parseJWT();
-    debugger
+    // debugger
     if (!auth) {
         return false
     } else {

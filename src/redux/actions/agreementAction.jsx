@@ -1,7 +1,7 @@
 export const agreementOn = () => ({
-    type: 'AGR',
-})
+    type: 'AGREEMENT_SHOW',
+});
 
 export const agreementOff = () => ({
-    type: 'AGRE'
-})
+    type: 'AGREEMENT_HIDE'
+});

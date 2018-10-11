@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Switch, Route, NavLink} from 'react-router-dom';
 import {resultSelected, resultUnSelected} from '../../redux/actions/resultPageActions';
 import {showEnter} from '../../redux/actions/enterAction';
 import {showRegistration} from '../../redux/actions/registrationAction';
@@ -20,15 +19,15 @@ const Header = (props) => {
         <div>
             {props.checkLogin ?
                 <div className={styles.header__container}>
-                <NavLink exact to='/' className={styles['header__main-nav-link']} onClick={props.resultUnSelected}>
+                <div className={styles['header__main-nav-link']} onClick={props.resultUnSelected}>
                     <img src={logo} alt="logo" className={styles['header__logo']}/>
-                </NavLink>
+                </div>
                 <ul className={styles['header__menu-nav-links']}>
                     <li className={styles.header__item}>
-                        <NavLink className={styles['header__item-nav']} to='/ratings' onClick={props.resultSelected}>Рейтинги</NavLink>
+                        <div className={styles['header__item-nav']} onClick={props.resultSelected}>Рейтинги</div>
                     </li>
                     <li className={styles.header__item}>
-                        <NavLink className={styles['header__item-nav']} to='/logout' onClick={logOut}>Выйти</NavLink>
+                        <div className={styles['header__item-nav']} onClick={logOut}>Выйти</div>
                     </li>
                 </ul>
                 </div>
