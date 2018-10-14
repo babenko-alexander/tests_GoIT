@@ -1,18 +1,29 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import axios from 'axios';
 import Result from '../../Components/Result/Result';
 import {connect} from 'react-redux';
 import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
 import {dataResault} from '../../redux/actions/actionDataResaults';
+import {getUserAuthHeader, getUserId} from '../../helpers/userValidation';
 
 import TestCard from '../TestCard/TestCard';
 import styles from './Test.css';
 
 const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, currentResult, dataResault, usersRateLength}) => {
 
+
+    const saveUserTestResultToServer = (persRes) => {
+        console.log(persRes, getUserId(), getUserAuthHeader());
+        axios.put(`/users/${getUserId()}`, getUserAuthHeader(), persRes)
+            .catch(err => console.log(err) )
+    };
+
+    let persRes = {};
+
     const onTestIsReady = () => {
         let type = 'TESTON';
-        let persRes = {
+         persRes = {
             testid: selectedTest._id,
             title: selectedTest.testname,
             totalQuest: 10,
@@ -21,6 +32,7 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
     };
         setTestIsReady(type);
         dataResault(persRes);
+        saveUserTestResultToServer(persRes);
     };
 
     const checkAnswers = () => {

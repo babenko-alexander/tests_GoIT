@@ -18,12 +18,26 @@ function checkUser(id, jwt) {
         .catch(err => {console.log(err); return false});
 }
 
-export default function validateUser() {
+export function validateUser() {
     let auth = parseJWT();
     // debugger
     if (!auth) {
         return false
     } else {
         return checkUser(auth.id, localStorage.getItem('token'))
+    }
+}
+
+export function getUserAuthHeader() {
+    const AuthStr = 'Bearer '.concat(localStorage.getItem('token'));
+    return { headers: { Authorization: AuthStr}}
+}
+
+export function getUserId() {
+    let auth = parseJWT();
+    if (!auth) {
+        return false
+    } else {
+        return auth.id
     }
 }

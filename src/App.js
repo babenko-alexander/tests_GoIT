@@ -14,7 +14,7 @@ import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActio
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 import {isLogin} from './redux/actions/isLogin';
-import validateUser from './helpers/userValidation';
+import {validateUser} from './helpers/userValidation';
 
 import styles from './App.css';
 

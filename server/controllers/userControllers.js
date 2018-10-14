@@ -20,7 +20,7 @@ module.exports.getUser = function (req, res) {
 module.exports.addUser = function (req, res) {
     db.add(req.body)
         .then(results => res.status(201).json(results))
-        .catch(err => {console.log('Error: ', err); res.status(400).json({err: 'User exists'})})
+        .catch(err => {console.log(err); res.status(400).json({err: 'User exists'})})
 };
 
 module.exports.editUser = function (req, res) {

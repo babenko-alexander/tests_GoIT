@@ -35,8 +35,9 @@ module.exports.add = function (data) {
 };
 
 module.exports.update = function (data, paramsId) {
+    console.log(userModel);
     let updatedUser = {
-        results: data.results
+        results: [...userModel.results, data.results]
     };
 
     return userModel.findByIdAndUpdate( paramsId, { $set: updatedUser }, {new: true})

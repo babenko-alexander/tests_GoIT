@@ -1,6 +1,4 @@
-export default function currentAnswer(state = [
-    //1,1,1,1,1,1,1,1,1,1
-], action) {
+export default function currentAnswer(state = [], action) {
     switch (action.type) {
         case ('ANSWERSAREREADY'):
             state[action.index] = action.data;

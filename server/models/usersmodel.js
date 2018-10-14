@@ -5,7 +5,14 @@ const bCrypt = require('bcryptjs');
 let User = new Schema(
     {
         email: { type: String, required: [ true, 'Укажите email' ]},
-        results:[{testId: String, result: Number}],
+        results:
+            [{
+                testid: String,
+                title: String,
+                totalQuest: Number,
+                corAnswers: Number,
+                success: String,
+        }],
         hash: { type: String, required: true }
     },{ timestamps: { createdAt: 'created_at' }}
     );

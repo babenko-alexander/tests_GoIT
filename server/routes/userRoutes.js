@@ -13,7 +13,7 @@ router.get('/:id', auth, userControllers.getUser);
 
 router.post('/', userControllers.addUser);
 
-router.put('/:id', auth, userControllers.editUser);
+router.put('/:id', userControllers.editUser);
 
 router.delete('/:id', auth, userControllers.deleteUser);
 
