@@ -35,12 +35,15 @@ module.exports.add = function (data) {
 };
 
 module.exports.update = function (data, paramsId) {
-    console.log(userModel);
-    let updatedUser = {
-        results: [...userModel.results, data.results]
-    };
+    // const currentUser = userModel.findById(paramsId);
+    // console.log(currentUser);
+    // const updatedUser.results = [...currentUser.results, data];
+    console.log(data);
+    // let updatedUser = {
+    //     results: data
+    // };
 
-    return userModel.findByIdAndUpdate( paramsId, { $set: updatedUser }, {new: true})
+    return userModel.findByIdAndUpdate( paramsId, { $set: {results: data.results,} }, {new: true})
 };
 
 module.exports.delete = function (paramsId) { return userModel.findByIdAndRemove(paramsId) };

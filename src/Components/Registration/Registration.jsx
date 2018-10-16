@@ -7,7 +7,7 @@ import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import { passChangeHandler} from '../../redux/actions/passChangeAction';
 import {checkBoxOn, checkBoxOff} from '../../redux/actions/checkBoxAction';
 
-import {showRegistration, hideRegistration} from '../../redux/actions/registrationAction';
+import {hideRegistration} from '../../redux/actions/registrationAction';
 import {agreementOn, agreementOff} from '../../redux/actions/agreementAction';
 import {emailChangeClear} from '../../redux/actions/emailChangeAction';
 import {passChangeClear} from '../../redux/actions/passChangeAction';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './PersonalResaults.css';
 import PersonalCard from './PersonalCard/PersonalCard';
-import {getDataAsync} from '../../redux/actions/actionDataResaults';
+// import {getDataAsync} from '../../redux/actions/actionDataResaults';
 import {connect} from 'react-redux';
 import {totalResaults, percentResaults} from '../../redux/selectors/totalResaults';
 import sad from '../PersonalResaults/PersonalCard/images/sad.svg';
@@ -31,7 +31,7 @@ class PersonalResaults extends Component {
                             <th className={styles.robotoOrange}>Количество правильних ответов</th>
                             <th className={styles.robotoOrange}>Процент успешности</th>
                         </tr>
-                        {dataResault.map((el, index) => <PersonalCard name={el.title} result={el.corAnswers} ratio={el.sucsess} key={index} testid={el.testid}/>)}
+                        {dataResault.map((el, index) => <PersonalCard name={el.title} result={el.corAnswers} ratio={el.success} key={index} testid={el.testid}/>)}
                         <tr>
                             <th>Итог</th>
                             <th className={styles.robotoOrange}>Средний : {total}</th>

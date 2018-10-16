@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
 import MessageBox from './Components/MessageBox/MessageBox';
 import Header from './Components/Header/Header';
 import Registration from './Components/Registration/Registration';
@@ -14,7 +15,8 @@ import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActio
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 import {isLogin} from './redux/actions/isLogin';
-import {validateUser} from './helpers/userValidation';
+import {getUserAuthHeader, getUserId, validateUser} from './helpers/userValidation';
+import {dataResault} from './redux/actions/actionDataResaults';
 
 import styles from './App.css';
 
@@ -24,10 +26,13 @@ class App extends Component {
     componentDidMount() {
         if (validateUser()) {
             this.props.isLogin();
+            axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return this.props.dataResultFunc(data.data.results)} )
         }
 
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
+
+
     };
 
     componentDidUpdate() {
@@ -96,6 +101,9 @@ function MDTP(dispatch) {
         },
         isLogin: function () {
             dispatch(isLogin())
+        },
+        dataResultFunc: function(data){
+            dispatch(dataResault(data))
         },
     }
 }

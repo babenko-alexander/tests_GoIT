@@ -10,7 +10,7 @@ const Main = ({modules, tests, loadSelectedTest, checkLogin}) => {
     const selectTest = function(e) {
         // find individual test in store using module name and test name:
         const st = tests.find(el => el._id === e.target.dataset.testid);
-        const sm = modules.find(el => el._id === e.target.dataset.moduleid);
+        // const sm = modules.find(el => el._id === e.target.dataset.moduleid);
         // add module name in the selectedTest:
         const selectedTestObj = Object.keys(st).length ? {'module': e.target.dataset.module, ...st} : {};
         // console.log('selectedTestObj', selectedTestObj);

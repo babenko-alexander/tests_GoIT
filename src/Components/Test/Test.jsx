@@ -10,12 +10,11 @@ import {getUserAuthHeader, getUserId} from '../../helpers/userValidation';
 import TestCard from '../TestCard/TestCard';
 import styles from './Test.css';
 
-const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, currentResult, dataResault, usersRateLength}) => {
+const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, currentResult, dataResault, usersRateLength, dataResaults}) => {
 
 
-    const saveUserTestResultToServer = (persRes) => {
-        console.log(persRes, getUserId(), getUserAuthHeader());
-        axios.put(`/users/${getUserId()}`, getUserAuthHeader(), persRes)
+    const  saveUserTestResultToServer = (persRes) => {
+        axios.put(`/users/${getUserId()}`, {results: [...dataResaults, persRes]}, getUserAuthHeader()).then(() => dataResault([persRes]))
             .catch(err => console.log(err) )
     };
 
@@ -28,11 +27,12 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
             title: selectedTest.testname,
             totalQuest: 10,
             corAnswers: usersRateLength,
-            sucsess: usersRateLength /10  * 100 +'%',
+            success: usersRateLength /10  * 100 +'%',
     };
+
         setTestIsReady(type);
-        dataResault(persRes);
-        saveUserTestResultToServer(persRes);
+        // dataResault(persRes);
+        saveUserTestResultToServer(persRes)
     };
 
     const checkAnswers = () => {
@@ -109,7 +109,7 @@ function MSTP(state) {
         currentAnswer: state.currentAnswer,
         currentResult: state.currentResult,
         usersRateLength: state.currentResult.filter(el => el === true).length,
-
+        dataResaults: state.dataResaults,
     }
 }
 

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Modal from '../ModalChild/ModalChild';
 import {clearMessageText} from '../../redux/actions/messageTextActions';
 import {hideRegistration} from "../../redux/actions/registrationAction";
-import styles from '../ModalChild/ModalChild.css';
+// import styles from '../ModalChild/ModalChild.css';
 
 
 const MessageBox = (props) => {
