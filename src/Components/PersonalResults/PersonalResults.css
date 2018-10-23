@@ -1,21 +1,21 @@
 .wrapper {
     margin: auto;
     /* box-shadow: 0px 0px 5px 5px #888888; */
-    -webkit-box-shadow: 7px 0px 40px -8px rgba(112,111,111,1);
-    -moz-box-shadow: 7px 0px 40px -8px rgba(112,111,111,1);
-    box-shadow: 4px 0px 30px -8px rgba(112,111,111,1);
-    margin-top: 20px;
-    max-width: 780px;
+    /*-webkit-box-shadow: 7px 0px 40px -8px rgba(112,111,111,1);*/
+    /*-moz-box-shadow: 7px 0px 40px -8px rgba(112,111,111,1);*/
+    /*box-shadow: 4px 0px 30px -8px rgba(112,111,111,1);*/
+    /*margin-top: 20px;*/
+    /*max-width: 780px;*/
 }
 .container {
     background-color: #ffffff;
 }
-.resaultText {
+.resultText {
     font-size: 1.4rem;
     font-family: 'Roboto', sans-serif;
     color: #3f51b5;
     padding: 0.6rem 0 0.6rem 0.6rem;
-/* text-align: left; */
+    text-align: center;
 }
 .robotoOrange,.robotoGray{
     font-size: 0.9rem;
@@ -52,7 +52,7 @@ table {
 }
 
 @media (min-width: 450px){
-.resaultText {
+.resultText {
     font-size: 1.3rem;
     padding: 0.75rem 0 0.75rem 0.75rem;
 }
@@ -63,7 +63,7 @@ table {
 }
 
 @media (min-width: 768px){
-.resaultText {
+.resultText {
     font-size: 1.5rem;
     padding: 1.4rem 0 1.4rem 1.4rem;
 }
@@ -87,7 +87,7 @@ table {
 
 }
 @media (min-width: 1024px){
-.resaultText {
+.resultText {
     padding: 2.18rem 0 2.18rem 2.18rem;
 }
 .robotoOrange {

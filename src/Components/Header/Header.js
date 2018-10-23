@@ -13,6 +13,7 @@ const Header = (props) => {
     const logOut = function() {
         props.logoutHandler();
         props.resultPageOff();
+        props.unSelectedTestFunc();
     };
 
     return (
@@ -71,13 +72,17 @@ function MDTP(dispatch) {
         },
 
         resultSelected : function() {
-            dispatch(unSelectedTest());
+            // dispatch(unSelectedTest());
             dispatch(resultSelected())
         },
 
         resultUnSelected : function() {
             dispatch(resultUnSelected());
-            dispatch(unSelectedTest())
+            // dispatch(unSelectedTest())
+        },
+
+        unSelectedTestFunc : function() {
+            dispatch(unSelectedTest());
         }
     }
 }

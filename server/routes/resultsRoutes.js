@@ -8,7 +8,7 @@ let auth = passport.authenticate('jwt', {
 });
 
 
-router.get('/all', auth, ResultsController.getAllResults);
-router.get('/', auth, ResultsController.getUserResults);
+// router.get('/all', auth, ResultsController.getAllResults);
+// router.get('/', auth, ResultsController.getUserResults);
 
 module.exports = router;

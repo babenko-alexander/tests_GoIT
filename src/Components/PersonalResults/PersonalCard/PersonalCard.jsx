@@ -4,8 +4,8 @@ import sad from './images/sad.svg';
 import weird from './images/weird.svg';
 import smile from './images/smile.svg';
 import {connect} from 'react-redux';
-import {totalResaults} from '../../../redux/selectors/totalResaults';
-import {percentResaults} from '../../../redux/selectors/totalResaults';
+import {totalResults} from '../../../redux/selectors/totalResults';
+import {percentResults} from '../../../redux/selectors/totalResults';
 
 const PersonalCard = ({name, result, ratio, total, percent}) => {
     return (
@@ -28,9 +28,9 @@ const PersonalCard = ({name, result, ratio, total, percent}) => {
 
 function mSTP (store) {
     return {
-        dataResault: store.dataResaults,
-        total: totalResaults(store),
-        percent: percentResaults(store),
+        dataResult: store.dataResults,
+        total: totalResults(store),
+        percent: percentResults(store),
     }
 }
 

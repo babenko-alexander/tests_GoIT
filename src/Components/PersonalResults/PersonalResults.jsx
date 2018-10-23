@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './PersonalResaults.css';
+import styles from './PersonalResults.css';
 import PersonalCard from './PersonalCard/PersonalCard';
-// import {getDataAsync} from '../../redux/actions/actionDataResaults';
+// import {getDataAsync} from '../../redux/actions/actionDataResults';
 import {connect} from 'react-redux';
-import {totalResaults, percentResaults} from '../../redux/selectors/totalResaults';
-import sad from '../PersonalResaults/PersonalCard/images/sad.svg';
-import weird from '../PersonalResaults/PersonalCard/images/weird.svg';
-import smile from '../PersonalResaults/PersonalCard/images/smile.svg';
+import Modal from '../ModalChild/ModalChild'
+import {totalResults, percentResults} from '../../redux/selectors/totalResults';
+import sad from './PersonalCard/images/sad.svg';
+import weird from './PersonalCard/images/weird.svg';
+import smile from './PersonalCard/images/smile.svg';
+import {resultUnSelected} from '../../redux/actions/resultPageActions';
 
+const PersonalResults=({dataResult, total, percent, closeModalFunc})=> {
 
-class PersonalResaults extends Component {
-
-    // componentDidMount(){
-    //     this.props.getDataAsync();
-    // }
-
-    render() {
-        const {dataResault, total, percent} = this.props;
+    const closeMsgBox = (e) => {
+        if (e.target.id === 'overlay' || e.target.id === 'closeSymbol') {
+            closeModalFunc();
+        }
+    };
         return (
-            
+            <Modal closeModal={closeMsgBox}>
             <div className={styles.wrapper}>
                 <table className={styles.container} cellSpacing="0">
                 <tbody>
-                <tr >
-                    <th className={styles.resaultText} >Результаты тестов</th>
+                <tr>
+                    <td colSpan="3" className={styles.resultText}>Результаты тестов</td>
                 </tr>
                         <tr >
                            <th className={styles.robotoOrange}>Название</th>
                             <th className={styles.robotoOrange}>Количество правильних ответов</th>
                             <th className={styles.robotoOrange}>Процент успешности</th>
                         </tr>
-                        {dataResault.map((el, index) => <PersonalCard name={el.title} result={el.corAnswers} ratio={el.success} key={index} testid={el.testid}/>)}
+                        {dataResult.map((el, index) => <PersonalCard name={el.title} result={el.corAnswers} ratio={el.success} key={index} testid={el.testid}/>)}
                         <tr>
                             <th>Итог</th>
                             <th className={styles.robotoOrange}>Средний : {total}</th>
@@ -50,30 +50,29 @@ class PersonalResaults extends Component {
                 </table>
             <style>@import url('https://fonts.googleapis.com/css?family=Roboto:300');</style>
             </div>
+            </Modal>
         );
-    }
-}
+};
 
-PersonalResaults.propTypes = {
+PersonalResults.propTypes = {
     total: PropTypes.number.isRequired,
     percent: PropTypes.number.isRequired,
 };
 
 function mSTP (store) {
     return {
-        dataResault: store.dataResaults,
-        total: totalResaults(store),
-        percent: percentResaults(store),
+        dataResult: store.dataResults,
+        total: totalResults(store),
+        percent: percentResults(store),
     }
 }
 
-// function mDTP (dispatch) {
-//     return {
-//         getDataAsync : function (){
-//             dispatch(getDataAsync())
-//         }
-//     }
-// }
+function MDTP (dispatch) {
+    return {
+        closeModalFunc: function () {
+            dispatch(resultUnSelected())
+        },
+    }
+}
 
-
-export default connect(mSTP)(PersonalResaults);
+export default connect(mSTP, MDTP)(PersonalResults);

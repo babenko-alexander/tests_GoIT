@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
-import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
+import {unsetTestIsReady} from '../../redux/actions/testIsReadyActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
 import {setSelectedTest} from '../../redux/actions/selectedTestAction';
 import styles from './Result.css';
@@ -9,8 +9,7 @@ import styles from './Result.css';
 function Result(props) {
 
     const offTestIsReady = () => {
-        let type = 'TESTOFF';
-        props.setTestIsReady(type);
+        props.unsetTestIsReadyFunc();
         props.currentAnswer.map((el, i) => props.addCurrentAnswers(undefined, i));
         props.setSelectedTest();
     };
@@ -40,8 +39,8 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        setTestIsReady: function (type) {
-            dispatch(setTestIsReady(type))
+        unsetTestIsReadyFunc: function () {
+            dispatch(unsetTestIsReady())
         },
         addCurrentAnswers: function (data, index) {
             dispatch(addCurrentAnswers(data, index))

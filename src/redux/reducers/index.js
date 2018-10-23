@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import dataResaults from './reducerDataResaults';
+import dataResults from './reducerDataResults';
 
 import registration from './registrationReducers';
 import enter from './enterReducers';
@@ -27,7 +27,7 @@ const rootReducer = combineReducers ({
     modules,
     tests,
     selectedTest,
-    dataResaults,
+    dataResults,
     registration,
     enter,
     emailChange,

@@ -1,8 +1,8 @@
 export default function testIsReady (state = false, action) {
     switch (action.type) {
-        case ('TESTON'):
+        case ('ON'):
             return true;
-        case ('TESTOFF'):
+        case ('OFF'):
             return false;
         default:
             return state;

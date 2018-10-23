@@ -7,7 +7,7 @@ import Registration from './Components/Registration/Registration';
 import Main from './Components/Main/Main';
 import Test from './Components/Test/Test';
 import Enter from './Components/Enter/Enter';
-import PersonalResaults from './Components/PersonalResaults/PersonalResaults';
+import PersonalResults from './Components/PersonalResults/PersonalResults';
 
 import {fetchModulesDataAsync} from './redux/actions/modulesAction';
 import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
@@ -16,7 +16,7 @@ import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 import {isLogin} from './redux/actions/isLogin';
 import {getUserAuthHeader, getUserId, validateUser} from './helpers/userValidation';
-import {dataResault} from './redux/actions/actionDataResaults';
+import {dataResult} from './redux/actions/actionDataResults';
 
 import styles from './App.css';
 
@@ -51,7 +51,7 @@ class App extends Component {
             <div className={styles.App}>
                 {/* TODO: use routes instead */}
                 <Header/>
-                {testIsSelected ? <Test/> : this.props.resultIsActive ? <PersonalResaults/> : <Main/>}
+                {testIsSelected ? <Test/> : <Main/>}
                 {/*<button id='enter' onClick={this.props.showEnter}>Вход</button>*/}
                 {/*<button id='reg' onClick={this.props.showRegistration}>Регистрация</button>*/}
                 {/* <Registration/> */}
@@ -60,7 +60,7 @@ class App extends Component {
                 {this.props.enter && <Enter/>}
                 {this.props.registration && <Registration/>}
                 {this.props.messageText && <MessageBox/>}
-                    {/*{this.props.message && <Message msgText={msgText}><p></p></Message>}*/}
+                {this.props.resultIsActive &&  <PersonalResults/>}
             </div>
         );
     }
@@ -103,7 +103,7 @@ function MDTP(dispatch) {
             dispatch(isLogin())
         },
         dataResultFunc: function(data){
-            dispatch(dataResault(data))
+            dispatch(dataResult(data))
         },
     }
 }

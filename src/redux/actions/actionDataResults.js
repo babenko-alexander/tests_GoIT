@@ -1,5 +1,5 @@
 
-export const dataResault = (tests) => ({
+export const dataResult = (tests) => ({
     type: 'data',
     tests,
 });

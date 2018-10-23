@@ -1,27 +1,35 @@
 import React from 'react';
+import {connect} from 'react-redux';
 // import PropTypes from 'prop-types';
 import axios from 'axios';
 import Result from '../../Components/Result/Result';
-import {connect} from 'react-redux';
-import {setTestIsReady} from '../../redux/actions/testIsReadyActions';
-import {dataResault} from '../../redux/actions/actionDataResaults';
-import {getUserAuthHeader, getUserId} from '../../helpers/userValidation';
-
 import TestCard from '../TestCard/TestCard';
+import {setTestIsReady, unsetTestIsReady} from '../../redux/actions/testIsReadyActions';
+import {dataResult} from '../../redux/actions/actionDataResults';
+import {getUserAuthHeader, getUserId} from '../../helpers/userValidation';
+import {addCurrentAnswers} from "../../redux/actions/currentAnswerActions";
+import {setSelectedTest, unSelectedTest} from "../../redux/actions/selectedTestAction";
+
 import styles from './Test.css';
 
-const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, currentResult, dataResault, usersRateLength, dataResaults}) => {
+
+const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, unsetTestIsReadyFunc, currentAnswer, currentResult, dataResult, usersRateLength, dataResults}) => {
 
 
     const  saveUserTestResultToServer = (persRes) => {
-        axios.put(`/users/${getUserId()}`, {results: [...dataResaults, persRes]}, getUserAuthHeader()).then(() => dataResault([persRes]))
+        axios.put(`/users/${getUserId()}`, {results: [...dataResults, persRes]}, getUserAuthHeader()).then(() => dataResult([persRes]))
             .catch(err => console.log(err) )
+    };
+
+    const offTestIsReady = () => {
+        unsetTestIsReadyFunc();
+        currentAnswer.map((el, i) => addCurrentAnswers(undefined, i));
+        unSelectedTest();
     };
 
     let persRes = {};
 
     const onTestIsReady = () => {
-        let type = 'TESTON';
          persRes = {
             testid: selectedTest._id,
             title: selectedTest.testname,
@@ -30,8 +38,8 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
             success: usersRateLength /10  * 100 +'%',
     };
 
-        setTestIsReady(type);
-        // dataResault(persRes);
+        setTestIsReadyFunc();
+        // dataResult(persRes);
         saveUserTestResultToServer(persRes)
     };
 
@@ -95,6 +103,7 @@ const Test = ({selectedTest, testIsready, setTestIsReady, currentAnswer, current
                         />
                         )}
                     </div>
+                    <button className={styles.test__btn} onClick={offTestIsReady}>ОТМЕНА</button>
                     <button className={styles.test__btn} onClick={checkAnswers}>ГОТОВО</button>
                 </div>
             </div>
@@ -109,17 +118,29 @@ function MSTP(state) {
         currentAnswer: state.currentAnswer,
         currentResult: state.currentResult,
         usersRateLength: state.currentResult.filter(el => el === true).length,
-        dataResaults: state.dataResaults,
+        dataResults: state.dataResults,
     }
 }
 
 function MDTP(dispatch) {
     return {
-        setTestIsReady: function (type) {
-            dispatch(setTestIsReady(type))
+        setTestIsReadyFunc: function () {
+            dispatch(setTestIsReady())
         },
-        dataResault: function(data){
-            dispatch(dataResault(data))
+        unsetTestIsReadyFunc: function () {
+            dispatch(unsetTestIsReady())
+        },
+        dataResult: function(data){
+            dispatch(dataResult(data))
+        },
+        addCurrentAnswers: function (data, index) {
+            dispatch(addCurrentAnswers(data, index))
+        },
+        setSelectedTest: function() {
+            dispatch(setSelectedTest(null))
+        },
+        unSelectedTest: function() {
+            dispatch(unSelectedTest())
         },
     }
 }
