@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 import rootReducer from '../reducers/index';
@@ -8,6 +8,6 @@ const DevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_
 
 
 export const history = createBrowserHistory();
-const store = createStore(connectRouter(history)(rootReducer), DevTools, applyMiddleware(thunk));
+const store = createStore(connectRouter(history)(rootReducer), compose(applyMiddleware(thunk), DevTools )  );
 
 export default store;
