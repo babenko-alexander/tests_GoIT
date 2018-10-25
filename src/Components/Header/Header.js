@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {resultSelected, resultUnSelected} from '../../redux/actions/resultPageActions';
+import {resultIsActive, resultIsInactive} from '../../redux/actions/resultPageActions';
 import {showEnter} from '../../redux/actions/enterAction';
 import {showRegistration} from '../../redux/actions/registrationAction';
 import {isLogout} from '../../redux/actions/isLogin';
@@ -22,12 +22,12 @@ const Header = (props) => {
         <div>
             {props.checkLogin ?
                 <div className={styles.header__container}>
-                <div className={styles['header__main-nav-link']} onClick={props.resultUnSelected}>
+                <div className={styles['header__main-nav-link']} onClick={props.resultIsInactiveFunc}>
                     <img src={logo} alt="logo" className={styles['header__logo']}/>
                 </div>
                 <ul className={styles['header__menu-nav-links']}>
                     <li className={styles.header__item}>
-                        <div className={styles['header__item-nav']} onClick={props.resultSelected}>Рейтинги</div>
+                        <div className={styles['header__item-nav']} onClick={props.resultIsActiveFunc}>Рейтинги</div>
                     </li>
                     <li className={styles.header__item}>
                         <div className={styles['header__item-nav']} onClick={logOut}>Выйти</div>
@@ -57,12 +57,10 @@ function MSTP(state) {
 function MDTP(dispatch) {
     return {
         resultPageOff: function () {
-            dispatch(resultUnSelected());
+            dispatch(resultIsInactive());
         },
         logoutHandler: function() {
-            // dispatch(resultUnSelected());
             dispatch(isLogout());
-            // dispatch(unSelectedTest())
         },
 
         showEnter: function() {
@@ -73,14 +71,12 @@ function MDTP(dispatch) {
             dispatch(showRegistration())
         },
 
-        resultSelected : function() {
-            // dispatch(unSelectedTest());
-            dispatch(resultSelected())
+        resultIsActiveFunc : function() {
+            dispatch(resultIsActive())
         },
 
-        resultUnSelected : function() {
-            dispatch(resultUnSelected());
-            // dispatch(unSelectedTest())
+        resultIsInactiveFunc : function() {
+            dispatch(resultIsInactive());
         },
 
         unSelectedTestFunc : function() {

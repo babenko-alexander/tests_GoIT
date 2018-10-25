@@ -9,7 +9,7 @@ import {totalResults, percentResults} from '../../redux/selectors/totalResults';
 import sad from './PersonalCard/images/sad.svg';
 import weird from './PersonalCard/images/weird.svg';
 import smile from './PersonalCard/images/smile.svg';
-import {resultUnSelected} from '../../redux/actions/resultPageActions';
+import {resultIsInactive} from '../../redux/actions/resultPageActions';
 
 const PersonalResults=({dataResult, total, percent, closeModalFunc})=> {
 
@@ -70,7 +70,7 @@ function mSTP (store) {
 function MDTP (dispatch) {
     return {
         closeModalFunc: function () {
-            dispatch(resultUnSelected())
+            dispatch(resultIsInactive())
         },
     }
 }

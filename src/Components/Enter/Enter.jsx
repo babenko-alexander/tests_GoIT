@@ -8,7 +8,7 @@ import lock from './locked.svg';
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import {passChangeHandler} from '../../redux/actions/passChangeAction';
 import {isLogin} from '../../redux/actions/isLogin';
-import {setLoginError, clearLoginError} from '../../redux/actions/LoginErrorAction';
+import {setErrorMessage, clearErrorMessage} from '../../redux/actions/errorMessageAction';
 import {closeModal} from '../../redux/actions/enterAction';
 import {emailChangeClear} from '../../redux/actions/emailChangeAction';
 import {passChangeClear} from '../../redux/actions/passChangeAction';
@@ -23,7 +23,7 @@ const Enter = (props) => {
         props.closeModalFunc();
         props.emailChangeClearFunc();
         props.passChangeClearFunc();
-        props.clearLoginError();
+        props.clearErrorMessageFunc();
     };
 
     const closeEntModal = (e) => {
@@ -55,7 +55,7 @@ const Enter = (props) => {
             .then(() => props.loginHandler())
             .then(() => modalCloseStateClear())
             .then(()=> axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return props.dataResultFunc(data.data.results)} ))
-            .catch(err => {console.log(err); props.setLoginError()})
+            .catch(err => {console.log(err); props.setErrorMessageFunc()})
 
     };
 
@@ -64,14 +64,6 @@ const Enter = (props) => {
 
         // debugger
         post();
-
-        // if (validateUser()) {
-        //     // props.loginHandler();
-        //     props.closeEntModal();
-        // } else {
-        //
-        //     // props.setLoginError();
-        // }
     };
 
     // const doLogin = () => validateUser() ? props.loginHandler() : null;
@@ -94,7 +86,7 @@ const Enter = (props) => {
 
                 <button type='submit' className={styles.btn}>Войти</button>
             </form>
-            <span className={props.loginError ? styles.showError : styles.hiddenError}>
+            <span className={props.errorText ? styles.showError : styles.hiddenError}>
                     Неправильный логин или пароль
                 </span>
         </Modal>
@@ -106,7 +98,7 @@ function MSTP (state) {
         emailChange: state.emailChange,
         passChange: state.passChange,
         checkBoxIsActive: state.checkBoxIsActive,
-        loginError: state.loginError,
+        errorText: state.errorText,
     }
 }
 
@@ -121,11 +113,11 @@ function MDTP (dispatch) {
         loginHandler: function() {
             dispatch(isLogin())
         },
-        setLoginError: function () {
-            dispatch(setLoginError())
+        setErrorMessageFunc: function () {
+            dispatch(setErrorMessage())
         },
-        clearLoginError: function () {
-            dispatch(clearLoginError())
+        clearErrorMessageFunc: function () {
+            dispatch(clearErrorMessage())
         },
         closeModalFunc: function () {
             dispatch(closeModal())

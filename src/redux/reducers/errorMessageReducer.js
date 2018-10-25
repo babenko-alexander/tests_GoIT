@@ -1,10 +1,10 @@
-export default function loginError(state = false, action) {
+export default function errorMessage(state = false, action) {
     switch (action.type){
-        case 'LOGIN_ERROR_SET':
+        case 'ERROR_SET':
             // console.log(state);
             return true;
 
-        case 'LOGIN_ERROR_CLEAR':
+        case 'ERROR_CLEAR':
             return false;
 
         default:

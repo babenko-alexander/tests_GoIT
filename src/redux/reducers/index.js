@@ -16,7 +16,7 @@ import tests from './testsReducer';
 import selectedTest from './selectedTestReducer';
 import resultIsActive from './resultPageReducer';
 import modules from './modulesReducer';
-import loginError from './LoginErrorReducer';
+import errorMessage from './errorMessageReducer';
 import messageText from './messageTextReducers';
 
 const rootReducer = combineReducers ({
@@ -36,7 +36,7 @@ const rootReducer = combineReducers ({
     isLogin,
     showAgreement,
     resultIsActive,
-    loginError,
+    errorMessage,
     messageText,
 });
 

@@ -11,14 +11,16 @@ import {addCurrentAnswers} from "../../redux/actions/currentAnswerActions";
 import {setSelectedTest, unSelectedTest} from "../../redux/actions/selectedTestAction";
 
 import styles from './Test.css';
+import MessageBox from "../MessageBox/MessageBox";
 
 
-const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, unsetTestIsReadyFunc, currentAnswer, currentResult, dataResult, usersRateLength, dataResults}) => {
+const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, unsetTestIsReadyFunc, currentAnswer, currentResult, dataResult, usersRateLength, dataResults, errorMessage}) => {
 
 
     const  saveUserTestResultToServer = (persRes) => {
         axios.put(`/users/${getUserId()}`, {results: [...dataResults.filter(el => el.testid !== persRes.testid), persRes]}, getUserAuthHeader())
-            // .then(() => dataResult([persRes]))
+            .then(user => dataResult(user.data.results))
+            // .then(user => console.log(user))
             .catch(err => console.log(err) )
     };
 
@@ -107,6 +109,7 @@ const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, un
                     <button className={styles.test__btn} onClick={offTestIsReady}>ОТМЕНА</button>
                     <button className={styles.test__btn} onClick={checkAnswers}>ГОТОВО</button>
                 </div>
+                {errorMessage && <MessageBox/>}
             </div>
         );
     }
@@ -120,6 +123,8 @@ function MSTP(state) {
         currentResult: state.currentResult,
         usersRateLength: state.currentResult.filter(el => el === true).length,
         dataResults: state.dataResults,
+        messageText: state.messageText,
+        errorMessage: state.errorMessage,
     }
 }
 
