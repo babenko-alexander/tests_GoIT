@@ -1,14 +1,10 @@
 
 export const dataResult = (tests) => ({
-    type: 'data',
+    type: 'DATA_SET',
     tests,
 });
 
-// Collapse 
-
-// Message Input
-
-// Message #random
-
-// Files
+export const clearDataResult = () => ({
+    type: 'DATA_CLEAR'
+});
 

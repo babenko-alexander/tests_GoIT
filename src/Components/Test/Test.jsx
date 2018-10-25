@@ -17,7 +17,8 @@ const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, un
 
 
     const  saveUserTestResultToServer = (persRes) => {
-        axios.put(`/users/${getUserId()}`, {results: [...dataResults, persRes]}, getUserAuthHeader()).then(() => dataResult([persRes]))
+        axios.put(`/users/${getUserId()}`, {results: [...dataResults.filter(el => el.testid !== persRes.testid), persRes]}, getUserAuthHeader())
+            // .then(() => dataResult([persRes]))
             .catch(err => console.log(err) )
     };
 

@@ -25,7 +25,7 @@ module.exports.addUser = function (req, res) {
 
 module.exports.editUser = function (req, res) {
     db.update(req.body, req.params.id)
-        .then(results => results ? res.json(results) : res.status(400).json({err: 'User not found'}))
+        .then(user => user ? res.json(user) : res.status(400).json({err: 'User not found'}))
         .catch(err => res.status(400).json({err: err.message}))
 };
 

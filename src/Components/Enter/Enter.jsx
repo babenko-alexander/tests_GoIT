@@ -12,6 +12,8 @@ import {setLoginError, clearLoginError} from '../../redux/actions/LoginErrorActi
 import {closeModal} from '../../redux/actions/enterAction';
 import {emailChangeClear} from '../../redux/actions/emailChangeAction';
 import {passChangeClear} from '../../redux/actions/passChangeAction';
+import {getUserAuthHeader, getUserId} from "../../helpers/userValidation";
+import {dataResult} from '../../redux/actions/actionDataResults';
 
 
 
@@ -52,8 +54,9 @@ const Enter = (props) => {
             .then(result => localStorage.setItem('token', result.token))
             .then(() => props.loginHandler())
             .then(() => modalCloseStateClear())
-
+            .then(()=> axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return props.dataResultFunc(data.data.results)} ))
             .catch(err => {console.log(err); props.setLoginError()})
+
     };
 
     const submit = (e) => {
@@ -132,6 +135,9 @@ function MDTP (dispatch) {
         },
         passChangeClearFunc: function () {
             dispatch(passChangeClear())
+        },
+        dataResultFunc: function(data){
+            dispatch(dataResult(data))
         },
     }
 }

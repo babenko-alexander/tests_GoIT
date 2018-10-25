@@ -7,6 +7,7 @@ import {isLogout} from '../../redux/actions/isLogin';
 import logo from './logo.svg';
 import styles from './Header.css';
 import {unSelectedTest} from '../../redux/actions/selectedTestAction';
+import {clearDataResult} from '../../redux/actions/actionDataResults';
 
 const Header = (props) => {
 
@@ -14,6 +15,7 @@ const Header = (props) => {
         props.logoutHandler();
         props.resultPageOff();
         props.unSelectedTestFunc();
+        props.clearDataResultFunc();
     };
 
     return (
@@ -83,7 +85,11 @@ function MDTP(dispatch) {
 
         unSelectedTestFunc : function() {
             dispatch(unSelectedTest());
-        }
+        },
+
+        clearDataResultFunc : function() {
+            dispatch(clearDataResult());
+        },
     }
 }
 
