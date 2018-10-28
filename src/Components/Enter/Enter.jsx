@@ -2,19 +2,19 @@ import React from 'react';
 import {connect} from 'react-redux';
 import axios from "axios/index";
 import Modal from '../ModalChild/ModalChild';
+import MessageBox from '../MessageBox/MessageBox';
 import styles from './Enter.css';
 import email from './mail.svg';
 import lock from './locked.svg';
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
 import {passChangeHandler} from '../../redux/actions/passChangeAction';
 import {isLogin} from '../../redux/actions/isLogin';
-import {setErrorMessage, clearErrorMessage} from '../../redux/actions/errorMessageAction';
 import {closeModal} from '../../redux/actions/enterAction';
 import {emailChangeClear} from '../../redux/actions/emailChangeAction';
 import {passChangeClear} from '../../redux/actions/passChangeAction';
 import {getUserAuthHeader, getUserId} from "../../helpers/userValidation";
 import {dataResult} from '../../redux/actions/actionDataResults';
-
+import {clearMessageText, setMessageText} from '../../redux/actions/messageTextActions';
 
 
 const Enter = (props) => {
@@ -23,7 +23,7 @@ const Enter = (props) => {
         props.closeModalFunc();
         props.emailChangeClearFunc();
         props.passChangeClearFunc();
-        props.clearErrorMessageFunc();
+        props.clearMessageTextFunc();
     };
 
     const closeEntModal = (e) => {
@@ -55,7 +55,7 @@ const Enter = (props) => {
             .then(() => props.loginHandler())
             .then(() => modalCloseStateClear())
             .then(()=> axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return props.dataResultFunc(data.data.results)} ))
-            .catch(err => {console.log(err); props.setErrorMessageFunc()})
+            .catch(err => {console.log(err); props.setMessageTextFunc('Неправильный логин или пароль')})
 
     };
 
@@ -86,9 +86,9 @@ const Enter = (props) => {
 
                 <button type='submit' className={styles.btn}>Войти</button>
             </form>
-            <span className={props.errorText ? styles.showError : styles.hiddenError}>
-                    Неправильный логин или пароль
-                </span>
+            {props.messageText && <MessageBox>
+                <p>Неправильный логин или пароль</p>
+            </MessageBox>}
         </Modal>
     );
 };
@@ -98,7 +98,7 @@ function MSTP (state) {
         emailChange: state.emailChange,
         passChange: state.passChange,
         checkBoxIsActive: state.checkBoxIsActive,
-        errorText: state.errorText,
+        messageText: state.messageText
     }
 }
 
@@ -113,11 +113,11 @@ function MDTP (dispatch) {
         loginHandler: function() {
             dispatch(isLogin())
         },
-        setErrorMessageFunc: function () {
-            dispatch(setErrorMessage())
+        setMessageTextFunc: function (message) {
+            dispatch(setMessageText(message))
         },
-        clearErrorMessageFunc: function () {
-            dispatch(clearErrorMessage())
+        clearMessageTextFunc: function () {
+            dispatch(clearMessageText())
         },
         closeModalFunc: function () {
             dispatch(closeModal())

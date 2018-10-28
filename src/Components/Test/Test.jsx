@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import PropTypes from 'prop-types';
 import axios from 'axios';
 import Result from '../../Components/Result/Result';
 import TestCard from '../TestCard/TestCard';
@@ -12,10 +11,10 @@ import {setSelectedTest, unSelectedTest} from "../../redux/actions/selectedTestA
 
 import styles from './Test.css';
 import MessageBox from "../MessageBox/MessageBox";
+import {clearMessageText, setMessageText} from "../../redux/actions/messageTextActions";
 
 
-const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, unsetTestIsReadyFunc, currentAnswer, currentResult, dataResult, usersRateLength, dataResults, errorMessage}) => {
-
+const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, unsetTestIsReadyFunc, currentAnswer, currentResult, dataResult, usersRateLength, dataResults, messageText, setMessageTextFunc, clearMessageTextFunc}) => {
 
     const  saveUserTestResultToServer = (persRes) => {
         axios.put(`/users/${getUserId()}`, {results: [...dataResults.filter(el => el.testid !== persRes.testid), persRes]}, getUserAuthHeader())
@@ -48,7 +47,7 @@ const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, un
 
     const checkAnswers = () => {
         currentAnswer.includes(undefined) || currentAnswer.length !== 10
-            ? alert('Вы не ответили на все вопросы!')
+            ? setMessageTextFunc('Вы не ответили на все вопросы!')
             : onTestIsReady();
     };
 
@@ -109,7 +108,7 @@ const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, un
                     <button className={styles.test__btn} onClick={offTestIsReady}>ОТМЕНА</button>
                     <button className={styles.test__btn} onClick={checkAnswers}>ГОТОВО</button>
                 </div>
-                {errorMessage && <MessageBox/>}
+                {messageText && <MessageBox/>}
             </div>
         );
     }
@@ -124,7 +123,6 @@ function MSTP(state) {
         usersRateLength: state.currentResult.filter(el => el === true).length,
         dataResults: state.dataResults,
         messageText: state.messageText,
-        errorMessage: state.errorMessage,
     }
 }
 
@@ -148,6 +146,13 @@ function MDTP(dispatch) {
         unSelectedTest: function() {
             dispatch(unSelectedTest())
         },
+        setMessageTextFunc: function (message) {
+            dispatch(setMessageText(message))
+        },
+        clearMessageTextFunc: function () {
+            dispatch(clearMessageText())
+        },
+
     }
 }
 

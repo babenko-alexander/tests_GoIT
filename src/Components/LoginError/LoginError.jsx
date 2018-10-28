@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LoginError.css';
-const ErrorMessage = ({showError}) => {
+const LoginError = ({showError}) => {
     console.log(showError);
     return (
         <div>
@@ -13,4 +13,4 @@ const ErrorMessage = ({showError}) => {
 
 
 
-export default ErrorMessage;
+export default LoginError;
