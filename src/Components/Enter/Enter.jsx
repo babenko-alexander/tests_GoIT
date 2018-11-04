@@ -86,9 +86,6 @@ const Enter = (props) => {
 
                 <button type='submit' className={styles.btn}>Войти</button>
             </form>
-            {props.messageText && <MessageBox>
-                <p>Неправильный логин или пароль</p>
-            </MessageBox>}
         </Modal>
     );
 };

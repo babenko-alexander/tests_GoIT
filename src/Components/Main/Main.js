@@ -22,7 +22,9 @@ const Main = ({modules, tests, loadSelectedTest, checkLogin}) => {
     const moduleCircle = [styles.box__task_0, styles.box__task_1, null];
 
     if (tests.length && modules.length) {
-        const modulesSorted = modules.sort((a, b) => a.modulename > b.modulename);
+        const modulesSorted = modules.sort((a, b) => (a.modulename > b.modulename) ? 1 : -1);
+        // console.log(modulesSorted);
+
         return (
         <div>
             {checkLogin ?

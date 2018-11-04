@@ -27,7 +27,7 @@ const Header = (props) => {
                 </div>
                 <ul className={styles['header__menu-nav-links']}>
                     <li className={styles.header__item}>
-                        <div className={styles['header__item-nav']} onClick={props.resultIsActiveFunc}>Рейтинги</div>
+                        <div className={styles['header__item-nav']} onClick={props.resultIsActiveFunc}>Результаты</div>
                     </li>
                     <li className={styles.header__item}>
                         <div className={styles['header__item-nav']} onClick={logOut}>Выйти</div>

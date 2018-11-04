@@ -42,6 +42,7 @@ Header {
 .header__menu-buttons {
     display: flex;
     min-width:55%;
+    cursor: pointer;
     /* justify-content: flex-end; */
 }
 
@@ -77,11 +78,11 @@ Header {
 
 .test {
     font-size: 2rem;
-    font-weight: 600;
+    /*font-weight: 600;*/
     outline: none;
     border: none;
     background-color: #3f51b5;
-    color: #fff;
+    /*color: #fff;*/
     border-radius: 18px;
     padding: 10px;
     cursor: pointer;
@@ -102,6 +103,13 @@ Header {
     text-transform: capitalize;
     font-size: 1.2rem;
     font-weight: 700;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 10px;
+}
+
+.header__item-nav:hover {
+    background-color: #293a9b;
 }
 
 @media (min-width: 350px) {

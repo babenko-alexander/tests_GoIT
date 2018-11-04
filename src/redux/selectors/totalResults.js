@@ -1,4 +1,4 @@
 export const total = (store) => store.dataResults;
 export const massLenght = (store) => total(store).length;
-export const totalResults = (store) => total(store).reduce((acc, el) => Math.round((acc + el.corAnswers/massLenght(store))), 0);
-export const percentResults = (store) => total(store).reduce((acc, el) => Math.round((acc + parseFloat(el.success)/massLenght(store))), 0);
+export const totalResults = (store) => Math.round(total(store).reduce((acc, el) => (acc + el.corAnswers), 0)/massLenght(store));
+export const percentResults = (store) => Math.round(total(store).reduce((acc, el) => (acc + parseFloat(el.success)), 0)/massLenght(store));
