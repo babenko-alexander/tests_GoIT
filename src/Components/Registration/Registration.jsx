@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Modal from '../ModalChild/ModalChild';
 
 import {emailChangeHandler} from '../../redux/actions/emailChangeAction';
-import { passChangeHandler} from '../../redux/actions/passChangeAction';
+import {passChangeHandler} from '../../redux/actions/passChangeAction';
 import {checkBoxOn, checkBoxOff} from '../../redux/actions/checkBoxAction';
 
 import {hideRegistration} from '../../redux/actions/registrationAction';
@@ -54,12 +54,13 @@ const Registration = (props) => {
 
 
     const valPass = () => {
-        return props.passChange.length >= 6 && props.passChange.length <= 10
+        // return props.passChange.length >= 6 && props.passChange.length <= 10
+        let passReg = /[\w-]{6,10}$/;
+        return passReg.test(props.passChange)
     };
 
     const valMail = () => {
-        let loginReg = /@/g;
-
+        let loginReg =  /[\w-]+@([\w-]+\.)+[a-z]{2,6}$/;
         return loginReg.test(props.emailChange)
     };
 
@@ -76,14 +77,13 @@ const Registration = (props) => {
                     ? props.setMessageTextFunc(`Пользователь ${result.data.email} успешно создан. Теперь вы можете войти в систему.`)
                     : null)
         .catch(err => {console.log(err); props.setMessageTextFunc('Такой пользователь уже существует!')})
-        } else {
-            console.log('err');
         }
     };
 
     const submit = (e) => {
         e.preventDefault();
         sumCheck();
+        props.checkBoxOffFunc();
         modalCloseStateClear();
     };
     
@@ -105,12 +105,12 @@ const Registration = (props) => {
 
                 <div className={styles.emCont}>
                 <img src={email} alt="e" className={styles.emSvg}/>
-                <input type='email' className={styles.input} placeholder='E-mail' value={props.emailChange} onChange={onChangeEm}/>
+                <input type='email' pattern="[\w-]+@([\w-]+\.)+[a-z]{2,6}$" title='Адрес должен содержать "@" и "." и от 2 до 6 символов после точки' className={styles.input} placeholder='E-mail' value={props.emailChange} onChange={onChangeEm}/>
                 </div>
 
                 <div className={styles.lockCont}>
                 <img src={lock} alt="lock" className={styles.lockSvg}/>
-                <input type="password" className={styles.input} placeholder='Password' value={props.passChange} onChange={onChangePass}/>
+                <input type="password" pattern="[\w-]{6,10}$" title='Введите пароль от 6 до 10 символов' className={styles.input} placeholder='Password' value={props.passChange} onChange={onChangePass}/>
                 </div>
 
                 <p className={styles.agreement}>
