@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import dataResults from './reducerDataResults';
 
 import registration from './registrationReducers';
@@ -18,7 +19,9 @@ import resultIsActive from './resultPageReducer';
 import modules from './modulesReducer';
 import messageText from './messageTextReducers';
 
-const rootReducer = combineReducers ({
+
+ export default (history) => combineReducers({
+    router: connectRouter(history),
     currentAnswer,
     currentResult,
     correctResult,
@@ -37,5 +40,3 @@ const rootReducer = combineReducers ({
     resultIsActive,
     messageText,
 });
-
-export default rootReducer;

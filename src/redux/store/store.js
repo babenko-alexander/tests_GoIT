@@ -1,16 +1,23 @@
-// import {createStore, applyMiddleware, compose} from 'redux';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
-import { createBrowserHistory } from 'history';
+import {createBrowserHistory} from 'history';
 import rootReducer from '../reducers/index';
-import { connectRouter } from 'connected-react-router';
+// import { connectRouter } from 'connected-react-router';
+import { routerMiddleware } from 'connected-react-router'
 
-const DevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const history = createBrowserHistory();
-// const store = createStore(connectRouter(history)(rootReducer), compose(applyMiddleware(thunk), DevTools )  );
-// should fix the error with DevTools in Chrome
-const store = createStore(connectRouter(history)(rootReducer), DevTools, applyMiddleware(thunk));
+
+const store = createStore(
+    rootReducer(history),
+    composeEnhancers(
+        applyMiddleware(
+            routerMiddleware(history), // for dispatching history actions
+            thunk
+        ),
+    )
+);
+
 
 export default store;

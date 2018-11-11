@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import axios from "axios/index";
 import Modal from '../ModalChild/ModalChild';
 import MessageBox from '../MessageBox/MessageBox';
@@ -64,6 +65,7 @@ const Enter = (props) => {
 
         // debugger
         post();
+
     };
 
     // const doLogin = () => validateUser() ? props.loginHandler() : null;
@@ -84,7 +86,7 @@ const Enter = (props) => {
                     <input type="password" className={styles.input} onChange={onChangePass} placeholder='Password'/>
                 </div>
 
-                <button type='submit' className={styles.btn}>Войти</button>
+                <button type='submit' className={styles.btn}><NavLink to="/tests">Войти</NavLink></button>
             </form>
         </Modal>
     );

@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import { Route, Switch } from 'react-router';
+// import { ConnectedRouter } from 'connected-react-router';
+
+// import { createBrowserHistory } from 'history';
+
 import {connect} from 'react-redux';
 import axios from 'axios';
 import MessageBox from './Components/MessageBox/MessageBox';
@@ -6,8 +11,13 @@ import Header from './Components/Header/Header';
 import Registration from './Components/Registration/Registration';
 import Main from './Components/Main/Main';
 import Test from './Components/Test/Test';
+import Tests from './Components/Tests/Tests';
 import Enter from './Components/Enter/Enter';
 import PersonalResults from './Components/PersonalResults/PersonalResults';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
+
+// import store, {history} from './redux/store/store';
+
 
 import {fetchModulesDataAsync} from './redux/actions/modulesAction';
 import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
@@ -25,7 +35,7 @@ class App extends Component {
 
     componentDidMount() {
         if (validateUser()) {
-            this.props.isLogin();
+            this.props.isLoginFunc();
             axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return this.props.dataResultFunc(data.data.results)} )
         }
 
@@ -51,11 +61,23 @@ class App extends Component {
             <div className={styles.App}>
                 {/* TODO: use routes instead */}
                 <Header/>
-                {testIsSelected ? <Test/> : <Main/>}
+
+                <Switch>
+                    <Route exact path="/" component={Main} />
+                    <ProtectedRoute path='/tests' authed={this.props.isLogin} component={Tests}/>
+                    <ProtectedRoute path="/test/:id" authed={this.props.isLogin} component={Test} />
+                    {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
+                </Switch>
+
+                {/*{testIsSelected ? <Test/> : <Main/>}*/}
                 {/*<button id='enter' onClick={this.props.showEnter}>Вход</button>*/}
                 {/*<button id='reg' onClick={this.props.showRegistration}>Регистрация</button>*/}
                 {/* <Registration/> */}
                 {/* <Enter/> */}
+
+                {/*<NavLink to="/">*/}
+                    {/*<Main />*/}
+                {/*</NavLink>*/}
 
                 {this.props.enter && <Enter/>}
                 {this.props.registration && <Registration/>}
@@ -64,6 +86,7 @@ class App extends Component {
             </div>
         );
     }
+
 }
 
 
@@ -71,13 +94,12 @@ function MSTP(state) {
     return {
         tests: state.tests,
         selectedTest: state.selectedTest,
-
         enter: state.enter,
         registration: state.registration,
-
         resultIsActive: state.resultIsActive,
-        messageText: state.messageText
-
+        messageText: state.messageText,
+        router: state.router,
+        isLogin: state.isLogin
     }
 }
 
@@ -99,7 +121,7 @@ function MDTP(dispatch) {
         showRegistration: function() {
             dispatch(showRegistration())
         },
-        isLogin: function () {
+        isLoginFunc: function () {
             dispatch(isLogin())
         },
         dataResultFunc: function(data){
