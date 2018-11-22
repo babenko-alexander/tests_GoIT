@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import axios from "axios/index";
 import Modal from '../ModalChild/ModalChild';
-import MessageBox from '../MessageBox/MessageBox';
+// import MessageBox from '../MessageBox/MessageBox';
 import styles from './Enter.css';
 import email from './mail.svg';
 import lock from './locked.svg';
@@ -19,6 +19,7 @@ import {clearMessageText, setMessageText} from '../../redux/actions/messageTextA
 
 
 const Enter = (props) => {
+
 
     const modalCloseStateClear = () => {
         props.closeModalFunc();
@@ -74,7 +75,7 @@ const Enter = (props) => {
         <Modal closeModal={closeEntModal}>
             <h2 className={styles.entSpan}>Вход</h2>
 
-            <form className={styles.form} onSubmit={submit}>
+            <form className={styles.form}>
 
                 <div className={styles.emCont}>
                     <img src={email} alt="e" className={styles.emSvg}/>
@@ -86,7 +87,9 @@ const Enter = (props) => {
                     <input type="password" className={styles.input} onChange={onChangePass} placeholder='Password'/>
                 </div>
 
-                <button type='submit' className={styles.btn}><NavLink to="/tests">Войти</NavLink></button>
+                {/*<button type='submit' className={styles.btn}>*/}
+                    <NavLink to="/tests" onClick={post}>Войти</NavLink>
+                {/*</button>*/}
             </form>
         </Modal>
     );

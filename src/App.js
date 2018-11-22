@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, Redirect } from 'react-router';
 // import { ConnectedRouter } from 'connected-react-router';
 
 // import { createBrowserHistory } from 'history';
@@ -18,7 +18,6 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
 // import store, {history} from './redux/store/store';
 
-
 import {fetchModulesDataAsync} from './redux/actions/modulesAction';
 import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
 import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
@@ -33,6 +32,7 @@ import styles from './App.css';
 
 class App extends Component {
 
+
     componentDidMount() {
         if (validateUser()) {
             this.props.isLoginFunc();
@@ -41,8 +41,6 @@ class App extends Component {
 
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
-
-
     };
 
     componentDidUpdate() {
@@ -52,39 +50,41 @@ class App extends Component {
             let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
             this.props.addCurrentCorrectResult(correctAnswerData)
         }
+        console.log('Update', this.props);
     };
 
     render() {
-        const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
+        //const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
+        console.log('render');
+            return (
+                <div className={styles.App}>
+                    {/* TODO: use routes instead */}
+                    <Header/>
 
-        return (
-            <div className={styles.App}>
-                {/* TODO: use routes instead */}
-                <Header/>
+                    <Switch>
+                        <Route exact path="/" component={Main} />
+                        {/*<Route path="/tests" component={Tests} />*/}
+                        <ProtectedRoute path='/tests' authed={this.props.isLogin} component={Tests}/>
+                        <ProtectedRoute path="/test/:id" authed={this.props.isLogin} component={Test} />
+                        {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
+                    </Switch>
 
-                <Switch>
-                    <Route exact path="/" component={Main} />
-                    <ProtectedRoute path='/tests' authed={this.props.isLogin} component={Tests}/>
-                    <ProtectedRoute path="/test/:id" authed={this.props.isLogin} component={Test} />
-                    {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
-                </Switch>
+                    {/*{testIsSelected ? <Test/> : <Main/>}*/}
+                    {/*<button id='enter' onClick={this.props.showEnter}>Вход</button>*/}
+                    {/*<button id='reg' onClick={this.props.showRegistration}>Регистрация</button>*/}
+                    {/* <Registration/> */}
+                    {/* <Enter/> */}
 
-                {/*{testIsSelected ? <Test/> : <Main/>}*/}
-                {/*<button id='enter' onClick={this.props.showEnter}>Вход</button>*/}
-                {/*<button id='reg' onClick={this.props.showRegistration}>Регистрация</button>*/}
-                {/* <Registration/> */}
-                {/* <Enter/> */}
-
-                {/*<NavLink to="/">*/}
+                    {/*<NavLink to="/">*/}
                     {/*<Main />*/}
-                {/*</NavLink>*/}
+                    {/*</NavLink>*/}
 
-                {this.props.enter && <Enter/>}
-                {this.props.registration && <Registration/>}
-                {this.props.messageText && <MessageBox/>}
-                {this.props.resultIsActive &&  <PersonalResults/>}
-            </div>
-        );
+                    {this.props.enter && <Enter/>}
+                    {this.props.registration && <Registration/>}
+                    {this.props.messageText && <MessageBox/>}
+                    {this.props.resultIsActive &&  <PersonalResults/>}
+                </div>
+            )
     }
 
 }
