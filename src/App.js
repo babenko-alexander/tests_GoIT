@@ -1,15 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
 import {fetchAllTestsDataAsync} from './redux/actions/fetchActions';
 import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActions';
 import Main from './Components/Main/Main';
 import Test from './Components/Test/Test';
-
 import './App.css';
 
 class App extends Component {
-
     componentDidMount() {
         this.props.loadAllTestsDataAsync();
     };

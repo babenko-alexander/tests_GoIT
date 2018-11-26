@@ -7,9 +7,9 @@ import styles from './Main.css';
 
 const Main = ({tests, loadSelectedTest}) => {
 
-    const selectTest = function(e) {
+    const selectTest = function (e) {
         // find individual test in store using module name and test name:
-        const st = tests.find(el => el.module === e.target.dataset.module)['module-tests'].find(el=> el['test-name'] === e.target.dataset.testname);
+        const st = tests.find(el => el.module === e.target.dataset.module)['module-tests'].find(el => el['test-name'] === e.target.dataset.testname);
         // add module name in the selectedTest:
         const selectedTestObj = Object.keys(st).length ? {'module': e.target.dataset.module, ...st} : {};
         // console.log('selectedTestObj', selectedTestObj);
@@ -22,15 +22,15 @@ const Main = ({tests, loadSelectedTest}) => {
 
     if (tests.length) {
         // const modules = tests;
-        const modules = tests.sort((a,b) => a.module > b.module);
+        const modules = tests.sort((a, b) => a.module > b.module);
 
         return (
             <div className={styles.main__wrapper}>
                 <div className={styles.main__container}>
                     <section className={styles.section}>
                         <h1 className={styles.title}>Проверь свои знания Front End</h1>
-                        <p className={styles.sub__title}>Здраствуйте дорогие студенты, надеемся что, тесты GoIT не только
-                            принесут вам пользу и знания, но и множество эмоций, и удовольствия от их прохождения</p>
+                        <p className={styles.sub__title}>Здраствуйте дорогие студенты, надеемся что, тесты GoIT не
+                            толькопринесут вам пользу и знания, но и множество эмоций, и удовольствия от их прохождения</p>
 
                         <div className={styles.section__main}>
                             {modules.map((m, index) =>
@@ -71,7 +71,7 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        loadSelectedTest: function(modulename, testname) {
+        loadSelectedTest: function (modulename, testname) {
             dispatch(setSelectedTest(modulename, testname))
         },
     }
