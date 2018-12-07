@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Switch, Redirect } from 'react-router';
+import { Route, Switch} from 'react-router';
 // import { ConnectedRouter } from 'connected-react-router';
 
 // import { createBrowserHistory } from 'history';
@@ -31,31 +31,46 @@ import styles from './App.css';
 
 
 class App extends Component {
-
+    // state={
+    //     jopa: false
+    // };
 
     componentDidMount() {
         if (validateUser()) {
+            // this.setState({jopa: true});
+            // console.log(this.state.jopa);
             this.props.isLoginFunc();
-            axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return this.props.dataResultFunc(data.data.results)} )
+            axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data => {
+                //console.log(data);
+                return this.props.dataResultFunc(data.data.results)
+            })
         }
 
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
     };
 
+
+    isLoginHandler = () => {
+        console.log(this.props.isLogin);
+        return this.props.isLogin
+    };
+
+    // loginhandler2 = ()=> setTimeout(this.isLoginHandler,3000);
+
+
     componentDidUpdate() {
         const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
-
         if (testIsSelected) {
             let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
             this.props.addCurrentCorrectResult(correctAnswerData)
         }
-        console.log('Update', this.props);
+        // console.log('Update', this.props);
     };
 
     render() {
         //const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
-        console.log('render');
+        // console.log('render');
             return (
                 <div className={styles.App}>
                     {/* TODO: use routes instead */}
@@ -64,8 +79,8 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Main} />
                         {/*<Route path="/tests" component={Tests} />*/}
-                        <ProtectedRoute path='/tests' authed={this.props.isLogin} component={Tests}/>
-                        <ProtectedRoute path="/test/:id" authed={this.props.isLogin} component={Test} />
+                        <ProtectedRoute path='/tests' authed={this.isLoginHandler} component={Tests}/>
+                        <ProtectedRoute path="/test/:id" authed={this.isLoginHandler} component={Test} />
                         {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
                     </Switch>
 

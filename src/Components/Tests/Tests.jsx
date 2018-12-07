@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {setSelectedTest} from '../../redux/actions/selectedTestAction';
 
 import styles from './Tests.css';
+import {NavLink} from "react-router-dom";
 
 const Tests = ({modules, tests, loadSelectedTest}) => {
 
@@ -37,15 +38,17 @@ const Tests = ({modules, tests, loadSelectedTest}) => {
                                                 <p>{m.modulename}</p>
                                                 {tests.filter(t => m._id === t.moduleId ? t : null)
                                                     .map((t, ind) =>
-                                                        <div
+                                                        <NavLink
+                                                            to={`/test/${t._id}`}
                                                             className={`${styles.main__span} ${modulesSorted.indexOf(m) === 0 ? taskOne[ind] : taskTwo[ind]}`}
+                                                            style={{textDecoration: 'none', color: '#000'}}
                                                             key={t._id}
                                                             data-testid={t._id}
                                                             data-moduleid={m._id}
                                                             onClick={selectTest}
                                                         >
                                                             {t.testname}
-                                                        </div>)
+                                                        </NavLink>)
                                                 }
                                             </div>
                                         </div>)

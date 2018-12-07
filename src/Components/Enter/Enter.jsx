@@ -61,13 +61,13 @@ const Enter = (props) => {
 
     };
 
-    const submit = (e) => {
-        e.preventDefault();
-
-        // debugger
-        post();
-
-    };
+    // const submit = (e) => {
+    //     e.preventDefault();
+    //
+    //     // debugger
+    //     post();
+    //
+    // };
 
     // const doLogin = () => validateUser() ? props.loginHandler() : null;
 

@@ -8,6 +8,7 @@ import logo from './logo.svg';
 import styles from './Header.css';
 import {unSelectedTest} from '../../redux/actions/selectedTestAction';
 import {clearDataResult} from '../../redux/actions/actionDataResults';
+import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
 
@@ -30,7 +31,7 @@ const Header = (props) => {
                         <div className={styles['header__item-nav']} onClick={props.resultIsActiveFunc}>Результаты</div>
                     </li>
                     <li className={styles.header__item}>
-                        <div className={styles['header__item-nav']} onClick={logOut}>Выйти</div>
+                        <NavLink to="/" className={styles['header__item-nav']} onClick={logOut}>Выйти</NavLink>
                     </li>
                 </ul>
                 </div>

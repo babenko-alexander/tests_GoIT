@@ -12,7 +12,7 @@ function parseJWT() {
 
 function checkUser(id, jwt) {
     const AuthStr = 'Bearer '.concat(jwt);
-    console.log(AuthStr);
+    // console.log(AuthStr);
     return axios.get(`/users/${id}`, { headers: { Authorization: AuthStr } })
         .then(result => result.status === 200)
         .catch(err => {console.log(err); return false});
