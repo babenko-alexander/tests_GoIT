@@ -39,7 +39,7 @@ class App extends Component {
         if (validateUser()) {
             // this.setState({jopa: true});
             // console.log(this.state.jopa);
-            this.props.isLoginFunc();
+            // this.props.isLoginFunc();
             axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data => {
                 //console.log(data);
                 return this.props.dataResultFunc(data.data.results)
@@ -51,10 +51,10 @@ class App extends Component {
     };
 
 
-    isLoginHandler = () => {
-        console.log(this.props.isLogin);
-        return this.props.isLogin
-    };
+    // isLoginHandler = () => {
+    //     console.log(this.props.isLogin);
+    //     return this.props.isLogin
+    // };
 
     // loginhandler2 = ()=> setTimeout(this.isLoginHandler,3000);
 
@@ -79,8 +79,8 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Main} />
                         {/*<Route path="/tests" component={Tests} />*/}
-                        <ProtectedRoute path='/tests' authed={this.isLoginHandler} component={Tests}/>
-                        <ProtectedRoute path="/test/:id" authed={this.isLoginHandler} component={Test} />
+                        <ProtectedRoute path='/tests' authed={this.props.isLogin} component={Tests}/>
+                        <ProtectedRoute path="/test/:id" authed={this.props.isLogin} component={Test} />
                         {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
                     </Switch>
 

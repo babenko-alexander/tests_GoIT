@@ -6,7 +6,6 @@ import {Route, Redirect} from 'react-router-dom';
 
 const ProtectedRoute = ({component: Component, authed, setMessageTextFunc, ...rest}) => {
     console.log(authed);
-    const logggined = authed();
     // if (!authed) {
     //         setMessageTextFunc('Вы не авторизированы!');
     // } else {

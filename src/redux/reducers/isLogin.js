@@ -1,4 +1,4 @@
-export default function isLogin (state = false, action) {
+export default function isLogin (state = null, action) {
     switch (action.type){
         case 'SIGN_IN':
             return true;
