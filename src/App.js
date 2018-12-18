@@ -24,7 +24,7 @@ import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActio
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 import {isLogin} from './redux/actions/isLogin';
-import {getUserAuthHeader, getUserId, validateUser} from './helpers/userValidation';
+import {getUserAuthHeader, getUserId,  checkUser} from './helpers/userValidation';
 import {dataResult} from './redux/actions/actionDataResults';
 
 import styles from './App.css';
@@ -36,25 +36,25 @@ class App extends Component {
     // };
 
     componentDidMount() {
-        if (validateUser()) {
-            // this.setState({jopa: true});
-            // console.log(this.state.jopa);
-            // this.props.isLoginFunc();
+        checkUser !== false && checkUser()
+            .then(authResult=>authResult===200 && this.props.isLoginFunc() && true)
+            .then(data=> {
+        if(data === true){
             axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data => {
                 //console.log(data);
                 return this.props.dataResultFunc(data.data.results)
             })
-        }
+        }});
 
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
     };
 
 
-    // isLoginHandler = () => {
-    //     console.log(this.props.isLogin);
-    //     return this.props.isLogin
-    // };
+    isLoginHandler = () => {
+        console.log(this.props.isLogin);
+        return this.props.isLogin
+    };
 
     // loginhandler2 = ()=> setTimeout(this.isLoginHandler,3000);
 

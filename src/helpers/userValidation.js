@@ -1,32 +1,32 @@
 import axios from "axios";
 
+const TOKEN = localStorage.getItem('token');
+
 function parseJWT() {
-    let token = localStorage.getItem('token');
-    if (token) {
-        let base64 = token.split('.')[1];
+    if (TOKEN) {
+        let base64 = TOKEN.split('.')[1];
         return JSON.parse(window.atob(base64));
     } else {
         return false;
     }
 }
 
-function checkUser(id, jwt) {
-    const AuthStr = 'Bearer '.concat(jwt);
-    // console.log(AuthStr);
-    return axios.get(`/users/${id}`, { headers: { Authorization: AuthStr } })
-        .then(result => result.status === 200)
-        .catch(err => {console.log(err); return false});
+export function checkUser() {
+    let auth = parseJWT();
+        const AuthStr = 'Bearer '.concat(TOKEN);
+        // console.log(AuthStr);
+        return axios.get(`/users/${auth.id}`, { headers: { Authorization: AuthStr } })
+            .then(result => console.log(result.status))
+            .catch(err => {console.log(err)});
 }
 
-export function validateUser() {
-    let auth = parseJWT();
-    // debugger
-    if (!auth) {
-        return false
-    } else {
-        return checkUser(auth.id, localStorage.getItem('token'))
-    }
-}
+// export function validateUser() {
+//     let auth = parseJWT();
+//     // debugger
+//     return !auth ?
+//         false :
+//         checkUser(auth.id, TOKEN)
+// }
 
 export function getUserAuthHeader() {
     const AuthStr = 'Bearer '.concat(localStorage.getItem('token'));
@@ -35,9 +35,7 @@ export function getUserAuthHeader() {
 
 export function getUserId() {
     let auth = parseJWT();
-    if (!auth) {
-        return false
-    } else {
-        return auth.id
-    }
+    return !auth?
+        false :
+        auth.id
 }
