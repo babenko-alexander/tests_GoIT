@@ -13,7 +13,7 @@ const ProtectedRoute = ({component: Component, authed, setMessageTextFunc, ...re
         return (
             <Route
                 {...rest}
-                render={(props) => authed
+                render={(props) => (true)
                     ? (<Component {...props} />)
                     : (<Redirect to={
                         {

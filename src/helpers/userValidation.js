@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const TOKEN = localStorage.getItem('token');
+const TOKEN = () => localStorage.getItem('token');
 
 function parseJWT() {
-    if (TOKEN) {
-        let base64 = TOKEN.split('.')[1];
+    if (TOKEN()) {
+        let base64 = TOKEN().split('.')[1];
         return JSON.parse(window.atob(base64));
     } else {
         return false;
@@ -13,11 +13,11 @@ function parseJWT() {
 
 export function checkUser() {
     let auth = parseJWT();
-        const AuthStr = 'Bearer '.concat(TOKEN);
+        const AuthStr = 'Bearer '.concat(TOKEN());
         // console.log(AuthStr);
-        return axios.get(`/users/${auth.id}`, { headers: { Authorization: AuthStr } })
-            .then(result => console.log(result.status))
-            .catch(err => {console.log(err)});
+        return TOKEN() !==null && axios.get(`/users/${auth.id}`, { headers: { Authorization: AuthStr } })
+            .then(result => result.status)
+            .catch(err => console.log(err));
 }
 
 // export function validateUser() {
@@ -29,7 +29,7 @@ export function checkUser() {
 // }
 
 export function getUserAuthHeader() {
-    const AuthStr = 'Bearer '.concat(localStorage.getItem('token'));
+    const AuthStr = 'Bearer '.concat(TOKEN());
     return { headers: { Authorization: AuthStr}}
 }
 

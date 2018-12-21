@@ -31,20 +31,12 @@ import styles from './App.css';
 
 
 class App extends Component {
-    // state={
-    //     jopa: false
-    // };
-
     componentDidMount() {
-        checkUser !== false && checkUser()
-            .then(authResult=>authResult===200 && this.props.isLoginFunc() && true)
-            .then(data=> {
-        if(data === true){
-            axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data => {
-                //console.log(data);
-                return this.props.dataResultFunc(data.data.results)
-            })
-        }});
+        localStorage.getItem('token') !== null && checkUser()
+          .then(authResult => authResult === 200 && this.props.isLoginFunc() && true)
+          .then(data => data === true && axios.get(`/users/${getUserId()}`, getUserAuthHeader())
+            .then(data => this.props.dataResultFunc(data.data.results)))
+          .catch(err => console.log(err));
 
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
@@ -79,8 +71,8 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Main} />
                         {/*<Route path="/tests" component={Tests} />*/}
-                        <ProtectedRoute path='/tests' authed={this.props.isLogin} component={Tests}/>
-                        <ProtectedRoute path="/test/:id" authed={this.props.isLogin} component={Test} />
+                        <ProtectedRoute exact path='/tests' authed={this.props.isLogin} component={Tests}/>
+                        <ProtectedRoute path="/tests/:id" authed={this.props.isLogin} component={Test} />
                         {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
                     </Switch>
 

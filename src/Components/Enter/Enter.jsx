@@ -51,8 +51,8 @@ const Enter = (props) => {
         };
         // console.log(result);
         axios.post('/users/login', result)
-            .then(result => result.status === 200 ? result.data : null)
-            // .then(result => {console.log(result); return result})
+            .then(result => result.status === 200 && result.data)
+            .then(result => {console.log(result); return result})
             .then(result => localStorage.setItem('token', result.token))
             .then(() => props.loginHandler())
             .then(() => modalCloseStateClear())

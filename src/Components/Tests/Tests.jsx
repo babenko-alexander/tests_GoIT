@@ -6,7 +6,7 @@ import {setSelectedTest} from '../../redux/actions/selectedTestAction';
 import styles from './Tests.css';
 import {NavLink} from "react-router-dom";
 
-const Tests = ({modules, tests, loadSelectedTest}) => {
+const Tests = ({modules, tests, loadSelectedTest, match}) => {
 
     const selectTest = function(e) {
         // find individual test in store using module name and test name:
@@ -25,7 +25,7 @@ const Tests = ({modules, tests, loadSelectedTest}) => {
     if (tests.length && modules.length) {
         const modulesSorted = modules.sort((a, b) => (a.modulename > b.modulename) ? 1 : -1);
         // console.log(modulesSorted);
-
+        // console.log(match);
         return (
                     <div className={styles.main__wrapper}>
                         <div className={styles.main__container}>
@@ -39,7 +39,7 @@ const Tests = ({modules, tests, loadSelectedTest}) => {
                                                 {tests.filter(t => m._id === t.moduleId ? t : null)
                                                     .map((t, ind) =>
                                                         <NavLink
-                                                            to={`/test/${t._id}`}
+                                                            to={`${match.url}/${t._id}`}
                                                             className={`${styles.main__span} ${modulesSorted.indexOf(m) === 0 ? taskOne[ind] : taskTwo[ind]}`}
                                                             style={{textDecoration: 'none', color: '#000'}}
                                                             key={t._id}
