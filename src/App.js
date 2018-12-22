@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Switch} from 'react-router';
+import { Route, Switch, Redirect } from 'react-router';
 // import { ConnectedRouter } from 'connected-react-router';
 
 // import { createBrowserHistory } from 'history';
@@ -70,9 +70,10 @@ class App extends Component {
 
                     <Switch>
                         <Route exact path="/" component={Main} />
-                        {/*<Route path="/tests" component={Tests} />*/}
                         <ProtectedRoute exact path='/tests' authed={this.props.isLogin} component={Tests}/>
                         <ProtectedRoute path="/tests/:id" authed={this.props.isLogin} component={Test} />
+                        {/*<Route path="/tests" component={Tests} />*/}
+
                         {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
                     </Switch>
 
@@ -129,7 +130,8 @@ function MDTP(dispatch) {
             dispatch(showRegistration())
         },
         isLoginFunc: function () {
-            dispatch(isLogin())
+            dispatch(isLogin());
+            return true
         },
         dataResultFunc: function(data){
             dispatch(dataResult(data))

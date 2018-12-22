@@ -54,9 +54,9 @@ const Enter = (props) => {
             .then(result => result.status === 200 && result.data)
             .then(result => {console.log(result); return result})
             .then(result => localStorage.setItem('token', result.token))
-            .then(() => props.loginHandler())
             .then(() => modalCloseStateClear())
             .then(()=> axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return props.dataResultFunc(data.data.results)} ))
+            .then(() => props.loginHandler())
             .catch(err => {console.log(err); props.setMessageTextFunc('Неправильный логин или пароль')})
 
     };
