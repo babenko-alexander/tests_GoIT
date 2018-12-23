@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { Route, Switch} from 'react-router';
+import { Route, Switch, Redirect} from 'react-router-dom';
 // import {Redirect} from 'react-router-dom'
 import axios from 'axios';
 // import { ConnectedRouter } from 'connected-react-router';
@@ -39,7 +39,7 @@ class App extends Component {
           .then(data => data === true && axios.get(`/users/${getUserId()}`, getUserAuthHeader())
             .then(data => {
                 this.props.dataResultFunc(data.data.results);
-                // return <Redirect to='/tests' />
+                return <Redirect to='/tests' />
             }))
           .catch(err => console.log(err));
 
