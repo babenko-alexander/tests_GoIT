@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import { Route, Switch, Redirect } from 'react-router';
+import {connect} from 'react-redux';
+import { Route, Switch} from 'react-router';
+// import {Redirect} from 'react-router-dom'
+import axios from 'axios';
 // import { ConnectedRouter } from 'connected-react-router';
 
 // import { createBrowserHistory } from 'history';
 
-import {connect} from 'react-redux';
-import axios from 'axios';
+
 import MessageBox from './Components/MessageBox/MessageBox';
 import Header from './Components/Header/Header';
 import Registration from './Components/Registration/Registration';
@@ -35,7 +37,10 @@ class App extends Component {
         localStorage.getItem('token') !== null && checkUser()
           .then(authResult => authResult === 200 && this.props.isLoginFunc() && true)
           .then(data => data === true && axios.get(`/users/${getUserId()}`, getUserAuthHeader())
-            .then(data => this.props.dataResultFunc(data.data.results)))
+            .then(data => {
+                this.props.dataResultFunc(data.data.results);
+                // return <Redirect to='/tests' />
+            }))
           .catch(err => console.log(err));
 
         this.props.loadModulesDataAsync();
