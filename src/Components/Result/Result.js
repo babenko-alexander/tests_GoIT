@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink} from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import {unsetTestIsReady} from '../../redux/actions/testIsReadyActions';
 import {addCurrentAnswers} from '../../redux/actions/currentAnswerActions';
@@ -12,6 +13,7 @@ function Result(props) {
         props.unsetTestIsReadyFunc();
         props.currentAnswer.map((el, i) => props.addCurrentAnswers(undefined, i));
         props.setSelectedTest();
+
     };
 
     return (
@@ -25,7 +27,7 @@ function Result(props) {
                     <li className={styles.result__item}>{`Успех: ${props.usersRateLength}0%`}</li>
                 </ul>
             </div>
-            <button onClick={offTestIsReady} className={styles.result__btn}>Выйти</button>
+            <NavLink to="/tests" onClick={offTestIsReady} className={styles.result__btn}>Выйти</NavLink>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { NavLink} from 'react-router-dom';
 import axios from 'axios';
 import Result from '../../Components/Result/Result';
 import TestCard from '../TestCard/TestCard';
@@ -105,7 +106,7 @@ const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, un
                         />
                         )}
                     </div>
-                    <button className={styles.test__btn} onClick={offTestIsReady}>ОТМЕНА</button>
+                    <NavLink to="/tests" className={styles.test__btn} onClick={offTestIsReady}>ОТМЕНА</NavLink>
                     <button className={styles.test__btn} onClick={checkAnswers}>ГОТОВО</button>
                 </div>
                 {messageText && <MessageBox/>}

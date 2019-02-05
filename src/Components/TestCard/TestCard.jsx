@@ -68,7 +68,7 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     className={styles.testcard__answers}
                                     value={answ}
                                     checked={checkedInd[index] === i}
-                                    readOnly={checkedInd[index] === i}
+                                    readOnly
                                 />
                                 {answ}
                             </label>
@@ -94,8 +94,8 @@ const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, 
                                     data-index={index}
                                     className={styles.testcard__answers}
                                     value={answ}
-                                    checked={(checkedInd[index] === i) ? true : false}
-                                    readOnly={(checkedInd[index] === i) ? true : false}
+                                    checked={(checkedInd[index] === i)}
+                                    readOnly
                                 />
                                 {answ}
                             </label>

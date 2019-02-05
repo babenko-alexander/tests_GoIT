@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Route, Switch, Redirect} from 'react-router-dom';
-// import {Redirect} from 'react-router-dom'
 import axios from 'axios';
-// import { ConnectedRouter } from 'connected-react-router';
-
-// import { createBrowserHistory } from 'history';
-
 
 import MessageBox from './Components/MessageBox/MessageBox';
 import Header from './Components/Header/Header';
@@ -17,8 +12,7 @@ import Tests from './Components/Tests/Tests';
 import Enter from './Components/Enter/Enter';
 import PersonalResults from './Components/PersonalResults/PersonalResults';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
-
-// import store, {history} from './redux/store/store';
+import NotFound from './Components/NotFound/NotFound'
 
 import {fetchModulesDataAsync} from './redux/actions/modulesAction';
 import {fetchAllTestsDataAsync} from './redux/actions/testsAction';
@@ -33,28 +27,17 @@ import styles from './App.css';
 
 
 class App extends Component {
+
     componentDidMount() {
         localStorage.getItem('token') !== null && checkUser()
           .then(authResult => authResult === 200 && this.props.isLoginFunc() && true)
           .then(data => data === true && axios.get(`/users/${getUserId()}`, getUserAuthHeader())
-            .then(data => {
-                this.props.dataResultFunc(data.data.results);
-                return <Redirect to='/tests' />
-            }))
+            .then(data => this.props.dataResultFunc(data.data.results)))
           .catch(err => console.log(err));
 
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
     };
-
-
-    isLoginHandler = () => {
-        console.log(this.props.isLogin);
-        return this.props.isLogin
-    };
-
-    // loginhandler2 = ()=> setTimeout(this.isLoginHandler,3000);
-
 
     componentDidUpdate() {
         const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
@@ -62,36 +45,26 @@ class App extends Component {
             let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
             this.props.addCurrentCorrectResult(correctAnswerData)
         }
-        // console.log('Update', this.props);
     };
 
     render() {
-        //const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
-        // console.log('render');
             return (
                 <div className={styles.App}>
-                    {/* TODO: use routes instead */}
                     <Header/>
 
-                    <Switch>
+                      <Switch>
+                          <Route exact path="/" render={() => (
+                            this.props.isLogin ? (
+                              <Redirect to="/tests"/>
+                            ) : (
+                              <Main/>
+                            )
+                          )}/>
                         <Route exact path="/" component={Main} />
-                        <ProtectedRoute exact path='/tests' authed={this.props.isLogin} component={Tests}/>
-                        <ProtectedRoute path="/tests/:id" authed={this.props.isLogin} component={Test} />
-                        {/*<Route path="/tests" component={Tests} />*/}
-
-                        {/*<Route component={<MessageBox>Страница не найдена</MessageBox>}/>*/}
-                    </Switch>
-
-                    {/*{testIsSelected ? <Test/> : <Main/>}*/}
-                    {/*<button id='enter' onClick={this.props.showEnter}>Вход</button>*/}
-                    {/*<button id='reg' onClick={this.props.showRegistration}>Регистрация</button>*/}
-                    {/* <Registration/> */}
-                    {/* <Enter/> */}
-
-                    {/*<NavLink to="/">*/}
-                    {/*<Main />*/}
-                    {/*</NavLink>*/}
-
+                        <ProtectedRoute exact path='/tests' component={Tests}/>
+                        <ProtectedRoute path="/tests/:id" component={Test} />
+                        <Route path="*" component={NotFound}/>
+                      </Switch>
                     {this.props.enter && <Enter/>}
                     {this.props.registration && <Registration/>}
                     {this.props.messageText && <MessageBox/>}

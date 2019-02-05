@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import axios from "axios/index";
 import Modal from '../ModalChild/ModalChild';
 // import MessageBox from '../MessageBox/MessageBox';
@@ -49,27 +49,16 @@ const Enter = (props) => {
             password: props.passChange,
             withCredentials: true
         };
-        // console.log(result);
+
         axios.post('/users/login', result)
             .then(result => result.status === 200 && result.data)
-            .then(result => {console.log(result); return result})
             .then(result => localStorage.setItem('token', result.token))
             .then(() => modalCloseStateClear())
-            .then(()=> axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=>{console.log(data); return props.dataResultFunc(data.data.results)} ))
+            .then(()=> axios.get(`/users/${getUserId()}`, getUserAuthHeader()).then(data=> props.dataResultFunc(data.data.results)))
             .then(() => props.loginHandler())
             .catch(err => {console.log(err); props.setMessageTextFunc('Неправильный логин или пароль')})
 
     };
-
-    // const submit = (e) => {
-    //     e.preventDefault();
-    //
-    //     // debugger
-    //     post();
-    //
-    // };
-
-    // const doLogin = () => validateUser() ? props.loginHandler() : null;
 
     return (
         <Modal closeModal={closeEntModal}>
@@ -100,7 +89,8 @@ function MSTP (state) {
         emailChange: state.emailChange,
         passChange: state.passChange,
         checkBoxIsActive: state.checkBoxIsActive,
-        messageText: state.messageText
+        messageText: state.messageText,
+        isLogin: state.isLogin
     }
 }
 
