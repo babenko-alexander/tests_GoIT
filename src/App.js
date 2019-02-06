@@ -53,13 +53,7 @@ class App extends Component {
                     <Header/>
 
                       <Switch>
-                          <Route exact path="/" render={() => (
-                            this.props.isLogin ? (
-                              <Redirect to="/tests"/>
-                            ) : (
-                              <Main/>
-                            )
-                          )}/>
+                          <Route exact path="/" render={() => ( this.props.isLogin ? <Redirect to="/tests"/> : <Main/> )}/>
                         <Route exact path="/" component={Main} />
                         <ProtectedRoute exact path='/tests' component={Tests}/>
                         <ProtectedRoute path="/tests/:id" component={Test} />

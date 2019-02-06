@@ -15,7 +15,7 @@ import MessageBox from "../MessageBox/MessageBox";
 import {clearMessageText, setMessageText} from "../../redux/actions/messageTextActions";
 
 
-const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, unsetTestIsReadyFunc, currentAnswer, currentResult, dataResult, usersRateLength, dataResults, messageText, setMessageTextFunc, clearMessageTextFunc}) => {
+const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, unsetTestIsReadyFunc, currentAnswer, currentResult, dataResult, dataResults, messageText, setMessageTextFunc, clearMessageTextFunc}) => {
 
     const  saveUserTestResultToServer = (persRes) => {
         axios.put(`/users/${getUserId()}`, {results: [...dataResults.filter(el => el.testid !== persRes.testid), persRes]}, getUserAuthHeader())
@@ -33,12 +33,13 @@ const Test = ({selectedTest, unSelectedTest, testIsready, setTestIsReadyFunc, un
     let persRes = {};
 
     const onTestIsReady = () => {
+        const testResult = currentResult.filter(el => el === true).length;
          persRes = {
             testid: selectedTest._id,
             title: selectedTest.testname,
             totalQuest: 10,
-            corAnswers: usersRateLength,
-            success: usersRateLength /10  * 100 +'%',
+            corAnswers: testResult,
+            success: testResult /10  * 100 +'%',
     };
 
         setTestIsReadyFunc();
@@ -121,7 +122,6 @@ function MSTP(state) {
         testIsready: state.testIsReady,
         currentAnswer: state.currentAnswer,
         currentResult: state.currentResult,
-        usersRateLength: state.currentResult.filter(el => el === true).length,
         dataResults: state.dataResults,
         messageText: state.messageText,
     }
