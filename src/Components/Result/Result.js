@@ -16,6 +16,7 @@ function Result(props) {
 
     };
 
+    const testResult = props.currentResult.filter(el => el === true).length;
     return (
         <div className={styles.result__container}>
             {/*<span onClick={offTestIsReady} className={styles.result__x}>x</span>*/}
@@ -23,8 +24,8 @@ function Result(props) {
                 <h2 className={styles.result__header}>Результат:</h2>
                 <ul className={styles.result__list}>
                     <li className={styles.result__item}>Вопросов: 10</li>
-                    <li className={styles.result__item}>{`Правильных: ${props.usersRateLength}`}</li>
-                    <li className={styles.result__item}>{`Успех: ${props.usersRateLength}0%`}</li>
+                    <li className={styles.result__item}>{`Правильных: ${testResult}`}</li>
+                    <li className={styles.result__item}>{`Успех: ${testResult}0%`}</li>
                 </ul>
             </div>
             <NavLink to="/tests" onClick={offTestIsReady} className={styles.result__btn}>Выйти</NavLink>
@@ -35,7 +36,7 @@ function Result(props) {
 function MSTP(state) {
     return {
         currentAnswer: state.currentAnswer,
-        usersRateLength: state.currentResult.filter(el => el === true).length,
+        currentResult: state.currentResult
     }
 }
 
