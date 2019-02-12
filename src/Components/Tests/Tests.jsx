@@ -9,11 +9,12 @@ import {NavLink} from "react-router-dom";
 const Tests = ({modules, tests, loadSelectedTest, match}) => {
 
     const selectTest = function(e) {
+        console.log("select test");
         // find individual test in store using module name and test name:
         const st = tests.find(el => el._id === e.target.dataset.testid);
         // const sm = modules.find(el => el._id === e.target.dataset.moduleid);
         // add module name in the selectedTest:
-        const selectedTestObj = Object.keys(st).length ? {'module': e.target.dataset.module, ...st} : {};
+        const selectedTestObj = Object.keys(st).length ? {...st} : {};
         // console.log('selectedTestObj', selectedTestObj);
         loadSelectedTest(selectedTestObj);
     };
@@ -73,8 +74,8 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        loadSelectedTest: function (modulename, testname) {
-            dispatch(setSelectedTest(modulename, testname))
+        loadSelectedTest: function (selectedTestObj) {
+            dispatch(setSelectedTest(selectedTestObj))
         },
     }
 }

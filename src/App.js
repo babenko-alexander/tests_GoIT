@@ -29,6 +29,7 @@ import styles from './App.css';
 class App extends Component {
 
     componentDidMount() {
+        console.log("did mount");
         localStorage.getItem('token') !== null && checkUser()
           .then(authResult => authResult === 200 && this.props.isLoginFunc() && true)
           .then(data => data === true && axios.get(`/users/${getUserId()}`, getUserAuthHeader())
@@ -40,6 +41,7 @@ class App extends Component {
     };
 
     componentDidUpdate() {
+        console.log("componentDidUpdate");
         const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
         if (testIsSelected) {
             let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
@@ -48,12 +50,14 @@ class App extends Component {
     };
 
     render() {
+        console.log("location",this.props.location);
+        console.log("match", this.props.match);
             return (
                 <div className={styles.App}>
                     <Header/>
 
                       <Switch>
-                          <Route exact path="/" render={() => ( this.props.isLogin ? <Redirect to="/tests"/> : <Main/> )}/>
+                        <Route exact path="/" render={() => ( this.props.isLogin ? <Redirect to="/tests"/> : <Main/> )}/>
                         <Route exact path="/" component={Main} />
                         <ProtectedRoute exact path='/tests' component={Tests}/>
                         <ProtectedRoute path="/tests/:id" component={Test} />

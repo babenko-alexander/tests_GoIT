@@ -10,6 +10,7 @@ let checkedInd = [];
 
 const TestCard = ({testname, index, question, answers, clas, addCurrentAnswers, correctResult, addCurrentResult}) => {
 
+console.log("test card");
 
     const addCurrentAnswersFunc = (e) => {
         addCurrentAnswers(e.target.value, e.target.dataset.index);
