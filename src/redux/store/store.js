@@ -7,14 +7,7 @@ import rootReducer from '../reducers/index';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// let preLoadedState = {};
-// let check = localStorage.getItem('token') !== null;
-//
-// if (check) {
-//   console.log("initial state true");
-//   preLoadedState.isLogin = true;
-//   console.log(preLoadedState)
-// }
+
 // export const history = createBrowserHistory();
 const store = createStore(
     rootReducer(),

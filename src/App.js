@@ -20,8 +20,9 @@ import {addCurrentCorrectResult} from './redux/actions/currentCorrectResultActio
 import {showEnter} from './redux/actions/enterAction';
 import {showRegistration} from './redux/actions/registrationAction';
 import {isLogin} from './redux/actions/isLogin';
-import {getUserAuthHeader, getUserId,  checkUser} from './helpers/userValidation';
+import {getUserAuthHeader, getUserId, checkUser} from './helpers/userValidation';
 import {dataResult} from './redux/actions/actionDataResults';
+import {LocationPathnameSave,LocationPathnameClear} from './redux/actions/locationPathnameAction'
 
 import styles from './App.css';
 
@@ -38,31 +39,26 @@ class App extends Component {
 
         this.props.loadModulesDataAsync();
         this.props.loadAllTestsDataAsync();
-    };
-
-    componentDidUpdate() {
-        console.log("componentDidUpdate");
-        const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
-        if (testIsSelected) {
-            let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
-            this.props.addCurrentCorrectResult(correctAnswerData)
-        }
+        this.props.location.pathname !== "/" && this.props.location.pathname !== "/tests" && this.props.locationPathnameSaveFunc(this.props.location.pathname);
     };
 
     render() {
         console.log("location",this.props.location);
         console.log("match", this.props.match);
+        console.log("history",this.props.history);
+        // debugger;
             return (
                 <div className={styles.App}>
                     <Header/>
-
+                    {/*{this.props.savedLocationPathname && this.props.isLogin &&  <Route render={() => ( <Redirect to={this.props.savedLocationPathname}/> )}/>}*/}
                       <Switch>
                         <Route exact path="/" render={() => ( this.props.isLogin ? <Redirect to="/tests"/> : <Main/> )}/>
                         <Route exact path="/" component={Main} />
                         <ProtectedRoute exact path='/tests' component={Tests}/>
-                        <ProtectedRoute path="/tests/:id" component={Test} />
+                        <ProtectedRoute exact path="/tests/:id" component={Test} />
                         <Route path="*" component={NotFound}/>
                       </Switch>
+                    {/*{this.props.savedLocationPathname && <Redirect to={this.props.savedLocationPathname}/>}*/}
                     {this.props.enter && <Enter/>}
                     {this.props.registration && <Registration/>}
                     {this.props.messageText && <MessageBox/>}
@@ -70,48 +66,34 @@ class App extends Component {
                 </div>
             )
     }
-
 }
-
 
 function MSTP(state) {
     return {
         tests: state.tests,
-        selectedTest: state.selectedTest,
         enter: state.enter,
         registration: state.registration,
         resultIsActive: state.resultIsActive,
         messageText: state.messageText,
         router: state.router,
-        isLogin: state.isLogin
+        isLogin: state.isLogin,
+        savedLocationPathname: state.locationPathname
     }
 }
 
 function MDTP(dispatch) {
     return {
-        loadModulesDataAsync: function() {
-            dispatch(fetchModulesDataAsync())
-        },
-        loadAllTestsDataAsync: function() {
-            dispatch(fetchAllTestsDataAsync())
-        },
-        addCurrentCorrectResult: function (data) {
-            dispatch(addCurrentCorrectResult(data))
-        },
-
-        showEnter: function() {
-            dispatch(showEnter())
-        },
-        showRegistration: function() {
-            dispatch(showRegistration())
-        },
-        isLoginFunc: function () {
+        loadModulesDataAsync: ()=> dispatch(fetchModulesDataAsync()),
+        loadAllTestsDataAsync: () => dispatch(fetchAllTestsDataAsync()),
+        addCurrentCorrectResult: (data) => dispatch(addCurrentCorrectResult(data)),
+        showEnter: () => dispatch(showEnter()),
+        showRegistration: () => dispatch(showRegistration()),
+        isLoginFunc: () => {
             dispatch(isLogin());
             return true
         },
-        dataResultFunc: function(data){
-            dispatch(dataResult(data))
-        },
+        dataResultFunc:(data) => dispatch(dataResult(data)),
+        locationPathnameSaveFunc: (pathname) => dispatch(LocationPathnameSave(pathname))
     }
 }
 

@@ -31,7 +31,6 @@ const Tests = ({modules, tests, loadSelectedTest, match}) => {
                     <div className={styles.main__wrapper}>
                         <div className={styles.main__container}>
                             <section className={styles.section}>
-
                                 <div className={styles.section__main}>
                                     {modulesSorted.map((m, index) =>
                                         <div className={styles.main__box} key={m._id}>

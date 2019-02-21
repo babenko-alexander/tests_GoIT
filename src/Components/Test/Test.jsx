@@ -1,56 +1,49 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {NavLink, Switch, Route, Redirect} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import axios from 'axios';
 
 import Result from '../../Components/Result/Result';
 import TestCard from '../TestCard/TestCard';
 import MessageBox from "../MessageBox/MessageBox";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"
 
 import {setTestIsReady, unsetTestIsReady} from '../../redux/actions/testIsReadyActions';
 import {dataResult} from '../../redux/actions/actionDataResults';
 import {checkUser, getUserAuthHeader, getUserId} from '../../helpers/userValidation';
 import {addCurrentAnswers} from "../../redux/actions/currentAnswerActions";
 import {setSelectedTest, unSelectedTest} from "../../redux/actions/selectedTestAction";
-
 import styles from './Test.css';
-
 import {clearMessageText, setMessageText} from "../../redux/actions/messageTextActions";
 import {addCurrentCorrectResult} from "../../redux/actions/currentCorrectResultActions";
-
 import {fetchModulesDataAsync} from "../../redux/actions/modulesAction";
 import {fetchAllTestsDataAsync} from "../../redux/actions/testsAction";
 import {isLogin} from "../../redux/actions/isLogin";
-import Main from "../Main/Main";
-
-import Tests from "../Tests/Tests";
-import NotFound from "../NotFound/NotFound";
-
 
 
 class Test extends Component {
 
-    // componentDidMount() {
-    //     console.log("TEST did mount");
-    //     localStorage.getItem('token') !== null && checkUser()
-    //       .then(authResult => authResult === 200 && this.props.isLoginFunc() && true)
-    //       .then(data => data === true && axios.get(`/users/${getUserId()}`, getUserAuthHeader())
-    //         .then(data => this.props.dataResultFunc(data.data.results)))
-    //       .catch(err => console.log(err));
-    //
-    //     this.props.loadModulesDataAsync();
-    //     this.props.loadAllTestsDataAsync();
-    // };
-    //
-    // componentDidUpdate() {
-    //     console.log(" TEST did Update");
-    //     const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
-    //     if (testIsSelected) {
-    //         let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
-    //         this.props.addCurrentCorrectResult(correctAnswerData)
-    //     }
-    // };
+    componentDidMount() {
+        console.log("TEST did mount");
+        localStorage.getItem('token') !== null && checkUser()
+          .then(authResult => authResult === 200 && this.props.isLoginFunc() && true)
+          .then(data => data === true && axios.get(`/users/${getUserId()}`, getUserAuthHeader())
+            .then(data => this.props.dataResultFunc(data.data.results)))
+          .catch(err => console.log(err));
+
+        this.props.loadModulesDataAsync();
+        this.props.loadAllTestsDataAsync();
+        this.selectTest()
+
+    };
+
+    componentDidUpdate() {
+        console.log(" TEST did Update");
+        const testIsSelected = Object.keys(this.props.selectedTest).length > 0;
+        if (testIsSelected) {
+            let correctAnswerData = this.props.selectedTest.questions.map(el => el.rightAnswer);
+            this.props.addCurrentCorrectResult(correctAnswerData)
+        }
+    };
 
     saveUserTestResultToServer = (persRes) => {
         const dataResults = this.props.dataResults;
@@ -92,7 +85,6 @@ class Test extends Component {
     };
 
     selectTest = () => {
-        this.props.loadAllTestsDataAsync();
         console.log("select test func");
         const selectedTest = this.props.allTests.find(el => el._id === this.props.match.url.split("/")[2]);
 
@@ -103,7 +95,6 @@ class Test extends Component {
 
     render() {
         console.log("render test");
-        this.props.selectedTest === undefined && this.selectTest();
         // console.log("location", this.props.location);
         // console.log("history", this.props.history);
         console.log("selected tests check",this.props.selectedTest);
@@ -119,21 +110,22 @@ class Test extends Component {
                           {this.props.testIsReady && <Result/>}
                           <div className={styles.test__cards}>
                               {console.log(this.props.selectedTest)}
-                              {this.props.selectedTest.questions.map((q, index) =>{
+                              {this.props.selectedTest.questions.map((q, index) =>
+                                {
                                     return (
                                       <TestCard
-                                      clas={this.props.testIsReady ?
+                                        clas={this.props.testIsReady ?
                                           (this.props.currentResult[index]? 2 : 3):
                                           (1)
-                                      }
-                                      testname={this.props.selectedTest.testname}
-                                      index={index}
-                                      question={q.question}
-                                      answers={q.answers}
-                                      key={`${this.props.selectedTest.testname}${index}`}
-                                    />)
+                                        }
+                                        testname={this.props.selectedTest.testname}
+                                        index={index}
+                                        question={q.question}
+                                        answers={q.answers}
+                                        key={`${this.props.selectedTest.testname}${index}`}
+                                      />)
+                                })
                               }
-                              )}
                           </div>
                       </div>
                       {!this.props.testIsReady && (
@@ -164,39 +156,22 @@ function MSTP(state) {
 
 function MDTP(dispatch) {
     return {
-        loadModulesDataAsync: function() {
-            dispatch(fetchModulesDataAsync())
-        },
-        loadAllTestsDataAsync: function() {
-            dispatch(fetchAllTestsDataAsync())
-        },
-        isLoginFunc: function () {
+        loadModulesDataAsync: () => dispatch(fetchModulesDataAsync()),
+        loadAllTestsDataAsync: () => dispatch(fetchAllTestsDataAsync()),
+        isLoginFunc: () => {
             dispatch(isLogin());
             return true
         },
-        dataResultFunc: function(data){
-            dispatch(dataResult(data))
-        },
-        loadSelectedTestFunc: function (selectedTestObj) {
-            dispatch(setSelectedTest(selectedTestObj))
-        },
+        dataResultFunc: (data)=> dispatch(dataResult(data)),
+        loadSelectedTestFunc: (selectedTestObj) => dispatch(setSelectedTest(selectedTestObj)),
 
         setTestIsReadyFunc: () => dispatch(setTestIsReady()),
-
         unsetTestIsReadyFunc: () => dispatch(unsetTestIsReady()),
-
         dataResult: (data) => dispatch(dataResult(data)),
-
         addCurrentAnswers: (data, index) => dispatch(addCurrentAnswers(data, index)),
-
         addCurrentCorrectResult: (data) => dispatch(addCurrentCorrectResult(data)),
-
-        // setSelectedTest: ()=> dispatch(setSelectedTest(null)),
-
         unSelectedTest: ()=> dispatch(unSelectedTest()),
-
         setMessageTextFunc: (message) => dispatch(setMessageText(message)),
-
         clearMessageTextFunc: () => dispatch(clearMessageText()),
     }
 }
